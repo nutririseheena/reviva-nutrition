@@ -19,7 +19,7 @@ export default function Slide1() {
             </span>
 
             <h1
-              className="mt-6 max-w-xl text-4xl font-bold leading-tight lg:text-6xl"
+              className="mt-6 max-w-xl text-4xl font-bold leading-tight text-4xl lg:text-5xl"
               style={{
                 color: "var(--reviva-green)",
                 fontFamily: "var(--font-heading)",
