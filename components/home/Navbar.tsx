@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig } from "@/data/site";
 
 export default function Navbar() {
@@ -8,14 +9,15 @@ export default function Navbar() {
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
 
-          <Link
-            href="/"
-            className="text-2xl font-bold"
-            style={{
-              color: "var(--reviva-green)",
-            }}
-          >
-            {siteConfig.brand}
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/images/logo/reviva-logo.png"
+              alt="Reviva Nutrition"
+              width={180}
+              height={60}
+              priority
+              className="h-auto w-[140px]" // Adjust width and height as needed
+            />
           </Link>
 
           {/* Navigation */}
