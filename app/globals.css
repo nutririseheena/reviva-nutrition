@@ -12,6 +12,8 @@
 
   --reviva-cream: #faf8f2;
   --reviva-text: #1e293b;
+
+  --font-heading: var(--font-cormorant);
 }
 
 @theme inline {

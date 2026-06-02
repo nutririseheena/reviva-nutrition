@@ -1,10 +1,10 @@
 import { ArrowRight, Calendar, HeartPulse, Leaf } from "lucide-react";
 
-export default function HeroSection() {
+export default function Slide1() {
   return (
     <section className="bg-[var(--reviva-cream)]">
-      <div className="mx-auto max-w-7xl px-6 py-20 lg:py-28">
-        <div className="grid items-center gap-16 lg:grid-cols-2">
+      <div className="mx-auto max-w-7xl px-6 py-16 lg:py-24">
+        <div className="grid items-center gap-12 lg:grid-cols-2">
           {/* Left Content */}
 
           <div>
@@ -19,11 +19,11 @@ export default function HeroSection() {
             </span>
 
             <h1
-              className="mt-6 max-w-2xl text-5xl font-bold leading-tight lg:text-7xl"
+              className="mt-6 max-w-xl text-4xl font-bold leading-tight lg:text-6xl"
               style={{
                 color: "var(--reviva-green)",
                 fontFamily: "var(--font-heading)",
-                }}
+              }}
             >
               Heal the Root Cause,
               <br />
@@ -36,7 +36,7 @@ export default function HeroSection() {
               sustainable health.
             </p>
 
-            {/* CTA */}
+            {/* CTA Buttons */}
 
             <div className="mt-8 flex flex-wrap gap-4">
               <button
@@ -50,7 +50,7 @@ export default function HeroSection() {
               </button>
 
               <button
-                className="rounded-full border px-6 py-3 font-medium"
+                className="rounded-full border px-6 py-3 font-medium transition"
                 style={{
                   borderColor: "var(--reviva-green)",
                   color: "var(--reviva-green)",
@@ -60,25 +60,40 @@ export default function HeroSection() {
               </button>
             </div>
 
-            {/* Trust Metrics */}
+            {/* Stats */}
 
-            <div className="mt-10 flex flex-wrap gap-8">
+            <div className="mt-12 flex flex-wrap gap-10">
               <div>
-                <h3 className="text-2xl font-bold">500+</h3>
+                <h3
+                  className="text-2xl font-bold"
+                  style={{ color: "var(--reviva-green)" }}
+                >
+                  500+
+                </h3>
                 <p className="text-sm text-slate-500">
                   Clients Guided
                 </p>
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold">10+</h3>
+                <h3
+                  className="text-2xl font-bold"
+                  style={{ color: "var(--reviva-green)" }}
+                >
+                  10+
+                </h3>
                 <p className="text-sm text-slate-500">
                   Years Experience
                 </p>
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold">100%</h3>
+                <h3
+                  className="text-2xl font-bold"
+                  style={{ color: "var(--reviva-green)" }}
+                >
+                  100%
+                </h3>
                 <p className="text-sm text-slate-500">
                   Personalized Plans
                 </p>
@@ -90,22 +105,23 @@ export default function HeroSection() {
 
           <div className="relative">
             <div
-              className="aspect-[4/5] rounded-[32px]"
+              className="aspect-[4/5] rounded-[32px] border"
               style={{
                 background:
-                  "linear-gradient(135deg,#f4b21b20,#2f6b2d20)",
+                  "linear-gradient(135deg,#f4b21b15,#2f6b2d10)",
+                borderColor: "#ece7d9",
               }}
             >
               <div className="flex h-full items-center justify-center">
                 <span className="text-slate-500">
-                  Heena Photo Placeholder
+                  Heena's Professional Photo
                 </span>
               </div>
             </div>
 
-            {/* Floating Cards */}
+            {/* Floating Card 1 */}
 
-            <div className="absolute -left-6 top-10 rounded-2xl bg-white p-4 shadow-lg">
+            <div className="absolute left-0 top-10 rounded-2xl bg-white p-4 shadow-lg">
               <div className="flex items-center gap-3">
                 <Leaf
                   size={20}
@@ -115,7 +131,9 @@ export default function HeroSection() {
               </div>
             </div>
 
-            <div className="absolute -right-6 top-1/3 rounded-2xl bg-white p-4 shadow-lg">
+            {/* Floating Card 2 */}
+
+            <div className="absolute -right-4 top-1/3 rounded-2xl bg-white p-4 shadow-lg">
               <div className="flex items-center gap-3">
                 <HeartPulse
                   size={20}
@@ -124,6 +142,8 @@ export default function HeroSection() {
                 <span>Hormonal Balance</span>
               </div>
             </div>
+
+            {/* Floating Card 3 */}
 
             <div className="absolute bottom-10 left-10 rounded-2xl bg-white p-4 shadow-lg">
               <div className="flex items-center gap-3">
