@@ -5,8 +5,20 @@ export default function HomePage() {
     <>
       <Navbar />
 
-      <main>
-        <h1>Reviva Nutrition</h1>
+      <main
+        className="min-h-screen flex items-center justify-center"
+        style={{
+          backgroundColor: "var(--reviva-cream)",
+        }}
+      >
+        <h1
+          className="text-6xl font-bold"
+          style={{
+            color: "var(--reviva-green)",
+          }}
+        >
+          Reviva Nutrition
+        </h1>
       </main>
     </>
   );
