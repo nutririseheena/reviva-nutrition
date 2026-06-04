@@ -1,3 +1,8 @@
+// Polyfill structuredClone for Node < 17
+if (typeof globalThis.structuredClone === "undefined") {
+  globalThis.structuredClone = (obj) => JSON.parse(JSON.stringify(obj));
+}
+
 import { defineConfig, globalIgnores } from "eslint/config";
 import nextVitals from "eslint-config-next/core-web-vitals";
 import nextTs from "eslint-config-next/typescript";

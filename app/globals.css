@@ -1,8 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #faf8f2;
+  --foreground: #1e293b;
+
+  --reviva-green: #2f6b2d;
+  --reviva-green-light: #3dba24;
+  --reviva-green-dark: #1e4a1c;
+
+  --reviva-gold: #f4b21b;
+  --reviva-gold-dark: #e89b11;
+  --reviva-gold-light: rgba(244, 178, 27, 0.15);
+
+  --reviva-cream: #faf8f2;
+  --reviva-cream-dark: #f2ede2;
+  --reviva-text: #1e293b;
+
+  --font-heading: var(--font-cormorant);
+
+  --shadow-card: 0 4px 24px rgba(47, 107, 45, 0.08);
+  --shadow-card-hover: 0 12px 40px rgba(47, 107, 45, 0.16);
 }
 
 @theme inline {
@@ -12,15 +29,43 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+body {
+  background: var(--reviva-cream);
+  color: var(--reviva-text);
+  font-family: var(--font-geist-sans);
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+/* Smooth scroll for the whole page + global 95% scale */
+html {
+  scroll-behavior: smooth;
+  font-size: 95%;
+}
+
+/* Ticker / marquee animation — triple content, move -33.33% */
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Typewriter cursor blink */
+@keyframes cursor-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-cursor-blink {
+  animation: cursor-blink 0.85s step-end infinite;
 }
