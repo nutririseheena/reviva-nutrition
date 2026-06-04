@@ -11,6 +11,6 @@ export const siteConfig = {
     instagram: "",
     facebook: "",
     linkedin: "",
-    youtube: "https://www.youtube.com/results?search_query=nutririseheena",
+    youtube: "https://www.youtube.com/@NutriRiseHeena",
   },
 };

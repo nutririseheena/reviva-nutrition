@@ -3,37 +3,68 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { AnimatePresence, motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
+
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/consult", label: "Consult" },
+  { href: "/testimonials", label: "Testimonials" },
+];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setScrolled((prev) => {
+            if (!prev && window.scrollY > 50) return true;
+            if (prev && window.scrollY < 30) return false;
+            return prev;
+          });
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-    window.addEventListener("scroll", handleScroll);
-
-    return () =>
-      window.removeEventListener("scroll", handleScroll);
+  // Close mobile menu on resize to desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) setMobileOpen(false);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "backdrop-blur-md bg-[#faf8f2]/85 shadow-md border-b border-[#2f6b2d]/10"
-          : "bg-[var(--reviva-cream)]"
-      }`}
+      className="sticky top-0 z-50 backdrop-blur-md"
+      style={{
+        backgroundColor: scrolled ? "rgba(250,248,242,0.92)" : "rgba(250,248,242,1)",
+        boxShadow: scrolled ? "0 1px 12px rgba(47,107,45,0.10)" : "none",
+        borderBottom: scrolled ? "1px solid rgba(47,107,45,0.10)" : "1px solid transparent",
+        transition: "background-color 350ms ease, box-shadow 350ms ease, border-color 350ms ease",
+      }}
     >
       <div className="mx-auto max-w-7xl px-6">
         <div
-          className={`flex items-center justify-between transition-all duration-300 ${
-            scrolled ? "h-16" : "h-20"
-          }`}
+          className="flex items-center justify-between"
+          style={{
+            height: scrolled ? "64px" : "96px",
+            transition: "height 350ms ease",
+            willChange: "height",
+          }}
         >
           {/* Logo */}
-
           <Link href="/" className="flex items-center">
             <Image
               src="/images/logo/reviva-logo.png"
@@ -42,56 +73,81 @@ export default function Navbar() {
               height={60}
               priority
               className={`h-auto transition-all duration-300 ${
-                scrolled ? "w-[120px]" : "w-[140px]"
+                scrolled ? "w-[140px]" : "w-[165px]"
               }`}
             />
           </Link>
 
-          {/* Navigation */}
-
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <Link
-              href="/"
-              className="transition hover:text-[var(--reviva-green)]"
-            >
-              Home
-            </Link>
-
-            <Link
-              href="/about"
-              className="transition hover:text-[var(--reviva-green)]"
-            >
-              About
-            </Link>
-
-            <Link
-              href="/consult"
-              className="transition hover:text-[var(--reviva-green)]"
-            >
-              Consult
-            </Link>
-
-            <Link
-              href="/testimonials"
-              className="transition hover:text-[var(--reviva-green)]"
-            >
-              Testimonials
-            </Link>
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-base font-medium text-slate-700 transition hover:text-[var(--reviva-green)]"
+              >
+                {link.label}
+              </Link>
+            ))}
           </nav>
 
-          {/* CTA */}
-
-          <button
-            className="rounded-full px-5 py-2 font-medium transition hover:scale-105"
-            style={{
-              backgroundColor: "var(--reviva-gold)",
-              color: "#fff",
-            }}
+          {/* Desktop CTA */}
+          <Link
+            href="/consult"
+            className="hidden md:inline-flex items-center rounded-full px-6 py-3 text-base font-semibold text-white shadow-sm transition-all hover:scale-105 hover:shadow-md"
+            style={{ backgroundColor: "var(--reviva-gold)" }}
           >
             Book Consultation
+          </Link>
+
+          {/* Mobile Hamburger */}
+          <button
+            className="md:hidden rounded-xl p-2 transition hover:bg-[#eef5eb]"
+            onClick={() => setMobileOpen((prev) => !prev)}
+            aria-label="Toggle navigation menu"
+          >
+            {mobileOpen ? (
+              <X size={22} color="var(--reviva-green)" />
+            ) : (
+              <Menu size={22} color="var(--reviva-green)" />
+            )}
           </button>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.22, ease: "easeInOut" }}
+            className="overflow-hidden border-t border-[#2f6b2d]/10 bg-[var(--reviva-cream)] md:hidden"
+          >
+            <nav className="flex flex-col gap-1 px-6 py-4">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="rounded-xl px-3 py-3 text-base font-medium text-slate-700 transition hover:bg-[#eef5eb] hover:text-[var(--reviva-green)]"
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <Link
+                href="/consult"
+                onClick={() => setMobileOpen(false)}
+                className="mt-3 flex justify-center rounded-full py-3 text-base font-semibold text-white transition hover:opacity-90"
+                style={{ backgroundColor: "var(--reviva-gold)" }}
+              >
+                Book Consultation
+              </Link>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

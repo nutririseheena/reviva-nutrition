@@ -16,15 +16,13 @@ export const testimonials = [
   {
     name: "Meera K.",
     condition: "Gut Health",
-    quote:
-      "The root-cause approach completely changed how I think about nutrition and wellness.",
+    quote: "The root-cause approach completely changed how I think about nutrition and wellness.",
     result: "Improved digestion",
   },
   {
     name: "Kavita S.",
     condition: "Hormonal Wellness",
-    quote:
-      "The support and accountability helped me stay consistent and make lasting changes.",
+    quote: "The support and accountability helped me stay consistent and make lasting changes.",
     result: "Healthier daily habits",
   },
 ];

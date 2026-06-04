@@ -5,7 +5,7 @@ export const heroMetrics = {
 };
 
 export const heroGrowthData = [
-  { month: "Jan", clients: 20 },
+  { month: "Jan", clients: 10 },
   { month: "Feb", clients: 35 },
   { month: "Mar", clients: 48 },
   { month: "Apr", clients: 60 },

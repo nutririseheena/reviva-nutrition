@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond } from "next/font/google";
 import { Geist, Geist_Mono } from "next/font/google";
+import ScrollToTop from "@/components/ScrollToTop";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -21,6 +22,10 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   title: "Reviva Nutrition",
   description: "Personalized nutrition and wellness guidance by Heena",
+  icons: {
+    icon: "/images/logo/reviva-logo.png",
+    apple: "/images/logo/reviva-logo.png",
+  },
 };
 
 export default function RootLayout({
@@ -33,7 +38,10 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${cormorant.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <ScrollToTop />
+        {children}
+      </body>
     </html>
   );
 }
