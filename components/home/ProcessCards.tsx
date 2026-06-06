@@ -37,7 +37,7 @@ export default function ProcessCards() {
               fontFamily: "var(--font-heading)",
             }}
           >
-            A Simple Path To Better Health
+            Believe in Nutrition Power to Better health
           </h2>
 
           <p className="mx-auto mt-4 max-w-xl text-lg text-slate-500">

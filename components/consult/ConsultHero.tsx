@@ -58,7 +58,7 @@ export default function ConsultHero() {
               className="inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-semibold shadow-sm"
               style={{ backgroundColor: "var(--reviva-gold-light)", color: "var(--reviva-green)" }}
             >
-              Free initial consultation
+              Quick online consultation
             </span>
           </div>
 

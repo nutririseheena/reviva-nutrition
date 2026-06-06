@@ -56,7 +56,7 @@ export default function TestimonialsPreview() {
               color: "var(--reviva-green)",
             }}
           >
-            View All Stories
+            View All Success Stories
             <ArrowRight size={16} />
           </Link>
         </motion.div>
