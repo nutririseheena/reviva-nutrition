@@ -18,7 +18,7 @@ export default function ConsultPage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="overflow-x-hidden">
         <ConsultHero />
         <HowItWorks />
         <ProgramOptions />

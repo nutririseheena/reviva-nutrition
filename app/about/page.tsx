@@ -18,7 +18,7 @@ export default function AboutPage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="overflow-x-hidden">
         <AboutHero />
         <AboutStory />
         <AboutStatsCharts />

@@ -4,6 +4,7 @@ import Footer from "@/components/home/Footer";
 import WhatsAppFloat from "@/components/home/WhatsAppFloat";
 import TestimonialsHero from "@/components/testimonials/TestimonialsHero";
 import TestimonialsGrid from "@/components/testimonials/TestimonialsGrid";
+import TestimonialsFeedback from "@/components/testimonials/TestimonialsFeedback";
 import ConsultationCTA from "@/components/home/ConsultationCTA";
 
 export const metadata: Metadata = {
@@ -16,9 +17,10 @@ export default function TestimonialsPage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="overflow-x-hidden">
         <TestimonialsHero />
         <TestimonialsGrid />
+        <TestimonialsFeedback />
         <ConsultationCTA />
       </main>
       <Footer />

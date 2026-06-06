@@ -121,7 +121,7 @@ export default function Slide3() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.2, ease: "easeOut" }}
           >
-            <div className="relative w-full max-w-[280px] sm:max-w-[340px] lg:max-w-[420px]">
+            <div className="relative w-full max-w-[250px] sm:max-w-[340px] lg:max-w-[500px]">
               <div
                 className="absolute -inset-6 -z-10 rounded-[50px] blur-3xl"
                 style={{ backgroundColor: "rgba(47, 107, 45, 0.1)" }}

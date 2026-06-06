@@ -43,19 +43,6 @@ const durations = [
   },
 ];
 
-const consultWith = [
-  {
-    who: "With Heena",
-    tag: "Lead Nutritionist",
-    desc: "Work directly with Heena for a deeply personalized experience informed by a decade of clinical expertise.",
-  },
-  {
-    who: "With the Team",
-    tag: "Team Nutritionist",
-    desc: "Work with our trained team of nutritionists — same structured program, same outcomes, greater flexibility on scheduling.",
-  },
-];
-
 export default function ProgramOptions() {
   return (
     <section className="bg-[var(--reviva-cream)] py-24">
@@ -150,7 +137,7 @@ export default function ProgramOptions() {
           ))}
         </div>
 
-        {/* Consult With */}
+        {/* Consult With — Heena only */}
         <motion.div
           className="mt-16"
           initial={{ opacity: 0, y: 24 }}
@@ -162,41 +149,98 @@ export default function ProgramOptions() {
             className="text-center text-3xl md:text-4xl"
             style={{ color: "var(--reviva-green)", fontFamily: "var(--font-heading)" }}
           >
-            Who Do You Want to Work With?
+            Your Guide to Better Health
           </h3>
           <p className="mx-auto mt-3 max-w-xl text-center text-slate-500">
-            Choose the experience level that works best for your needs and schedule.
+            Work directly with Heena — a decade of clinical expertise, personalised to you.
           </p>
 
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
-            {consultWith.map((option, index) => (
-              <motion.div
-                key={option.who}
-                className="rounded-[24px] bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <span
-                  className="inline-block rounded-full px-3 py-1 text-xs font-semibold"
-                  style={{
-                    backgroundColor: "var(--reviva-gold-light)",
-                    color: "var(--reviva-green)",
-                  }}
-                >
-                  {option.tag}
-                </span>
-                <h4
-                  className="mt-3 text-2xl font-semibold"
-                  style={{ color: "var(--reviva-green)" }}
-                >
-                  {option.who}
-                </h4>
-                <p className="mt-2 text-slate-500 leading-relaxed">{option.desc}</p>
-              </motion.div>
-            ))}
-          </div>
+          <motion.div
+            className="mt-8 overflow-hidden rounded-[28px] bg-white shadow-md"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="grid md:grid-cols-[auto_1fr]">
+              {/* Accent strip */}
+              <div
+                className="hidden md:block w-2 rounded-l-[28px]"
+                style={{
+                  background: "linear-gradient(to bottom, var(--reviva-green), var(--reviva-gold))",
+                }}
+              />
+
+              <div className="p-8 md:p-10">
+                <div className="flex flex-wrap items-start justify-between gap-6">
+                  <div className="flex-1 min-w-[200px]">
+                    <span
+                      className="inline-block rounded-full px-3 py-1 text-xs font-semibold"
+                      style={{
+                        backgroundColor: "var(--reviva-gold-light)",
+                        color: "var(--reviva-green)",
+                      }}
+                    >
+                      Lead Nutritionist
+                    </span>
+                    <h4
+                      className="mt-3 text-3xl font-semibold"
+                      style={{ color: "var(--reviva-green)", fontFamily: "var(--font-heading)" }}
+                    >
+                      Work With Heena
+                    </h4>
+                    <p className="mt-2 max-w-lg text-slate-500 leading-relaxed">
+                      Get a deeply personalised nutrition experience built around your unique body,
+                      lifestyle, and goals — guided by a decade of evidence-based clinical expertise
+                      in root-cause healing.
+                    </p>
+                  </div>
+
+                  {/* Expertise tags */}
+                  <div className="flex flex-wrap gap-2 self-end">
+                    {[
+                      "Gut Health",
+                      "Hormonal Balance",
+                      "Diabetes",
+                      "PCOS",
+                      "Weight Management",
+                      "Thyroid",
+                    ].map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full border px-3 py-1 text-xs font-medium"
+                        style={{
+                          borderColor: "rgba(47,107,45,0.2)",
+                          color: "var(--reviva-green)",
+                          backgroundColor: "rgba(47,107,45,0.04)",
+                        }}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mt-8 grid gap-4 border-t border-slate-100 pt-8 sm:grid-cols-3">
+                  {[
+                    { value: "10+", label: "Years of Practice" },
+                    { value: "500+", label: "Clients Guided" },
+                    { value: "95%", label: "Success Rate" },
+                  ].map(({ value, label }) => (
+                    <div key={label} className="text-center">
+                      <p
+                        className="text-3xl font-bold"
+                        style={{ color: "var(--reviva-green)", fontFamily: "var(--font-heading)" }}
+                      >
+                        {value}
+                      </p>
+                      <p className="mt-1 text-sm text-slate-500">{label}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

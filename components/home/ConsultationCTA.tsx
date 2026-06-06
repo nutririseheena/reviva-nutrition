@@ -208,7 +208,7 @@ export default function ConsultationCTA() {
                     transition={{ duration: 0.3 }}
                   >
                     <h3 className="text-2xl font-semibold" style={{ color: "var(--reviva-green)" }}>
-                      Book Your Consultation
+                      Book Consultation
                     </h3>
                     <p className="mt-1 text-sm text-slate-500">
                       Fill in your details and we&apos;ll get back to you shortly.
@@ -275,14 +275,17 @@ export default function ConsultationCTA() {
                       </div>
 
                       <div>
-                        <label className="mb-1.5 block text-xs font-medium text-slate-600">
+                        <label className="mb-1 block text-xs font-medium text-slate-600">
                           Health Concern
                         </label>
+                        <p className="mb-1.5 text-[11px] text-slate-400">
+                          Please describe your primary health concern.
+                        </p>
                         <textarea
                           rows={4}
                           value={concern}
                           onChange={(e) => setConcern(e.target.value)}
-                          placeholder="Tell us about your health goals or concerns..."
+                          placeholder="Ex. Undergoing Diabetes 10yrs."
                           className="w-full resize-none rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-[#2f6b2d] focus:bg-white"
                         />
                       </div>
