@@ -132,7 +132,7 @@ export default function ConsultationCTA() {
               </p>
 
               <ul className="mt-8 space-y-3.5">
-                <Benefit text="Free initial consultation" />
+                <Benefit text="Online consultation" />
                 <Benefit text="Personalized health assessment" />
                 <Benefit text="No obligation to continue" />
                 <Benefit text="WhatsApp support available" />
@@ -299,7 +299,7 @@ export default function ConsultationCTA() {
                             Sending...
                           </>
                         ) : (
-                          "Book Free Consultation"
+                          "Book Consultation"
                         )}
                       </button>
 

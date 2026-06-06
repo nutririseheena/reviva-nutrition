@@ -103,7 +103,7 @@ export default function Footer() {
             </h3>
 
             <p className="mt-4 text-sm text-white/70 leading-relaxed">
-              Ready to transform your health? Book a free consultation today.
+              Ready to transform your health? Book an online consultation today.
             </p>
 
             <Link
@@ -114,7 +114,7 @@ export default function Footer() {
                 color: "#fff",
               }}
             >
-              Book Free Consult
+              Book Consult
             </Link>
 
             <a

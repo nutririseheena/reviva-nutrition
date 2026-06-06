@@ -68,7 +68,7 @@ export default function ConsultHero() {
               className="inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-semibold text-white shadow-md transition-all hover:scale-105 hover:shadow-lg"
               style={{ backgroundColor: "var(--reviva-green)" }}
             >
-              Book Free Consultation
+              Book Online Consultation
               <ArrowRight size={18} />
             </Link>
           </div>

@@ -36,8 +36,4 @@ export const faqs = [
     q: "Do I need to buy special foods or supplements?",
     a: "No. Meal plans are built around everyday, accessible Indian ingredients that are affordable and culturally appropriate. Supplements are suggested only when there's a genuine clinical need — never as a replacement for real, whole food.",
   },
-  {
-    q: "Is there a free initial consultation?",
-    a: "Yes! We offer a complimentary initial consultation so you can ask questions, understand the program structure, and see if it's the right fit — completely without obligation. You can book it using the form on this page.",
-  },
 ];
