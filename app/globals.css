@@ -43,6 +43,11 @@ body {
 html {
   scroll-behavior: smooth;
   font-size: 95%;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 /* Ticker / marquee animation — triple content, move -33.33% */
