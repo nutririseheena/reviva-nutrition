@@ -2,7 +2,7 @@
 
 A modern, responsive marketing website for **Reviva Nutrition** — a personalized nutrition and wellness practice by Heena. Built with Next.js 16, Tailwind CSS 4, and Framer Motion for smooth animations.
 
-> **Note:** This project is currently in its structural/scaffolding phase. Text content, images, and client-specific details will be updated once received from the client.
+> **Note:** This project is live at **[https://reviva-nutrition.vercel.app](https://reviva-nutrition.vercel.app)**. Content, images, and client-specific details will be finalised and updated by the client.
 
 ---
 
@@ -33,35 +33,51 @@ reviva-nutrition/
 │   │       └── route.ts       # Resend email API endpoint
 │   ├── layout.tsx          # Root layout (fonts, metadata, scroll-to-top)
 │   ├── page.tsx            # Home page
-│   ├── about/page.tsx      # About page (scaffold)
-│   ├── consult/page.tsx    # Consultation page (scaffold)
-│   ├── testimonials/page.tsx  # Testimonials page (scaffold)
+│   ├── about/page.tsx      # About page (full — story, stats, charts, YouTube)
+│   ├── consult/page.tsx    # Consultation page (process, programs, FAQs)
+│   ├── testimonials/page.tsx  # Testimonials page (full grid)
 │   └── globals.css         # Global CSS, CSS variables, animations
 ├── components/
 │   ├── ScrollToTop.tsx     # Client component — resets scroll on page load
-│   └── home/               # All homepage section components
+│   ├── about/
+│   │   ├── AboutHero.tsx       # Hero banner with CTA
+│   │   ├── AboutStory.tsx      # Story section with credentials & specialties
+│   │   ├── AboutStatsCharts.tsx # Animated counters + Recharts (bar + donut)
+│   │   └── AboutYoutube.tsx    # YouTube topics section
+│   ├── consult/
+│   │   ├── ConsultHero.tsx     # Consult hero section
+│   │   ├── HowItWorks.tsx      # 3-stage process (pre / consult / post)
+│   │   ├── ProgramOptions.tsx  # Duration cards + who to consult with
+│   │   └── FaqAccordion.tsx    # Animated FAQ accordion
+│   ├── testimonials/
+│   │   ├── TestimonialsHero.tsx # Hero with stats strip
+│   │   └── TestimonialsGrid.tsx # Full testimonials grid (8 cards)
+│   └── home/               # Homepage section components
 │       ├── Navbar.tsx          # Sticky, shrinking navbar with mobile menu
-│       ├── HeroSlider.tsx      # Auto-advancing hero slider (3 slides)
+│       ├── HeroSlider.tsx      # Auto-advancing hero slider (touch-swipe enabled)
 │       ├── TrustTicker.tsx     # Scrolling specialty ticker banner
-│       ├── ProcessCards.tsx    # "Your Healing Journey" 4-step cards
+│       ├── ProcessCards.tsx    # "Your Healing Journey" 4-step cards (with blended bg images)
 │       ├── AboutPreview.tsx    # About section with animated counters
 │       ├── TestimonialsPreview.tsx  # Testimonial cards grid
-│       ├── ConsultationCTA.tsx # CTA section with contact form
+│       ├── ConsultationCTA.tsx # CTA section with validated contact form
 │       ├── Footer.tsx          # Site footer with social links
 │       ├── WhatsAppFloat.tsx   # Fixed WhatsApp floating button
 │       └── hero-slides/
-│           ├── Slide1.tsx      # Typewriter hero slide
-│           ├── Slide2.tsx      # Lifestyle hero slide
-│           └── Slide3.tsx      # Online consultation slide
+│           ├── Slide1.tsx      # Typewriter hero slide (portrait-first on mobile)
+│           ├── Slide2.tsx      # Sunset/Sunrise opportunity-to-heal slide
+│           └── Slide3.tsx      # Online consultation slide (larger laptop on desktop)
 ├── data/                   # Static data / content
-│   ├── hero.ts             # Hero metrics and chart data
-│   ├── process-cards.ts    # 4-step process content
+│   ├── about-stats.ts      # Chart data + YouTube topics (easy to update)
+│   ├── faqs.ts             # FAQ questions and answers (easy to update)
+│   ├── hero.ts             # Hero metrics
+│   ├── process-cards.ts    # 4-step process content (includes image paths + prompts)
 │   ├── site.ts             # Brand, contact, social config
-│   └── testimonials.ts     # Client testimonials
+│   └── testimonials.ts     # Home page testimonials preview
 └── public/
     └── images/
         ├── about/          # About section images
-        ├── hero/           # Hero slide images
+        ├── hero/           # Hero slide images (sunset-disease.jpg + sunrise-heal.jpg to be added)
+        ├── process/        # Process card background images (to be added — prompts in data/process-cards.ts)
         └── logo/           # Brand logo
 ```
 
@@ -69,16 +85,42 @@ reviva-nutrition/
 
 ## Key Features
 
-- **Auto-advancing hero slider** — Slide 1 waits ~12 s for the typewriter to cycle all 4 roles before auto-advancing; slides 2 & 3 auto-advance every 5.5 s. Pauses on hover; manual arrow/dot navigation resets the timer.
-- **Typewriter animation** — Slide 1 cycles through "Nutritionist → Dietician → Coach → Guide" with smooth type/delete/pause rhythm.
-- **Smooth scroll-triggered sections** — Every section below the hero fades in _and_ out as you scroll through (Framer Motion `whileInView`, `once: false`).
-- **Shrinking sticky navbar** — Expands to 96 px on top, smoothly shrinks to 64 px on scroll with hysteresis (triggers at 50 px down, releases at 30 px up) to eliminate flicker. Always uses backdrop blur.
+- **Three full pages built** — About (story, credentials, charts, YouTube), Consult (3-stage process, program options, FAQs), and Testimonials (full grid of 8 client stories + Google Form feedback CTA).
+- **Auto-advancing hero slider with touch/swipe** — Slide 1 waits ~12 s for the typewriter; slides 2 & 3 auto-advance every 5.5 s. Pauses on hover; swipe left/right on mobile to manually navigate.
+- **Typewriter animation** — Slide 1 cycles through "Nutritionist → Dietician → Coach → Guide" at a comfortable pace with smooth type/delete/pause rhythm.
+- **Slide 2 — Sunset/Sunrise redesign** — Dual-image concept: sunset card showing disease burden vs. sunrise card showing Reviva-guided recovery. Headline "Opportunity To Heal." + "Begin Your Journey" CTA. Gradient fallback while real images are placed.
+- **Smooth scroll-triggered sections** — Every section fades in _and_ out as you scroll (Framer Motion `whileInView`, `once: false`).
+- **Shrinking sticky navbar** — Expands to 96 px on top, smoothly shrinks to 64 px on scroll. Works on all pages. `overflow-x: clip` used globally to avoid breaking `position: sticky`.
+- **Mobile portrait-first Slide 1** — Heena's portrait appears above the text on mobile; reversed on desktop.
+- **Validated consultation form** — Per-field inline errors (name, phone, email), placeholder updated to "Ex. Undergoing Diabetes 10yrs.", spinner during submission, success card on completion.
+- **Process Cards with blended backgrounds** — 4-step cards use CSS `background-image` with gradient fallback. Drop real images at `public/images/process/` (prompts provided in `data/process-cards.ts`).
+- **Testimonials feedback section** — Google Form CTA block after the testimonials grid linking to the client's feedback form.
+- **Consult page — Work With Heena** — "Team Nutritionist" option removed; redesigned as a single prominent card showcasing Heena's expertise with stats.
+- **Recharts statistics** — About page includes a horizontal bar chart and donut chart. All chart data lives in `data/about-stats.ts` for easy non-technical updates.
+- **YouTube section** — About page lists YouTube topics with links. Add/remove topics by editing `youtubeTopics` in `data/about-stats.ts`.
+- **Easy content management** — `data/about-stats.ts` (charts + YouTube), `data/faqs.ts` (FAQs) are clearly commented and simple to edit without coding knowledge.
 - **Scroll-to-top on reload** — Sets `history.scrollRestoration = 'manual'` and calls `scrollTo(0,0)` on every page load.
 - **Trust ticker** — Infinite scrolling specialty banner with seamless loop.
-- **Animated stat counters** — Count up once when the About section enters the viewport.
 - **WhatsApp float button** — Fixed bottom-right, links directly to business WhatsApp.
 - **Global 95% scale** — `html { font-size: 95% }` reduces all rem-based sizes slightly for a tighter feel.
-- **Consultation Form Integration** — Contact form submissions are processed through a Next.js API route and delivered directly to the business email using Resend.
+- **Consultation Form Integration** — Contact form submissions processed through a Next.js API route and delivered via Resend.
+
+---
+
+## Image Assets Needed
+
+The following images need to be provided by the client and placed in the correct paths:
+
+| Image                     | Path                                          | Notes                             |
+| ------------------------- | --------------------------------------------- | --------------------------------- |
+| Sunset — disease burden   | `public/images/hero/sunset-disease.jpg`       | Prompt in `Slide2.tsx`            |
+| Sunrise — health restored | `public/images/hero/sunrise-heal.jpg`         | Prompt in `Slide2.tsx`            |
+| Assessment card bg        | `public/images/process/assessment-bg.jpg`     | Prompt in `data/process-cards.ts` |
+| Personalized Plan card bg | `public/images/process/plan-bg.jpg`           | Prompt in `data/process-cards.ts` |
+| Guided Support card bg    | `public/images/process/support-bg.jpg`        | Prompt in `data/process-cards.ts` |
+| Transformation card bg    | `public/images/process/transformation-bg.jpg` | Prompt in `data/process-cards.ts` |
+
+All sections display beautifully with gradient fallbacks until real images are placed.
 
 ---
 
@@ -158,10 +200,12 @@ All consultation requests are delivered directly to the configured business emai
 ## Status
 
 - [x] Homepage complete
-- [x] Consultation form integration (Resend)
-- [x] Vercel deployment configuration
-- [ ] About page — content pending
-- [ ] Consult page — content pending
-- [ ] Testimonials page — content pending
+- [x] About page — full (story, credentials, charts, YouTube)
+- [x] Consult page — full (3-stage process, program options, FAQs)
+- [x] Testimonials page — full (8 client stories grid)
+- [x] Consultation form integration (Resend) with inline validation
+- [x] Touch/swipe hero slider for mobile
+- [x] No horizontal overflow on mobile
+- [x] Vercel deployment — live at [reviva-nutrition.vercel.app](https://reviva-nutrition.vercel.app)
 
-_Content, images, and copy will be updated once received from the client._
+_Images and copy placeholders will be replaced with final client assets._

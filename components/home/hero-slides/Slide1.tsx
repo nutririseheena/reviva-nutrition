@@ -20,7 +20,7 @@ function Typewriter() {
         const t = setTimeout(() => setPhase("pausing"), 1800);
         return () => clearTimeout(t);
       }
-      const t = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), 90);
+      const t = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), 130);
       return () => clearTimeout(t);
     }
 
@@ -37,7 +37,7 @@ function Typewriter() {
         }, 0);
         return () => clearTimeout(t);
       }
-      const t = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 52);
+      const t = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 75);
       return () => clearTimeout(t);
     }
   }, [displayed, phase, wordIndex]);
@@ -82,8 +82,13 @@ export default function Slide1() {
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid items-center gap-8 py-10 sm:py-12 lg:grid-cols-[55%_45%] lg:gap-12 lg:py-0 lg:min-h-[700px]">
-          {/* Left: Text */}
-          <motion.div variants={leftVariants} initial="hidden" animate="show">
+          {/* Left: Text — shown second on mobile (order-2), first on desktop */}
+          <motion.div
+            variants={leftVariants}
+            initial="hidden"
+            animate="show"
+            className="order-2 lg:order-1"
+          >
             {/* Intro chip */}
             <motion.div
               variants={item}
@@ -141,7 +146,7 @@ export default function Slide1() {
                 className="flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white shadow-md transition-all hover:scale-105 hover:shadow-lg"
                 style={{ backgroundColor: "var(--reviva-green)" }}
               >
-                Book Free Consultation
+                Book Online Consultation
                 <ArrowRight size={17} />
               </button>
               <Link
@@ -175,9 +180,9 @@ export default function Slide1() {
             </motion.div>
           </motion.div>
 
-          {/* Right: Portrait */}
+          {/* Right: Portrait — shown first on mobile (order-1), second on desktop */}
           <motion.div
-            className="flex justify-center lg:justify-end"
+            className="flex justify-center lg:justify-end order-1 lg:order-2"
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.2, ease: "easeOut" }}

@@ -12,12 +12,14 @@ export default function HomePage() {
   return (
     <>
       <Navbar />
-      <HeroSlider />
-      <TrustTicker />
-      <ProcessCards />
-      <AboutPreview />
-      <TestimonialsPreview />
-      <ConsultationCTA />
+      <main className="overflow-x-hidden">
+        <HeroSlider />
+        <TrustTicker />
+        <ProcessCards />
+        <AboutPreview />
+        <TestimonialsPreview />
+        <ConsultationCTA />
+      </main>
       <Footer />
       <WhatsAppFloat />
     </>

@@ -37,7 +37,7 @@ export default function ProcessCards() {
               fontFamily: "var(--font-heading)",
             }}
           >
-            A Simple Path To Better Health
+            Believe in Nutrition Power to Better health
           </h2>
 
           <p className="mx-auto mt-4 max-w-xl text-lg text-slate-500">
@@ -63,7 +63,6 @@ export default function ProcessCards() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {processCards.map((card, index) => {
               const Icon = icons[index];
-              const isEven = index % 2 === 1;
 
               return (
                 <motion.div
@@ -75,46 +74,64 @@ export default function ProcessCards() {
                 >
                   <Link
                     href="/consult"
-                    className="group relative block rounded-[28px] bg-[var(--reviva-cream)] p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:bg-white hover:shadow-xl"
+                    className="group relative block overflow-hidden rounded-[28px] shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                    style={{ minHeight: "280px" }}
                   >
-                    {/* Icon + step badge */}
-                    <div className="relative w-fit">
-                      <div
-                        className="flex h-14 w-14 items-center justify-center rounded-2xl transition-colors duration-300 group-hover:bg-[#eef5eb]"
-                        style={{
-                          backgroundColor: isEven ? "rgba(244,178,27,0.12)" : "#eef5eb",
-                        }}
-                      >
-                        <Icon size={26} color="var(--reviva-green)" />
+                    {/* Image layer — zooms on hover */}
+                    <div
+                      className="absolute inset-0 transition-transform duration-500 group-hover:scale-105"
+                      style={{
+                        backgroundImage: `url(${card.image})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                      }}
+                    />
+                    {/* Brand tint overlay — blends image into each card's colour palette */}
+                    <div
+                      className="absolute inset-0"
+                      style={{ background: card.gradient, opacity: 0.52 }}
+                    />
+                    {/* Bottom readability gradient — keeps text clearly legible */}
+                    <div
+                      className="absolute inset-0"
+                      style={{
+                        background:
+                          "linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.20) 52%, transparent 100%)",
+                      }}
+                    />
+
+                    {/* Card content */}
+                    <div
+                      className="relative z-10 flex h-full flex-col justify-between p-7"
+                      style={{ minHeight: "280px" }}
+                    >
+                      {/* Top: Icon + step badge */}
+                      <div className="relative w-fit">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/20 backdrop-blur-sm">
+                          <Icon size={22} color="white" />
+                        </div>
+                        <span
+                          className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full text-[10px] font-bold text-white shadow-sm"
+                          style={{ backgroundColor: "var(--reviva-gold)" }}
+                        >
+                          {index + 1}
+                        </span>
                       </div>
 
-                      {/* Step number badge */}
-                      <span
-                        className="absolute -top-2 -right-2 flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold text-white shadow-sm"
-                        style={{ backgroundColor: "var(--reviva-gold)" }}
-                      >
-                        {index + 1}
-                      </span>
-                    </div>
-
-                    <h3
-                      className="mt-6 text-xl font-semibold"
-                      style={{ color: "var(--reviva-green)" }}
-                    >
-                      {card.title}
-                    </h3>
-
-                    <p className="mt-3 text-slate-500 leading-relaxed">{card.description}</p>
-
-                    <div
-                      className="mt-6 flex items-center gap-2 text-sm font-medium"
-                      style={{ color: "var(--reviva-gold-dark)" }}
-                    >
-                      Learn More
-                      <ArrowRight
-                        size={16}
-                        className="transition-transform group-hover:translate-x-1"
-                      />
+                      {/* Bottom: text */}
+                      <div>
+                        <h3 className="text-lg font-semibold text-white">{card.title}</h3>
+                        <p className="mt-2 text-sm leading-relaxed text-white/75">
+                          {card.description}
+                        </p>
+                        <div className="mt-4 flex items-center gap-1.5 text-xs font-medium text-white/60 group-hover:text-white transition-colors">
+                          Learn More
+                          <ArrowRight
+                            size={13}
+                            className="transition-transform group-hover:translate-x-1"
+                          />
+                        </div>
+                      </div>
                     </div>
                   </Link>
                 </motion.div>

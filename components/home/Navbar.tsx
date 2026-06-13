@@ -65,7 +65,11 @@ export default function Navbar() {
           }}
         >
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link
+            href="/"
+            className="flex items-center"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
             <Image
               src="/images/logo/reviva-logo.png"
               alt="Reviva Nutrition"

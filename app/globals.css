@@ -43,6 +43,19 @@ body {
 html {
   scroll-behavior: smooth;
   font-size: 95%;
+  /*
+   * DO NOT set overflow-x on html — doing so reassigns the browser scroll
+   * container away from <html>, which breaks position:sticky on all pages.
+   * Horizontal overflow is clipped on <body> instead (see below).
+   */
+}
+
+body {
+  /*
+   * clip (not hidden) prevents horizontal overflow without creating a new
+   * scroll container, so position:sticky continues to work correctly.
+   */
+  overflow-x: clip;
 }
 
 /* Ticker / marquee animation — triple content, move -33.33% */
