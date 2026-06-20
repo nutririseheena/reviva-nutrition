@@ -2,7 +2,6 @@
 
 import { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Users, Clock, Award } from "lucide-react";
 import {
   BarChart,
   Bar,
@@ -16,20 +15,12 @@ import {
   Cell,
   Legend,
 } from "recharts";
-import { specialtyBarData, programSplitData } from "@/data/about-stats";
-
-interface StatItem {
-  icon: React.ElementType;
-  target: number;
-  suffix: string;
-  label: string;
-}
-
-const statsData: StatItem[] = [
-  { icon: Users, target: 500, suffix: "+", label: "Clients Guided" },
-  { icon: Clock, target: 10, suffix: "+", label: "Years of Practice" },
-  { icon: Award, target: 95, suffix: "%", label: "Client Satisfaction" },
-];
+import {
+  specialtyBarData,
+  programSplitData,
+  aboutStatsData,
+  type StatItem,
+} from "@/data/about-stats";
 
 function AnimatedCounter({ icon: Icon, target, suffix, label }: StatItem) {
   const ref = useRef<HTMLDivElement>(null);
@@ -218,7 +209,7 @@ export default function AboutStatsCharts() {
 
         {/* Animated counters */}
         <div className="mt-12 grid gap-4 sm:grid-cols-3">
-          {statsData.map((stat, i) => (
+          {aboutStatsData.map((stat, i) => (
             <motion.div
               key={stat.label}
               initial={{ opacity: 0, y: 30 }}

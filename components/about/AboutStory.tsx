@@ -2,25 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Heart, ShieldCheck, Award, BookOpen } from "lucide-react";
-
-const credentials = [
-  { icon: BookOpen, text: "M.Sc. Food Science & Nutrition" },
-  { icon: Award, text: "Certified Clinical Dietician" },
-  { icon: ShieldCheck, text: "Member, Indian Dietetic Association" },
-  { icon: Heart, text: "10+ Years Clinical Experience" },
-];
-
-const specialties = [
-  "Weight Management",
-  "PCOS & Hormonal Balance",
-  "Gut Health",
-  "Thyroid Care",
-  "Diabetes Management",
-  "Sports Nutrition",
-  "Pregnancy Nutrition",
-  "Child & Adolescent Nutrition",
-];
+import { credentials, aboutSpecialties } from "@/data/about";
 
 export default function AboutStory() {
   return (
@@ -118,7 +100,7 @@ export default function AboutStory() {
                 Areas of Expertise
               </p>
               <div className="flex flex-wrap gap-2">
-                {specialties.map((s) => (
+                {aboutSpecialties.map((s) => (
                   <span
                     key={s}
                     className="rounded-full px-3.5 py-1.5 text-sm font-medium"

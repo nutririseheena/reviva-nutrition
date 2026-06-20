@@ -1,43 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ClipboardCheck, MessageSquare, HeartHandshake } from "lucide-react";
-
-const stages = [
-  {
-    number: "1",
-    phase: "THE PRE-CONSULTATION STAGE",
-    icon: ClipboardCheck,
-    color: "var(--reviva-green)",
-    points: [
-      "Fill the \u201cGetting to Know You\u201d health assessment to help us understand your eating patterns, workout routine, and health goals.",
-      "An appointment schedule is generated for the full program duration based on your time and day preferences.",
-      "A document with easy-to-implement guidelines is shared before your very first session.",
-    ],
-  },
-  {
-    number: "2",
-    phase: "THE CONSULTATION STAGE",
-    icon: MessageSquare,
-    color: "var(--reviva-gold)",
-    points: [
-      "An in-depth first session where we work together to create an eating plan that is both sustainable and a cultural fit.",
-      "Weekly interactions to review and refine your meal and exercise plans based on how your body responds.",
-      "Special meal planning for occasions like work travel, holidays, weddings, and festivals.",
-    ],
-  },
-  {
-    number: "3",
-    phase: "THE POST-CONSULTATION STAGE",
-    icon: HeartHandshake,
-    color: "var(--reviva-green)",
-    points: [
-      "We maintain a lifelong relationship with you and are available for support whenever you need it.",
-      "A comprehensive post-consultation document summarizing all learnings from the program.",
-      "Practical guidelines for most situations you will face going forward — so you're never left without answers.",
-    ],
-  },
-];
+import { consultStages } from "@/data/consult";
 
 export default function HowItWorks() {
   return (
@@ -72,7 +36,7 @@ export default function HowItWorks() {
 
         {/* Stage cards */}
         <div className="mt-16 space-y-6">
-          {stages.map((stage, index) => {
+          {consultStages.map((stage, index) => {
             const Icon = stage.icon;
             return (
               <motion.div

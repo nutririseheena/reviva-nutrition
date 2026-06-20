@@ -57,15 +57,16 @@ reviva-nutrition/
 │       ├── HeroSlider.tsx      # Auto-advancing hero slider (touch-swipe enabled)
 │       ├── TrustTicker.tsx     # Scrolling specialty ticker banner
 │       ├── ProcessCards.tsx    # "Your Healing Journey" 4-step cards (with blended bg images)
-│       ├── AboutPreview.tsx    # About section with animated counters
-│       ├── TestimonialsPreview.tsx  # Testimonial cards grid
-│       ├── ConsultationCTA.tsx # CTA section with validated contact form
+│       ├── AboutPreview.tsx    # About section — "It began with a myth" + story + stats box
+│       ├── TestimonialsPreview.tsx  # 3 Pillars section + testimonial cards (gradient)
+│       ├── ConsultationCTA.tsx # Health Issues: Myths & Facts section
+│       ├── HealingCTA.tsx      # "Ready to Discover the Root Cause?" redirect CTA → /consult
 │       ├── Footer.tsx          # Site footer with social links
 │       ├── WhatsAppFloat.tsx   # Fixed WhatsApp floating button
 │       └── hero-slides/
-│           ├── Slide1.tsx      # Typewriter hero slide (portrait-first on mobile)
-│           ├── Slide2.tsx      # Sunset/Sunrise opportunity-to-heal slide
-│           └── Slide3.tsx      # Online consultation slide (larger laptop on desktop)
+│           ├── Slide1.tsx      # Typewriter hero slide — "Hi, Myself Heena"
+│           ├── Slide2.tsx      # Sunset of Lifestyle Diseases / Sunrise in Health dual-card
+│           └── Slide3.tsx      # Online consultation slide — larger laptop, 2025 outcomes bar chart
 ├── data/                   # Static data / content
 │   ├── about-stats.ts      # Chart data + YouTube topics (easy to update)
 │   ├── faqs.ts             # FAQ questions and answers (easy to update)
@@ -87,23 +88,20 @@ reviva-nutrition/
 
 - **Three full pages built** — About (story, credentials, charts, YouTube), Consult (3-stage process, program options, FAQs), and Testimonials (full grid of 8 client stories + Google Form feedback CTA).
 - **Auto-advancing hero slider with touch/swipe** — Slide 1 waits ~12 s for the typewriter; slides 2 & 3 auto-advance every 5.5 s. Pauses on hover; swipe left/right on mobile to manually navigate.
-- **Typewriter animation** — Slide 1 cycles through "Nutritionist → Dietician → Coach → Guide" at a comfortable pace with smooth type/delete/pause rhythm.
-- **Slide 2 — Sunset/Sunrise redesign** — Dual-image concept: sunset card showing disease burden vs. sunrise card showing Reviva-guided recovery. Headline "Opportunity To Heal." + "Begin Your Journey" CTA. Gradient fallback while real images are placed.
+- **Slide 1 — "Hi, Myself Heena"** — Updated greeting, tagline "At Reviva Nutrition, Believe in the Power of Nutrition 🌱", and bullet-style description.
+- **Slide 2 — Sunset of Lifestyle Diseases / Sunrise in Health** — Left card shows 6 lifestyle disease conditions; right card shows the 4 Reviva pillars (Identify Root Cause, Science-Backed, Personalized Nutrition, Lasting Wellness). Image prompts included in `Slide2.tsx` comments.
+- **Slide 3 — 2025 Outcomes Dashboard** — Laptop mockup enlarged; area chart replaced with horizontal bar chart showing 2025 health outcome case data (7 conditions).
+- **ProcessCards — "Believe in Nutrition Power for Better health"** — Heading fixed; cards renamed (Detailed Assessment, Root Cause Identification, Personalized Diet Plan, Transformation) with updated icons and image prompts in `data/process-cards.ts`.
+- **AboutPreview — "It began with a myth"** — Full redesign: quote above image on left, story text + dark green stats box (500+ Lives Transformed, 95% Satisfaction) on right. Content updated with client's 20-year journey story.
+- **TestimonialsPreview — 3 Pillars + Testimonials** — New "3 Pillars Behind Every Success Story" grid (Root Cause Healing, Personalized Nutrition, Lasting Transformation) merged into the same section above testimonial cards. Cards updated with warm on-brand gradients.
+- **ConsultationCTA — Health Issues: Myths & Facts** — Consultation form replaced with a clean Myth vs Fact comparison table (5 entries: Thyroid, Diabetes, PCOS, Constipation, Fatigue).
+- **HealingCTA — Root Cause CTA** — New section: "Ready to Discover the Root Cause and Transform Your Health?" with a gold "Begin Your Healing Journey" button linking to `/consult`.
 - **Smooth scroll-triggered sections** — Every section fades in _and_ out as you scroll (Framer Motion `whileInView`, `once: false`).
-- **Shrinking sticky navbar** — Expands to 96 px on top, smoothly shrinks to 64 px on scroll. Works on all pages. `overflow-x: clip` used globally to avoid breaking `position: sticky`.
-- **Mobile portrait-first Slide 1** — Heena's portrait appears above the text on mobile; reversed on desktop.
-- **Validated consultation form** — Per-field inline errors (name, phone, email), placeholder updated to "Ex. Undergoing Diabetes 10yrs.", spinner during submission, success card on completion.
-- **Process Cards with blended backgrounds** — 4-step cards use CSS `background-image` with gradient fallback. Drop real images at `public/images/process/` (prompts provided in `data/process-cards.ts`).
-- **Testimonials feedback section** — Google Form CTA block after the testimonials grid linking to the client's feedback form.
-- **Consult page — Work With Heena** — "Team Nutritionist" option removed; redesigned as a single prominent card showcasing Heena's expertise with stats.
-- **Recharts statistics** — About page includes a horizontal bar chart and donut chart. All chart data lives in `data/about-stats.ts` for easy non-technical updates.
-- **YouTube section** — About page lists YouTube topics with links. Add/remove topics by editing `youtubeTopics` in `data/about-stats.ts`.
-- **Easy content management** — `data/about-stats.ts` (charts + YouTube), `data/faqs.ts` (FAQs) are clearly commented and simple to edit without coding knowledge.
-- **Scroll-to-top on reload** — Sets `history.scrollRestoration = 'manual'` and calls `scrollTo(0,0)` on every page load.
-- **Trust ticker** — Infinite scrolling specialty banner with seamless loop.
-- **WhatsApp float button** — Fixed bottom-right, links directly to business WhatsApp.
-- **Global 95% scale** — `html { font-size: 95% }` reduces all rem-based sizes slightly for a tighter feel.
-- **Consultation Form Integration** — Contact form submissions processed through a Next.js API route and delivered via Resend.
+- **Shrinking sticky navbar** — Expands to 96 px on top, smoothly shrinks to 64 px on scroll.
+- **Process Cards with blended backgrounds** — 4-step cards use CSS `background-image` with gradient fallback. Drop real images at `public/images/process/` (prompts in `data/process-cards.ts`).
+- **Recharts statistics** — About page includes a horizontal bar chart and donut chart. Slide 3 now shows a horizontal bar chart of 2025 health outcomes.
+- **Easy content management** — `data/about-stats.ts` (charts + YouTube), `data/faqs.ts` (FAQs), `data/process-cards.ts` (step titles + image prompts) are clearly commented.
+- **Scroll-to-top on reload**, **Trust ticker**, **WhatsApp float button**, **Global 95% scale** — all unchanged.
 
 ---
 
@@ -113,12 +111,12 @@ The following images need to be provided by the client and placed in the correct
 
 | Image                     | Path                                          | Notes                             |
 | ------------------------- | --------------------------------------------- | --------------------------------- |
-| Sunset — disease burden   | `public/images/hero/sunset-disease.jpg`       | Prompt in `Slide2.tsx`            |
-| Sunrise — health restored | `public/images/hero/sunrise-heal.jpg`         | Prompt in `Slide2.tsx`            |
-| Assessment card bg        | `public/images/process/assessment-bg.jpg`     | Prompt in `data/process-cards.ts` |
-| Personalized Plan card bg | `public/images/process/plan-bg.jpg`           | Prompt in `data/process-cards.ts` |
-| Guided Support card bg    | `public/images/process/support-bg.jpg`        | Prompt in `data/process-cards.ts` |
-| Transformation card bg    | `public/images/process/transformation-bg.jpg` | Prompt in `data/process-cards.ts` |
+| Sunset — disease burden   | `public/images/hero/sunset-disease.png`       | Prompt in `Slide2.tsx`            |
+| Sunrise — health restored | `public/images/hero/sunrise-heal.png`         | Prompt in `Slide2.tsx`            |
+| Detailed Assessment bg    | `public/images/process/assessment-bg.png`     | Prompt in `data/process-cards.ts` |
+| Root Cause Identification | `public/images/process/plan-bg.png`           | Prompt in `data/process-cards.ts` |
+| Personalized Diet Plan bg | `public/images/process/support-bg.png`        | Prompt in `data/process-cards.ts` |
+| Transformation card bg    | `public/images/process/transformation-bg.png` | Prompt in `data/process-cards.ts` |
 
 All sections display beautifully with gradient fallbacks until real images are placed.
 

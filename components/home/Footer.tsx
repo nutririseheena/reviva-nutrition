@@ -3,13 +3,7 @@ import Link from "next/link";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 import { FaLinkedinIn, FaInstagram, FaYoutube, FaFacebookF } from "react-icons/fa";
-
-const quickLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/consult", label: "Consult" },
-  { href: "/testimonials", label: "Testimonials" },
-];
+import { navLinks, siteConfig } from "@/data/site";
 
 export default function Footer() {
   return (
@@ -33,18 +27,24 @@ export default function Footer() {
 
             {/* Social Icons */}
             <div className="mt-4 flex gap-3">
-              <SocialLink href="#" label="Instagram">
-                <FaInstagram size={16} />
-              </SocialLink>
-              <SocialLink href="#" label="Facebook">
-                <FaFacebookF size={16} />
-              </SocialLink>
-              <SocialLink href="https://www.youtube.com/@NutriRiseHeena" label="YouTube">
+              {siteConfig.social.instagram && (
+                <SocialLink href={siteConfig.social.instagram} label="Instagram">
+                  <FaInstagram size={16} />
+                </SocialLink>
+              )}
+              {siteConfig.social.facebook && (
+                <SocialLink href={siteConfig.social.facebook} label="Facebook">
+                  <FaFacebookF size={16} />
+                </SocialLink>
+              )}
+              <SocialLink href={siteConfig.social.youtube} label="YouTube">
                 <FaYoutube size={16} />
               </SocialLink>
-              <SocialLink href="#" label="LinkedIn">
-                <FaLinkedinIn size={16} />
-              </SocialLink>
+              {siteConfig.social.linkedin && (
+                <SocialLink href={siteConfig.social.linkedin} label="LinkedIn">
+                  <FaLinkedinIn size={16} />
+                </SocialLink>
+              )}
             </div>
           </div>
 
@@ -55,7 +55,7 @@ export default function Footer() {
             </h3>
 
             <ul className="mt-4 space-y-2.5">
-              {quickLinks.map((link) => (
+              {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -74,24 +74,24 @@ export default function Footer() {
 
             <div className="mt-4 space-y-3">
               <a
-                href="mailto:nutririseheena@gmail.com"
+                href={`mailto:${siteConfig.contact.email}`}
                 className="flex items-center gap-3 text-sm text-white/70 transition hover:text-white"
               >
                 <Mail size={16} className="shrink-0" />
-                nutririseheena@gmail.com
+                {siteConfig.contact.email}
               </a>
 
               <a
-                href="tel:+919930548506"
+                href={`tel:${siteConfig.contact.phone}`}
                 className="flex items-center gap-3 text-sm text-white/70 transition hover:text-white"
               >
                 <Phone size={16} className="shrink-0" />
-                +91 99305 48506
+                {siteConfig.contact.phoneDisplay}
               </a>
 
               <div className="flex items-start gap-3 text-sm text-white/70">
                 <MapPin size={16} className="mt-0.5 shrink-0" />
-                Mumbai, Maharashtra
+                {siteConfig.contact.location}
               </div>
             </div>
           </div>
@@ -118,7 +118,7 @@ export default function Footer() {
             </Link>
 
             <a
-              href="https://wa.me/919930548506"
+              href={`https://wa.me/${siteConfig.contact.phone.replace("+", "")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-2 flex items-center gap-2 text-xs text-white/60 transition hover:text-white"
