@@ -6,7 +6,7 @@ import AboutHero from "@/components/about/AboutHero";
 import AboutStory from "@/components/about/AboutStory";
 import AboutStatsCharts from "@/components/about/AboutStatsCharts";
 import AboutYoutube from "@/components/about/AboutYoutube";
-import ConsultationCTA from "@/components/home/ConsultationCTA";
+import ConsultationCTA from "@/components/home/MythnFactPreview";
 
 export const metadata: Metadata = {
   title: "About — Reviva Nutrition",

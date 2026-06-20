@@ -6,7 +6,7 @@ import ConsultHero from "@/components/consult/ConsultHero";
 import HowItWorks from "@/components/consult/HowItWorks";
 import ProgramOptions from "@/components/consult/ProgramOptions";
 import FaqAccordion from "@/components/consult/FaqAccordion";
-import ConsultationCTA from "@/components/home/ConsultationCTA";
+import ConsultationCTA from "@/components/home/MythnFactPreview";
 
 export const metadata: Metadata = {
   title: "Consult — Reviva Nutrition",

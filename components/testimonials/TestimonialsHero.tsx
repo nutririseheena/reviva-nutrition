@@ -2,13 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
-
-const stats = [
-  { value: "500+", label: "Clients Guided" },
-  { value: "10+", label: "Years of Practice" },
-  { value: "95%", label: "Client Satisfaction" },
-  { value: "4.9", label: "Average Rating" },
-];
+import { heroStats } from "@/data/testimonials";
 
 export default function TestimonialsHero() {
   return (
@@ -56,7 +50,7 @@ export default function TestimonialsHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          {stats.map((stat) => (
+          {heroStats.map((stat) => (
             <div
               key={stat.label}
               className="rounded-2xl bg-white/10 px-4 py-5 backdrop-blur-sm border border-white/15"

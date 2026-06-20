@@ -1,3 +1,19 @@
+import { Users, Clock, Award } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+
+export interface StatItem {
+  icon: LucideIcon;
+  target: number;
+  suffix: string;
+  label: string;
+}
+
+export const aboutStatsData: StatItem[] = [
+  { icon: Users, target: 500, suffix: "+", label: "Clients Guided" },
+  { icon: Clock, target: 10, suffix: "+", label: "Years of Practice" },
+  { icon: Award, target: 95, suffix: "%", label: "Client Satisfaction" },
+];
+
 // ─────────────────────────────────────────────────────────────────────────────
 // UPDATABLE DATA — Edit values here to update the charts on the About page.
 // No code knowledge needed. Just change the numbers or labels and save the file.

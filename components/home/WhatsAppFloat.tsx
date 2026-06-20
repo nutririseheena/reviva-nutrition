@@ -2,11 +2,12 @@
 
 import { motion } from "framer-motion";
 import { FaWhatsapp } from "react-icons/fa";
+import { siteConfig } from "@/data/site";
 
 export default function WhatsAppFloat() {
   return (
     <motion.a
-      href="https://wa.me/919930548506"
+      href={`https://wa.me/${siteConfig.contact.phone.replace("+", "")}`}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with us on WhatsApp"
