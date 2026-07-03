@@ -19,19 +19,16 @@ export default function AboutPreview() {
           >
             {/* Quote above image */}
             <div className="mb-8">
-              <p
-                className="text-4xl font-bold leading-snug"
-                style={{ color: "var(--reviva-green)", fontFamily: "var(--font-heading)" }}
-              >
+              <p className="reviva-quote" style={{ fontSize: "clamp(2rem, 4.5vw, 3rem)" }}>
                 It began with a myth
               </p>
-              <p className="mt-2 text-base italic leading-relaxed text-slate-500">
+              <p className="mt-3 text-base italic leading-relaxed text-slate-500">
                 —What many accepted as a health myth, I questioned{" "}
                 <span className="whitespace-nowrap">and discovered a deeper cause.</span>
               </p>
               <div
                 className="mt-8 h-0.5 w-12 rounded-full"
-                style={{ backgroundColor: "var(--reviva-gold)" }}
+                style={{ backgroundColor: "var(--reviva-terracotta)" }}
               />
             </div>
 
@@ -54,33 +51,36 @@ export default function AboutPreview() {
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
             className="lg:pt-4"
           >
-            <h2
-              className="mt-3 text-4xl md:text-5xl leading-tight"
-              style={{ color: "var(--reviva-green)", fontFamily: "var(--font-heading)" }}
-            >
-              About Heena 🌻
-            </h2>
+            <div className="mt-3">
+              <p className="reviva-eyebrow">About</p>
+              <h2 className="reviva-display mt-1" style={{ fontSize: "clamp(4rem, 10vw, 8rem)" }}>
+                Heena 🌻
+              </h2>
+            </div>
 
             <div className="mt-6 space-y-4 text-slate-600 leading-relaxed">
               <p className="text-lg font-semibold" style={{ color: "var(--reviva-green)" }}>
                 For over two decades, my own body has been my greatest teacher.
               </p>
-              <p>
+              <p className="text-[17px]">
                 Instead of relying solely on medication, I chose to trust the healing power of food
                 and lifestyle. Through years of observation, learning, and personal experience, I
                 discovered that when we truly listen to our body, it has an incredible ability to
                 restore balance and heal.
               </p>
-              <p>This belief became the foundation of Reviva Nutrition.</p>
-              <p>
+              <p className="text-[17px]">This belief became the foundation of Reviva Nutrition.</p>
+              <p className="text-[17px]">
                 Reviva Nutrition was born from a simple yet powerful vision—to help people reconnect
                 with their body&apos;s natural wisdom, understand the root causes of their health
                 challenges, and rediscover lasting wellness through nourishment and lifestyle
                 transformation.
               </p>
-              <p className="font-semibold italic" style={{ color: "var(--reviva-green)" }}>
+              <blockquote
+                className="mt-6 border-l-4 pl-4 reviva-quote text-xl"
+                style={{ borderColor: "var(--reviva-terracotta)" }}
+              >
                 Your body is constantly speaking to you. Together, let&apos;s learn how to listen.
-              </p>
+              </blockquote>
             </div>
 
             {/* Credentials / Info Cards */}

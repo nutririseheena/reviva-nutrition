@@ -9,7 +9,7 @@ import { processCards } from "@/data/process-cards";
 
 export default function ProcessCards() {
   return (
-    <section className="bg-white py-24">
+    <section className="py-24" style={{ backgroundColor: "#fdf8f4" }}>
       <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
         <motion.div
@@ -19,27 +19,22 @@ export default function ProcessCards() {
           viewport={{ once: false, amount: 0.15 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <span
-            className="inline-block rounded-full px-4 py-2 text-[38px] font-medium"
-            style={{
-              backgroundColor: "var(--reviva-gold-light)",
-              color: "var(--reviva-green)",
-            }}
-          >
-            Your Healing Journey
-          </span>
+          <p className="reviva-eyebrow">Your Healing Journey</p>
 
           <h2
-            className="mt-10 text-3xl md:text-4xl lg:text-5xl"
+            className="mt-4 text-4xl md:text-5xl lg:text-6xl xl:text-[4.5rem] leading-tight"
             style={{
               color: "var(--reviva-green)",
               fontFamily: "var(--font-heading)",
             }}
           >
-            Nourishing Health Through the Power of Nutrition
+            Nourishing Health Through the{" "}
+            <span className="italic" style={{ color: "var(--reviva-warm-brown)" }}>
+              Power of Nutrition
+            </span>
           </h2>
 
-          <p className="mx-auto mt-4 max-w-xl text-lg text-slate-500">
+          <p className="mx-auto mt-5 max-w-xl text-lg sm:text-xl text-slate-500">
             Four purposeful steps designed to help you heal, restore, and thrive.
           </p>
         </motion.div>

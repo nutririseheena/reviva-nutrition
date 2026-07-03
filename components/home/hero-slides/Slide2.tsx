@@ -53,7 +53,9 @@ export default function Slide2() {
                   >
                     Sunset of
                     <br />
-                    Lifestyle Diseases
+                    <span className="italic" style={{ color: "var(--reviva-terracotta)" }}>
+                      Lifestyle Diseases
+                    </span>
                   </h2>
 
                   <p className="mx-auto mt-4 max-w-[400px] text-[14px] leading-7 text-slate-700 font-medium">
@@ -119,7 +121,9 @@ export default function Slide2() {
                   >
                     Sunrise of
                     <br />
-                    Better Health
+                    <span className="italic" style={{ color: "var(--reviva-warm-brown)" }}>
+                      Better Health
+                    </span>
                   </h2>
 
                   <p className="mx-auto mt-4 max-w-[400px] text-[14px] leading-7 text-slate-700 font-medium">

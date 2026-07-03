@@ -49,7 +49,17 @@ export default function Slide3() {
               </span>
             </motion.div>
 
-            <motion.p variants={item} className="text-lg font-medium text-slate-500">
+            <motion.p
+              variants={item}
+              className="mt-2 italic"
+              style={{
+                fontFamily: "var(--font-heading)",
+                color: "var(--reviva-warm-brown)",
+                fontSize: "clamp(1.2rem, 2.5vw, 2.0rem)",
+                fontWeight: 300,
+                lineHeight: 1.2,
+              }}
+            >
               Expert guidance —
             </motion.p>
 
@@ -64,7 +74,9 @@ export default function Slide3() {
             >
               From
               <br />
-              Anywhere.
+              <span className="italic" style={{ color: "var(--reviva-warm-brown)" }}>
+                Anywhere.
+              </span>
             </motion.h1>
 
             <motion.p

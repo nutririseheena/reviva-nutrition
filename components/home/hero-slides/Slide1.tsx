@@ -106,17 +106,27 @@ export default function Slide1() {
               </span>
             </motion.div>
 
-            <motion.p variants={item} className="text-[20px] font-medium text-slate-500">
+            <motion.p
+              variants={item}
+              className="mt-2 italic"
+              style={{
+                fontFamily: "var(--font-heading)",
+                color: "var(--reviva-warm-brown)",
+                fontSize: "clamp(1.6rem, 3vw, 2.4rem)",
+                fontWeight: 400,
+                lineHeight: 1.2,
+              }}
+            >
               Hi, Myself Heena —
             </motion.p>
 
             <motion.h1
               variants={item}
-              className="mt-1 font-bold leading-[1.05] tracking-tight"
+              className="mt-3 font-bold leading-[1.05] tracking-tight"
               style={{
                 fontFamily: "var(--font-heading)",
                 color: "var(--reviva-green)",
-                fontSize: "clamp(2.8rem, 7vw, 5.5rem)",
+                fontSize: "clamp(3.2rem, 7.5vw, 6rem)",
               }}
             >
               Your <Typewriter />
@@ -169,10 +179,22 @@ export default function Slide1() {
                 { value: "98%", label: "Success Rate" },
               ].map(({ value, label }) => (
                 <div key={label}>
-                  <p className="text-2xl font-bold" style={{ color: "var(--reviva-green)" }}>
+                  <p
+                    className="text-4xl sm:text-5xl font-light"
+                    style={{
+                      color: "var(--reviva-warm-brown)",
+                      fontFamily: "var(--font-heading)",
+                    }}
+                  >
                     {value}
                   </p>
-                  <p className="mt-0.5 text-xs text-slate-500">{label}</p>
+                  <div
+                    className="mt-2 h-px w-12"
+                    style={{ backgroundColor: "rgba(124,66,51,0.25)" }}
+                  />
+                  <p className="mt-2 text-[11px] uppercase tracking-[0.15em] text-slate-400">
+                    {label}
+                  </p>
                 </div>
               ))}
             </motion.div>

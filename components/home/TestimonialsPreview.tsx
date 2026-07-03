@@ -9,7 +9,7 @@ import { homePillars, cardGradients, accentColors } from "@/data/home";
 
 export default function TestimonialsPreview() {
   return (
-    <section className="bg-white py-24">
+    <section className="py-24" style={{ backgroundColor: "#fdf8f4" }}>
       <div className="mx-auto max-w-7xl px-6">
         {/* ── Section header ── */}
         <motion.div
@@ -19,24 +19,19 @@ export default function TestimonialsPreview() {
           viewport={{ once: false, amount: 0.15 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <span
-            className="inline-block rounded-full px-4 py-2 text-[38px] font-medium"
-            style={{
-              backgroundColor: "var(--reviva-gold-light)",
-              color: "var(--reviva-green)",
-            }}
-          >
-            Foundation of Reviva
-          </span>
+          <p className="reviva-eyebrow">Foundation of Reviva</p>
 
           <h2
-            className="mt-8 text-3xl md:text-4xl lg:text-5xl"
+            className="mt-4 text-4xl md:text-5xl lg:text-6xl xl:text-[4.5rem] leading-tight"
             style={{
               color: "var(--reviva-green)",
               fontFamily: "var(--font-heading)",
             }}
           >
-            Three Pillars That Turn Hope Into Healing
+            Three Pillars That Turn{" "}
+            <span className="italic" style={{ color: "var(--reviva-warm-brown)" }}>
+              Hope Into Healing
+            </span>
           </h2>
           {/* <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-500">
             These principles guide every consultation, every plan, and every transformation at
@@ -79,7 +74,7 @@ export default function TestimonialsPreview() {
                     </div>
 
                     <h3
-                      className="mt-4 text-2xl tracking-[0.08em]"
+                      className="mt-4 text-2xl md:text-3xl tracking-[0.06em]"
                       style={{
                         color: "var(--reviva-green)",
                         fontFamily: "var(--font-heading)",
@@ -88,7 +83,7 @@ export default function TestimonialsPreview() {
                       {pillar.title}
                     </h3>
 
-                    <p className="mx-auto mt-4 max-w-[260px] text-[15px] leading-7 text-slate-700">
+                    <p className="mx-auto mt-4 max-w-[260px] text-sm sm:text-[15px] leading-7 text-slate-700">
                       {pillar.description}
                     </p>
                   </div>
@@ -126,13 +121,16 @@ export default function TestimonialsPreview() {
         >
           <div>
             <h2
-              className="mt-4 text-4xl md:text-5xl lg:text-6xl"
+              className="mt-4 text-4xl md:text-5xl lg:text-6xl xl:text-[4.5rem] leading-tight"
               style={{
                 color: "var(--reviva-green)",
                 fontFamily: "var(--font-heading)",
               }}
             >
-              Real People, Meaningful Change
+              Real People,{" "}
+              <span className="italic" style={{ color: "var(--reviva-warm-brown)" }}>
+                Meaningful Change
+              </span>
             </h2>
           </div>
 
