@@ -75,9 +75,11 @@ export default function ProcessCards() {
                 className="group relative block overflow-hidden rounded-[28px] shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
                 aria-label={card.title}
               >
-                <img
+                <Image
                   src={card.image}
                   alt={card.title}
+                  width={600}
+                  height={800}
                   className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
                 />
 

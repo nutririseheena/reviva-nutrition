@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Quote, Star, ArrowRight, Leaf } from "lucide-react";
+import { Quote, Star, ArrowRight } from "lucide-react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { testimonials } from "@/data/testimonials";
 import { homePillars, cardGradients, accentColors } from "@/data/home";
@@ -60,12 +61,8 @@ export default function TestimonialsPreview() {
                   delay: index * 0.15,
                 }}
               >
-                <div className="relative overflow-hidden rounded-[32px]">
-                  <img
-                    src={pillar.image}
-                    alt={pillar.title}
-                    className="h-[500px] w-full object-cover"
-                  />
+                <div className="relative h-[500px] overflow-hidden rounded-[32px]">
+                  <Image fill src={pillar.image} alt={pillar.title} className="object-cover" />
 
                   {/* Top Content */}
                   <div className="absolute inset-x-0 top-0 h-[210px] px-8 pt-8 text-center">
@@ -128,7 +125,6 @@ export default function TestimonialsPreview() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <div>
-
             <h2
               className="mt-4 text-4xl md:text-5xl lg:text-6xl"
               style={{

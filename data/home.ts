@@ -1,4 +1,4 @@
-import { Search, Leaf, TrendingUp, Handshake, Hourglass, CalendarCheck2 } from "lucide-react";
+import { Handshake, Hourglass, CalendarCheck2 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 export interface HomePillar {
@@ -52,8 +52,7 @@ export const homePillars = [
   {
     number: "03",
     title: "TRUST",
-    description:
-      "Trust the process. Trust your nutrition expert.",
+    description: "Trust the process. Trust your nutrition expert.",
     image: "/images/pillars/trust1.png",
     topIcon: Handshake,
     bottomText: "You're not alone. We're in this together.",

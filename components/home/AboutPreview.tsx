@@ -146,23 +146,21 @@ export default function AboutPreview() {
 
             {/* Specialty Pills */}
             <div className="mt-6 flex flex-wrap gap-3">
-              {[
-                "Prenatal Nutrition",
-                "Autoimmune- Eczema, Psoriasis",
-                "Hair & Skin Health",
-              ].map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border px-4 py-2 text-sm font-medium"
-                  style={{
-                    backgroundColor: "#eef5ee",
-                    borderColor: "rgba(47,107,45,0.25)",
-                    color: "var(--reviva-green)",
-                  }}
-                >
-                  {item}
-                </span>
-              ))}
+              {["Prenatal Nutrition", "Autoimmune- Eczema, Psoriasis", "Hair & Skin Health"].map(
+                (item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border px-4 py-2 text-sm font-medium"
+                    style={{
+                      backgroundColor: "#eef5ee",
+                      borderColor: "rgba(47,107,45,0.25)",
+                      color: "var(--reviva-green)",
+                    }}
+                  >
+                    {item}
+                  </span>
+                )
+              )}
             </div>
 
             <Link

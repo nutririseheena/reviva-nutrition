@@ -14,8 +14,6 @@ export default function HealingCTA() {
           viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 0.6 }}
         >
-          
-
           <h2
             className="mt-6 text-7xl md:text-7xl font-bold"
             style={{

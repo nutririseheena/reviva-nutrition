@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { diseaseList, heroPillars } from "@/data/hero";
 
@@ -19,7 +20,6 @@ export default function Slide2() {
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <div className="flex flex-col py-10 sm:py-12 lg:py-0 lg:min-h-[700px] lg:justify-center gap-6 lg:gap-7">
-
           {/* ── Two image cards ── */}
           <div className="grid gap-6 sm:grid-cols-2 lg:gap-6">
             {/* Sunset card — Lifestyle Diseases */}
@@ -29,14 +29,15 @@ export default function Slide2() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.65, delay: 0.15 }}
             >
-              <div className="relative overflow-hidden rounded-[32px]">
-                <img
+              <div className="relative h-[600px] overflow-hidden rounded-[32px]">
+                <Image
+                  fill
                   src="/images/hero/sunset2.png"
                   alt="Lifestyle Diseases"
-                  className="h-[600px] w-full object-cover object-[center_12%]"
+                  className="object-cover object-[center_12%]"
                 />
-                <div className="absolute inset-0 bg-black/8" /> {/* Dim overlay for better text contrast */}
-
+                <div className="absolute inset-0 bg-black/8" />{" "}
+                {/* Dim overlay for better text contrast */}
                 {/* Top Content */}
                 <div className="absolute inset-x-0 top-0 px-10 pt-8 text-center">
                   <span className="inline-flex items-center rounded-full border border-white/30 bg-white/70 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#6a2b18] backdrop-blur-md">
@@ -59,7 +60,6 @@ export default function Slide2() {
                     When nutrition and lifestyle deviate, health issues begin.
                   </p>
                 </div>
-
                 {/* Bottom Badge */}
                 {/* Disease List */}
                 <div className="absolute left-[58%] top-[64%] -translate-x-1/2 -translate-y-1/2">
@@ -96,11 +96,12 @@ export default function Slide2() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.65, delay: 0.28 }}
             >
-              <div className="relative overflow-hidden rounded-[32px]">
-                <img
+              <div className="relative h-[600px] overflow-hidden rounded-[32px]">
+                <Image
+                  fill
                   src="/images/hero/sunrise2.png"
                   alt="Reviva Nutrition"
-                  className="h-[600px] w-full object-cover object-center"
+                  className="object-cover object-center"
                 />
 
                 {/* Top Content */}

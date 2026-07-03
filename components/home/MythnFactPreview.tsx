@@ -26,9 +26,8 @@ export default function ConsultationCTA() {
             className="mt-4 text-4xl md:text-5xl"
             style={{ color: "var(--reviva-green)", fontFamily: "var(--font-heading)" }}
           >
-            What if the truth about your health is different from what you've been told?
+            What if the truth about your health is different from what you&apos;ve been told?
           </h2>
-          
         </motion.div>
 
         {/* Table */}
@@ -41,22 +40,22 @@ export default function ConsultationCTA() {
         >
           {/* Column headers */}
           <div className="grid grid-cols-2">
-  <div
-    className="flex items-center justify-center gap-2 px-6 py-4 text-[24px] font-bold uppercase tracking-wider text-white"
-    style={{ backgroundColor: "#c12e53" }}
-  >
-    <X size={24} />
-    Myths
-  </div>
+            <div
+              className="flex items-center justify-center gap-2 px-6 py-4 text-[24px] font-bold uppercase tracking-wider text-white"
+              style={{ backgroundColor: "#c12e53" }}
+            >
+              <X size={24} />
+              Myths
+            </div>
 
-  <div
-    className="flex items-center justify-center gap-2 px-6 py-4 text-[24px] font-bold uppercase tracking-wider text-white"
-    style={{ backgroundColor: "var(--reviva-green)" }}
-  >
-    <Check size={24} />
-    Facts
-  </div>
-</div>
+            <div
+              className="flex items-center justify-center gap-2 px-6 py-4 text-[24px] font-bold uppercase tracking-wider text-white"
+              style={{ backgroundColor: "var(--reviva-green)" }}
+            >
+              <Check size={24} />
+              Facts
+            </div>
+          </div>
 
           {/* Rows */}
           {mythsFacts.map((item, index) => (
