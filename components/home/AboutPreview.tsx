@@ -1,145 +1,171 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Heart, Leaf, ShieldCheck, Award, Users, Clock } from "lucide-react";
-import { motion, useInView } from "framer-motion";
-
-interface StatItem {
-  icon: React.ElementType;
-  target: number;
-  suffix: string;
-  label: string;
-}
-
-const statsData: StatItem[] = [
-  { icon: Users, target: 500, suffix: "+", label: "Clients Guided" },
-  { icon: Clock, target: 10, suffix: "+", label: "Years of Practice" },
-  { icon: Award, target: 95, suffix: "%", label: "Client Satisfaction" },
-];
-
-function AnimatedCounter({ icon: Icon, target, suffix, label }: StatItem) {
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true });
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (!inView) return;
-    let frame = 0;
-    const totalFrames = 50;
-    const timer = setInterval(() => {
-      frame++;
-      const progress = frame / totalFrames;
-      setCount(Math.floor(target * (1 - Math.pow(1 - progress, 3))));
-      if (frame >= totalFrames) {
-        setCount(target);
-        clearInterval(timer);
-      }
-    }, 1000 / 60);
-    return () => clearInterval(timer);
-  }, [inView, target]);
-
-  return (
-    <div
-      ref={ref}
-      className="flex flex-col items-center gap-1 rounded-2xl bg-white px-3 py-4 text-center shadow-sm"
-    >
-      <Icon size={20} color="var(--reviva-gold)" />
-      <span className="text-2xl font-bold" style={{ color: "var(--reviva-green)" }}>
-        {count}
-        {suffix}
-      </span>
-      <span className="text-xs leading-tight text-slate-500">{label}</span>
-    </div>
-  );
-}
+import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function AboutPreview() {
   return (
-    <section className="bg-[var(--reviva-cream)] py-24">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="grid items-center gap-14 lg:grid-cols-2">
-          {/* Image Column */}
+    <section id="about-preview" className="bg-[var(--reviva-cream)] py-22">
+      <div className="mx-auto max-w-7xl px-5">
+        <div className="grid items-start gap-18 lg:grid-cols-2">
+          {/* ── Left: Quote + Image ── */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: false, amount: 0.1 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <div className="relative overflow-hidden rounded-[32px] shadow-xl">
+            {/* Quote above image */}
+            <div className="mb-8">
+              <p className="reviva-quote" style={{ fontSize: "clamp(2rem, 4.5vw, 3rem)" }}>
+                It began with a myth
+              </p>
+              <p className="mt-3 text-base italic leading-relaxed text-slate-500">
+                —What many accepted as a health myth, I questioned{" "}
+                <span className="whitespace-nowrap">and discovered a deeper cause.</span>
+              </p>
+              <div
+                className="mt-8 h-0.5 w-12 rounded-full"
+                style={{ backgroundColor: "var(--reviva-terracotta)" }}
+              />
+            </div>
+
+            {/* Image */}
+            <div className="relative overflow-hidden rounded-[32px] shadow-2xl aspect-[1/1.1]">
               <Image
                 src="/images/about/about-preview.png"
                 alt="Heena — Reviva Nutrition"
-                width={800}
-                height={600}
-                className="h-full w-full object-cover"
+                fill
+                className="object-cover object-top"
               />
-
-              <div className="absolute bottom-6 left-6 rounded-2xl bg-white/95 px-5 py-4 shadow-lg backdrop-blur-sm border border-white">
-                <p className="font-semibold text-sm" style={{ color: "var(--reviva-green)" }}>
-                  Root-Cause Healing
-                </p>
-                <p className="mt-0.5 text-xs text-slate-500">Wellness begins from within</p>
-              </div>
-            </div>
-
-            {/* Animated stats row */}
-            <div className="mt-6 grid grid-cols-3 gap-4">
-              {statsData.map((stat) => (
-                <AnimatedCounter key={stat.label} {...stat} />
-              ))}
             </div>
           </motion.div>
 
-          {/* Content Column */}
+          {/* ── Right: About text + Stats box ── */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: false, amount: 0.1 }}
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+            className="lg:pt-4"
           >
-            <span
-              className="inline-block rounded-full px-4 py-2 text-sm font-medium"
-              style={{
-                backgroundColor: "var(--reviva-gold-light)",
-                color: "var(--reviva-green)",
-              }}
-            >
-              About Reviva Nutrition
-            </span>
+            <div className="mt-3">
+              <p className="reviva-eyebrow">About</p>
+              <h2 className="reviva-display mt-1" style={{ fontSize: "clamp(4rem, 10vw, 8rem)" }}>
+                Heena 🌻
+              </h2>
+            </div>
 
-            <h2
-              className="mt-4 text-4xl md:text-5xl lg:text-6xl leading-tight"
-              style={{
-                color: "var(--reviva-green)",
-                fontFamily: "var(--font-heading)",
-              }}
-            >
-              Helping You Heal,
-              <br />
-              Naturally.
-            </h2>
+            <div className="mt-6 space-y-4 text-slate-600 leading-relaxed">
+              <p className="text-lg font-semibold" style={{ color: "var(--reviva-green)" }}>
+                For over two decades, my own body has been my greatest teacher.
+              </p>
+              <p className="text-[17px]">
+                Instead of relying solely on medication, I chose to trust the healing power of food
+                and lifestyle. Through years of observation, learning, and personal experience, I
+                discovered that when we truly listen to our body, it has an incredible ability to
+                restore balance and heal.
+              </p>
+              <p className="text-[17px]">This belief became the foundation of Reviva Nutrition.</p>
+              <p className="text-[17px]">
+                Reviva Nutrition was born from a simple yet powerful vision—to help people reconnect
+                with their body&apos;s natural wisdom, understand the root causes of their health
+                challenges, and rediscover lasting wellness through nourishment and lifestyle
+                transformation.
+              </p>
+              <blockquote
+                className="mt-6 border-l-4 pl-4 reviva-quote text-xl"
+                style={{ borderColor: "var(--reviva-terracotta)" }}
+              >
+                Your body is constantly speaking to you. Together, let&apos;s learn how to listen.
+              </blockquote>
+            </div>
 
-            <p className="mt-6 text-lg leading-relaxed text-slate-600">
-              At Reviva Nutrition, we believe true wellness comes from addressing the root cause
-              rather than simply managing symptoms.
-            </p>
+            {/* Credentials / Info Cards */}
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div
+                className="rounded-2xl border p-5"
+                style={{
+                  background: "#f6efe6",
+                  borderColor: "rgba(0,0,0,0.08)",
+                }}
+              >
+                <p className="text-xs uppercase tracking-wider text-slate-500">Degree</p>
+                <p className="mt-2 text-sm font-semibold text-slate-800">
+                  M.Sc. Clinical Nutrition & Dietetics
+                  <br />
+                  Diploma in Ayurvedic Nutrition
+                </p>
+              </div>
 
-            <p className="mt-4 text-lg leading-relaxed text-slate-600">
-              Our approach combines personalized nutrition, sustainable lifestyle practices, and
-              evidence-based guidance to help you build long-term health and vitality.
-            </p>
+              <div
+                className="rounded-2xl border p-5"
+                style={{
+                  background: "#f6efe6",
+                  borderColor: "rgba(0,0,0,0.08)",
+                }}
+              >
+                <p className="text-xs uppercase tracking-wider text-slate-500">Specialization</p>
+                <p className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-sm font-semibold text-slate-800">
+                  <span>Diabetes</span>
+                  <span>• PCOS</span>
+                  <span>• Thyroid</span>
+                  <span>• IBS/IBD</span>
+                  <span>• Weight Management</span>
+                </p>
+              </div>
 
-            <div className="mt-8 grid gap-3 sm:grid-cols-3">
-              <FeaturePill icon={<Heart size={16} />} text="Personalized" />
-              <FeaturePill icon={<Leaf size={16} />} text="Root-Cause" />
-              <FeaturePill icon={<ShieldCheck size={16} />} text="Sustainable" />
+              <div
+                className="rounded-2xl border p-5"
+                style={{
+                  background: "#f6efe6",
+                  borderColor: "rgba(0,0,0,0.08)",
+                }}
+              >
+                <p className="text-xs uppercase tracking-wider text-slate-500">Experience</p>
+                <p className="mt-2 text-sm font-semibold text-slate-800">
+                  5+ Years in Clinical, Ayurvedic & Modern Nutrition
+                </p>
+              </div>
+
+              <div
+                className="rounded-2xl border p-5"
+                style={{
+                  background: "#f6efe6",
+                  borderColor: "rgba(0,0,0,0.08)",
+                }}
+              >
+                <p className="text-xs uppercase tracking-wider text-slate-500">Clients</p>
+                <p className="mt-2 text-sm font-semibold text-slate-800">
+                  3000+ Health Transformation Journeys
+                </p>
+              </div>
+            </div>
+
+            {/* Specialty Pills */}
+            <div className="mt-6 flex flex-wrap gap-3">
+              {["Prenatal Nutrition", "Autoimmune- Eczema, Psoriasis", "Hair & Skin Health"].map(
+                (item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border px-4 py-2 text-sm font-medium"
+                    style={{
+                      backgroundColor: "#eef5ee",
+                      borderColor: "rgba(47,107,45,0.25)",
+                      color: "var(--reviva-green)",
+                    }}
+                  >
+                    {item}
+                  </span>
+                )
+              )}
             </div>
 
             <Link
               href="/about"
-              className="mt-10 inline-flex items-center gap-2 rounded-full px-6 py-3 font-semibold text-white shadow-sm transition-all hover:scale-105 hover:shadow-md"
+              className="mt-8 inline-flex items-center gap-2 rounded-full px-6 py-3 font-semibold text-white shadow-sm transition-all hover:scale-105 hover:shadow-md"
               style={{ backgroundColor: "var(--reviva-green)" }}
             >
               Learn More About Heena
@@ -149,14 +175,5 @@ export default function AboutPreview() {
         </div>
       </div>
     </section>
-  );
-}
-
-function FeaturePill({ icon, text }: { icon: React.ReactNode; text: string }) {
-  return (
-    <div className="flex items-center gap-2 rounded-xl bg-white px-4 py-3 shadow-sm border border-slate-100">
-      <span style={{ color: "var(--reviva-green)" }}>{icon}</span>
-      <span className="text-sm font-medium text-slate-700">{text}</span>
-    </div>
   );
 }

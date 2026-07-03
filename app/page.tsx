@@ -4,7 +4,8 @@ import TrustTicker from "@/components/home/TrustTicker";
 import ProcessCards from "@/components/home/ProcessCards";
 import AboutPreview from "@/components/home/AboutPreview";
 import TestimonialsPreview from "@/components/home/TestimonialsPreview";
-import ConsultationCTA from "@/components/home/ConsultationCTA";
+import ConsultationCTA from "@/components/home/MythnFactPreview";
+import HealingCTA from "@/components/home/HealingCTA";
 import Footer from "@/components/home/Footer";
 import WhatsAppFloat from "@/components/home/WhatsAppFloat";
 
@@ -19,6 +20,7 @@ export default function HomePage() {
         <AboutPreview />
         <TestimonialsPreview />
         <ConsultationCTA />
+        <HealingCTA />
       </main>
       <Footer />
       <WhatsAppFloat />

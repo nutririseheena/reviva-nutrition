@@ -17,6 +17,18 @@
   --reviva-text: #1e293b;
 
   --font-heading: var(--font-cormorant);
+  --font-display: var(--font-playfair);
+
+  /* ── Extended warm palette ── */
+  --reviva-terracotta: #c1634a;
+  --reviva-terracotta-light: rgba(193, 99, 74, 0.12);
+  --reviva-warm-brown: #7c4233;
+  --reviva-warm-brown-light: rgba(124, 66, 51, 0.08);
+  --reviva-blush: #f5e8e0;
+  --reviva-blush-deep: #edd8cc;
+  --reviva-rose: #c08070;
+  --reviva-amber-deep: #d4973b;
+  --reviva-dark-wine: #3a1f1a;
 
   --shadow-card: 0 4px 24px rgba(47, 107, 45, 0.08);
   --shadow-card-hover: 0 12px 40px rgba(47, 107, 45, 0.16);
@@ -39,10 +51,55 @@ body {
   font-family: var(--font-heading);
 }
 
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* ── Typography utilities ──────────────────────────────────────── */
+
+/* Small uppercase eyebrow / section label */
+.reviva-eyebrow {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--reviva-terracotta);
+}
+
+/* Large italic display — for names and key emphasis */
+.reviva-display {
+  font-family: var(--font-heading);
+  font-style: italic;
+  color: var(--reviva-warm-brown);
+  line-height: 1.05;
+  font-weight: 600;
+}
+
+/* Elegant italic quote */
+.reviva-quote {
+  font-family: var(--font-heading);
+  font-style: italic;
+  color: var(--reviva-warm-brown);
+  line-height: 1.35;
+  font-weight: 500;
+}
+
+/* Terracotta highlight for inline emphasis */
+.reviva-highlight {
+  color: var(--reviva-terracotta);
+}
+
+/* Warm-brown italic inline emphasis */
+.reviva-italic-em {
+  font-style: italic;
+  color: var(--reviva-warm-brown);
+  font-family: var(--font-heading);
+}
+
 /* Smooth scroll for the whole page + global 95% scale */
 html {
   scroll-behavior: smooth;
-  font-size: 95%;
+  font-size: 100%;
   /*
    * DO NOT set overflow-x on html — doing so reassigns the browser scroll
    * container away from <html>, which breaks position:sticky on all pages.

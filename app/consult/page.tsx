@@ -6,7 +6,8 @@ import ConsultHero from "@/components/consult/ConsultHero";
 import HowItWorks from "@/components/consult/HowItWorks";
 import ProgramOptions from "@/components/consult/ProgramOptions";
 import FaqAccordion from "@/components/consult/FaqAccordion";
-import ConsultationCTA from "@/components/home/ConsultationCTA";
+import ConsultationCTA from "@/components/home/MythnFactPreview";
+import PaymentPreview from "@/components/consult/PaymentPreview";
 
 export const metadata: Metadata = {
   title: "Consult — Reviva Nutrition",
@@ -26,6 +27,7 @@ export default function ConsultPage() {
         <div id="book">
           <ConsultationCTA />
         </div>
+        <PaymentPreview />
       </main>
       <Footer />
       <WhatsAppFloat />

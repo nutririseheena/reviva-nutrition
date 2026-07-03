@@ -1,31 +1,16 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import { motion } from "framer-motion";
-
-const diseaseList = [
-  "Diabetes",
-  "PCOS / PCOD",
-  "Hypothyroid",
-  "Gut Disorders",
-  "Obesity",
-  "Hormonal Imbalance",
-];
-const healedList = [
-  "Blood Sugar Balanced",
-  "Hormones Restored",
-  "Thyroid Regulated",
-  "Gut Health Revived",
-  "Weight Normalised",
-  "Inner Balance Achieved",
-];
+import { diseaseList, heroPillars } from "@/data/hero";
 
 export default function Slide2() {
   return (
     <section className="relative overflow-hidden bg-[var(--reviva-cream)]">
       {/* Background blobs — matches Slide1/Slide3 */}
       <div
-        className="pointer-events-none absolute -top-32 -right-32 h-[520px] w-[520px] rounded-full blur-3xl"
+        className="pointer-events-none absolute -top-32 -right-32 h-[620px] w-[520px] rounded-full blur-3xl"
         style={{ backgroundColor: "rgba(244, 178, 27, 0.06)" }}
       />
       <div
@@ -33,175 +18,132 @@ export default function Slide2() {
         style={{ backgroundColor: "rgba(47, 107, 45, 0.05)" }}
       />
 
-      {/* Container — same height contract as Slide1/Slide3 */}
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <div className="flex flex-col py-10 sm:py-12 lg:py-0 lg:min-h-[700px] lg:justify-center gap-6 lg:gap-7">
-          {/* ── Heading ── */}
-          <motion.div
-            className="text-center"
-            initial={{ opacity: 0, y: 22 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, ease: "easeOut" }}
-          >
-            <div
-              className="mb-3 inline-flex items-center gap-2 rounded-full border px-4 py-1.5"
-              style={{
-                borderColor: "var(--reviva-gold)",
-                backgroundColor: "var(--reviva-gold-light)",
-              }}
-            >
-              <span
-                className="text-xs font-semibold tracking-wider uppercase"
-                style={{ color: "var(--reviva-green)" }}
-              >
-                Your Healing Begins Here
-              </span>
-            </div>
-
-            <h1
-              className="font-bold leading-[1.05] tracking-tight"
-              style={{
-                fontFamily: "var(--font-heading)",
-                color: "var(--reviva-green)",
-                fontSize: "clamp(2.4rem, 5.5vw, 4.5rem)",
-              }}
-            >
-              Opportunity To Heal.
-            </h1>
-            <p className="mx-auto mt-2 max-w-md text-sm text-slate-500 leading-relaxed">
-              Every sunset of illness can give way to a sunrise of restoration.
-            </p>
-          </motion.div>
-
-          {/* ── Two image cards — fixed lg:h-[370px] so total height matches Slide1/3 ── */}
-          <div className="grid gap-4 sm:grid-cols-2 lg:gap-6">
-            {/* Sunset card */}
+          {/* ── Two image cards ── */}
+          <div className="grid gap-6 sm:grid-cols-2 lg:gap-6">
+            {/* Sunset card — Lifestyle Diseases */}
             <motion.div
-              className="group relative overflow-hidden rounded-[20px] shadow-lg"
-              style={{ minHeight: "300px" }}
+              className="overflow-hidden rounded-[32px] border border-[#eadfcf] bg-[#fdf8ef] shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-lg"
               initial={{ opacity: 0, x: -28 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.65, delay: 0.15, ease: "easeOut" }}
+              transition={{ duration: 0.65, delay: 0.15 }}
             >
-              {/* Image layer */}
-              <div
-                className="absolute inset-0 transition-transform duration-700 group-hover:scale-105"
-                style={{
-                  backgroundImage: "url(/images/hero/sunset-disease.png)",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center top",
-                }}
-              />
-              {/* Brand tint: warm red-orange at 40% — blends image into palette */}
-              <div
-                className="absolute inset-0"
-                style={{
-                  background:
-                    "linear-gradient(160deg, rgba(139,40,0,0.42) 0%, rgba(80,10,0,0.52) 100%)",
-                }}
-              />
-              {/* Bottom readability vignette */}
-              <div
-                className="absolute inset-0"
-                style={{
-                  background:
-                    "linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.18) 55%, transparent 100%)",
-                }}
-              />
+              <div className="relative h-[600px] overflow-hidden rounded-[32px]">
+                <Image
+                  fill
+                  src="/images/hero/sunset2.png"
+                  alt="Lifestyle Diseases"
+                  className="object-cover object-[center_12%]"
+                />
+                <div className="absolute inset-0 bg-black/8" />{" "}
+                {/* Dim overlay for better text contrast */}
+                {/* Top Content */}
+                <div className="absolute inset-x-0 top-0 px-10 pt-8 text-center">
+                  <span className="inline-flex items-center rounded-full border border-white/30 bg-white/70 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#6a2b18] backdrop-blur-md">
+                    Without Nutrition
+                  </span>
 
-              <div
-                className="relative z-10 flex h-full flex-col justify-between p-6"
-                style={{ minHeight: "300px" }}
-              >
-                <span className="inline-block self-start rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white/90 backdrop-blur-sm border border-white/20">
-                  🌅 Without Nutrition
-                </span>
-                <div>
-                  <p className="mb-2.5 text-[10px] font-semibold uppercase tracking-widest text-white/55">
-                    Life with poor diet
+                  <h2
+                    className="mx-auto mt-8 max-w-[390px] text-[45px] leading-[0.95]"
+                    style={{
+                      color: "#5c1f12",
+                      fontFamily: "var(--font-heading)",
+                    }}
+                  >
+                    Sunset of
+                    <br />
+                    <span className="italic" style={{ color: "var(--reviva-terracotta)" }}>
+                      Lifestyle Diseases
+                    </span>
+                  </h2>
+
+                  <p className="mx-auto mt-4 max-w-[400px] text-[14px] leading-7 text-slate-700 font-medium">
+                    When nutrition and lifestyle deviate, health issues begin.
                   </p>
-                  <ul className="grid grid-cols-2 gap-x-3 gap-y-1.5">
-                    {diseaseList.map((d) => (
-                      <li
-                        key={d}
-                        className="flex items-center gap-1.5 text-xs font-medium text-white/90"
-                      >
-                        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-orange-400" />
-                        {d}
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="mt-3 text-[11px] leading-relaxed text-white/55">
-                    Poor nutrition silently drives chronic illness — leaving you drained and
-                    searching for answers.
-                  </p>
+                </div>
+                {/* Bottom Badge */}
+                {/* Disease List */}
+                <div className="absolute left-[58%] top-[64%] -translate-x-1/2 -translate-y-1/2">
+                  <div className="w-[200px]">
+                    <ul className="space-y-0">
+                      {diseaseList.map(({ icon: Icon, label }, index) => (
+                        <li
+                          key={label}
+                          className={index === diseaseList.length - 1 ? "pt-[4px]" : "py-[4px]"}
+                        >
+                          <div className="flex items-center gap-3">
+                            <Icon size={18} className="shrink-0 text-[#8d4a2a]" />
+
+                            <span className="text-[15px] font-semibold text-[#6a2b18]">
+                              {label}
+                            </span>
+                          </div>
+
+                          {index !== diseaseList.length - 1 && (
+                            <div className="mt-2 ml-[28px] h-px w-[85px] bg-[#8d4a2a]/10" />
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
             </motion.div>
 
-            {/* Sunrise card */}
+            {/* Sunrise card — Reviva Pillars */}
             <motion.div
-              className="group relative overflow-hidden rounded-[20px] shadow-lg"
-              style={{ minHeight: "300px" }}
+              className="overflow-hidden rounded-[32px] border border-[#d9e5d3] bg-[#fdf8ef] shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-lg"
               initial={{ opacity: 0, x: 28 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.65, delay: 0.28, ease: "easeOut" }}
+              transition={{ duration: 0.65, delay: 0.28 }}
             >
-              {/* Image layer */}
-              <div
-                className="absolute inset-0 transition-transform duration-700 group-hover:scale-105"
-                style={{
-                  backgroundImage: "url(/images/hero/sunrise-heal.png)",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center top",
-                }}
-              />
-              {/* Brand tint: deep green at 38% — blends into Reviva palette */}
-              <div
-                className="absolute inset-0"
-                style={{
-                  background:
-                    "linear-gradient(160deg, rgba(30,74,28,0.38) 0%, rgba(47,107,45,0.48) 100%)",
-                }}
-              />
-              {/* Bottom readability vignette */}
-              <div
-                className="absolute inset-0"
-                style={{
-                  background:
-                    "linear-gradient(to top, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.14) 55%, transparent 100%)",
-                }}
-              />
+              <div className="relative h-[600px] overflow-hidden rounded-[32px]">
+                <Image
+                  fill
+                  src="/images/hero/sunrise2.png"
+                  alt="Reviva Nutrition"
+                  className="object-cover object-center"
+                />
 
-              <div
-                className="relative z-10 flex h-full flex-col justify-between p-6"
-                style={{ minHeight: "300px" }}
-              >
-                <span className="inline-block self-start rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white/90 backdrop-blur-sm border border-white/20">
-                  🌄 With Reviva Nutrition
-                </span>
-                <div>
-                  <p className="mb-2.5 text-[10px] font-semibold uppercase tracking-widest text-white/55">
-                    Life after healing
+                {/* Top Content */}
+                <div className="absolute inset-x-0 top-0 h-[250px] px-8 pt-8 text-center">
+                  <span className="inline-flex items-center rounded-full border border-white/30 bg-white/70 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.15em] text-[var(--reviva-green)] backdrop-blur-md">
+                    With Right Nurition
+                  </span>
+
+                  <h2
+                    className="mx-auto mt-8 max-w-[450px] text-[45px] leading-[0.95]"
+                    style={{
+                      color: "var(--reviva-green)",
+                      fontFamily: "var(--font-heading)",
+                    }}
+                  >
+                    Sunrise of
+                    <br />
+                    <span className="italic" style={{ color: "var(--reviva-warm-brown)" }}>
+                      Better Health
+                    </span>
+                  </h2>
+
+                  <p className="mx-auto mt-4 max-w-[400px] text-[14px] leading-7 text-slate-700 font-medium">
+                    When nutrition and lifestyle align, health begins to thrive.
                   </p>
-                  <ul className="grid grid-cols-2 gap-x-3 gap-y-1.5">
-                    {healedList.map((h) => (
-                      <li
-                        key={h}
-                        className="flex items-center gap-1.5 text-xs font-medium text-white/90"
-                      >
-                        <span
-                          className="h-1.5 w-1.5 shrink-0 rounded-full"
-                          style={{ backgroundColor: "var(--reviva-gold)" }}
-                        />
-                        {h}
-                      </li>
+                </div>
+
+                {/* Bottom Badge */}
+                <div className="absolute inset-x-0 bottom-[280px] px-8">
+                  <div className="grid grid-cols-4 gap-4">
+                    {heroPillars.map(({ icon: Icon, label }) => (
+                      <div key={label} className="text-center">
+                        <Icon size={18} className="mx-auto text-[var(--reviva-green)]" />
+
+                        <p className="mt-3 text-[14px] font-semibold leading-tight text-[var(--reviva-green)]">
+                          {label}
+                        </p>
+                      </div>
                     ))}
-                  </ul>
-                  <p className="mt-3 text-[11px] leading-relaxed text-white/55">
-                    Root-cause nutrition for lasting recovery — your body knows how to heal. Reviva
-                    shows it the way.
-                  </p>
+                  </div>
                 </div>
               </div>
             </motion.div>

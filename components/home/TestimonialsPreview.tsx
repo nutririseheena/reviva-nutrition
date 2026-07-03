@@ -2,49 +2,135 @@
 
 import Link from "next/link";
 import { Quote, Star, ArrowRight } from "lucide-react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { testimonials } from "@/data/testimonials";
-
-const accentColors = [
-  "var(--reviva-green)",
-  "var(--reviva-gold-dark)",
-  "var(--reviva-green)",
-  "var(--reviva-gold-dark)",
-];
+import { homePillars, cardGradients, accentColors } from "@/data/home";
 
 export default function TestimonialsPreview() {
   return (
-    <section className="bg-white py-24">
+    <section className="py-24" style={{ backgroundColor: "#fdf8f4" }}>
       <div className="mx-auto max-w-7xl px-6">
-        {/* Header */}
+        {/* ── Section header ── */}
         <motion.div
-          className="flex flex-col items-center text-center md:flex-row md:items-end md:justify-between md:text-left"
+          className="text-center"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.15 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <p className="reviva-eyebrow">Foundation of Reviva</p>
+
+          <h2
+            className="mt-4 text-4xl md:text-5xl lg:text-6xl xl:text-[4.5rem] leading-tight"
+            style={{
+              color: "var(--reviva-green)",
+              fontFamily: "var(--font-heading)",
+            }}
+          >
+            Three Pillars That Turn{" "}
+            <span className="italic" style={{ color: "var(--reviva-warm-brown)" }}>
+              Hope Into Healing
+            </span>
+          </h2>
+          {/* <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-500">
+            These principles guide every consultation, every plan, and every transformation at
+            Reviva Nutrition.
+          </p> */}
+        </motion.div>
+
+        {/* ── Pillars grid ── */}
+        <div className="mt-12 grid gap-10 lg:gap-12 md:grid-cols-3">
+          {homePillars.map((pillar, index) => {
+            const Icon = pillar.topIcon;
+
+            return (
+              <motion.div
+                key={pillar.title}
+                className="overflow-hidden rounded-[32px] border border-[#eadfcf] bg-[#fdf8ef] shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-lg"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.1 }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.15,
+                }}
+              >
+                <div className="relative h-[500px] overflow-hidden rounded-[32px]">
+                  <Image fill src={pillar.image} alt={pillar.title} className="object-cover" />
+
+                  {/* Top Content */}
+                  <div className="absolute inset-x-0 top-0 h-[210px] px-8 pt-8 text-center">
+                    <div
+                      className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border-2"
+                      style={{
+                        borderColor: "var(--reviva-green)",
+                        color: "var(--reviva-green)",
+                        backgroundColor: "rgba(255,255,255,0.75)",
+                        backdropFilter: "blur(6px)",
+                      }}
+                    >
+                      <Icon size={24} />
+                    </div>
+
+                    <h3
+                      className="mt-4 text-2xl md:text-3xl tracking-[0.06em]"
+                      style={{
+                        color: "var(--reviva-green)",
+                        fontFamily: "var(--font-heading)",
+                      }}
+                    >
+                      {pillar.title}
+                    </h3>
+
+                    <p className="mx-auto mt-4 max-w-[260px] text-sm sm:text-[15px] leading-7 text-slate-700">
+                      {pillar.description}
+                    </p>
+                  </div>
+
+                  {/* Bottom Badge */}
+                  {/* <div className="absolute inset-x-0 bottom-6 px-6">
+                    <div className="mx-auto flex max-w-[300px] items-center justify-center gap-3 rounded-full bg-white/95 px-4 py-2.5 shadow-md backdrop-blur-md">
+                      <div
+                        className="flex h-8 w-8 items-center justify-center rounded-full"
+                        style={{
+                          backgroundColor: "var(--reviva-gold-light)",
+                        }}
+                      >
+                        <Leaf size={16} color="var(--reviva-green)" />
+                      </div>
+
+                      <span className="text-left text-[12px] font-medium text-slate-700">
+                        {pillar.bottomText}
+                      </span>
+                    </div>
+                  </div> */}
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* ── Testimonials header ── */}
+        <motion.div
+          className="mt-24 flex flex-col items-center text-center md:flex-row md:items-end md:justify-between md:text-left"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.15 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <div>
-            <span
-              className="inline-block rounded-full px-4 py-2 text-sm font-medium"
-              style={{
-                backgroundColor: "var(--reviva-gold-light)",
-                color: "var(--reviva-green)",
-              }}
-            >
-              Success Stories
-            </span>
-
             <h2
-              className="mt-4 text-4xl md:text-5xl lg:text-6xl"
+              className="mt-4 text-4xl md:text-5xl lg:text-6xl xl:text-[4.5rem] leading-tight"
               style={{
                 color: "var(--reviva-green)",
                 fontFamily: "var(--font-heading)",
               }}
             >
-              Real People,
-              <br />
-              Meaningful Change
+              Real People,{" "}
+              <span className="italic" style={{ color: "var(--reviva-warm-brown)" }}>
+                Meaningful Change
+              </span>
             </h2>
           </div>
 
@@ -61,17 +147,13 @@ export default function TestimonialsPreview() {
           </Link>
         </motion.div>
 
-        <p className="mt-4 max-w-2xl text-lg text-slate-500">
-          Every wellness journey is unique. Here are a few examples of how personalized nutrition
-          and sustainable habits create lasting transformation.
-        </p>
-
-        {/* Cards */}
+        {/* ── Testimonial Cards ── */}
         <div className="mt-14 grid gap-6 lg:grid-cols-2">
           {testimonials.map((testimonial, index) => (
             <motion.article
               key={testimonial.name}
-              className="group relative overflow-hidden rounded-[28px] bg-[var(--reviva-cream)] p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-xl"
+              className="group relative overflow-hidden rounded-[28px] p-8 shadow-sm border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              style={{ background: cardGradients[index % cardGradients.length] }}
               initial={{ opacity: 0, y: 36 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.1 }}
@@ -80,20 +162,20 @@ export default function TestimonialsPreview() {
               {/* Left accent bar */}
               <div
                 className="absolute left-0 top-0 h-full w-1 rounded-l-[28px]"
-                style={{ backgroundColor: accentColors[index] }}
+                style={{ backgroundColor: accentColors[index % accentColors.length] }}
               />
 
               {/* Quote icon */}
               <div className="absolute right-8 top-8 opacity-10">
-                <Quote size={40} color="var(--reviva-green)" />
+                <Quote size={48} color="var(--reviva-green)" />
               </div>
 
               {/* Avatar + Name */}
               <div className="flex items-center gap-4">
                 <div
-                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-base font-bold"
+                  className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-lg font-bold shadow-sm"
                   style={{
-                    backgroundColor: "#eef5eb",
+                    backgroundColor: "rgba(255,255,255,0.85)",
                     color: "var(--reviva-green)",
                   }}
                 >
@@ -101,35 +183,35 @@ export default function TestimonialsPreview() {
                 </div>
 
                 <div>
-                  <h3 className="font-semibold" style={{ color: "var(--reviva-green)" }}>
+                  <h3 className="text-base font-bold text-slate-800">
                     {testimonial.name}
                   </h3>
-                  <p className="text-sm text-slate-500">{testimonial.condition}</p>
+                  <p className="mt-0.5 text-sm text-slate-500">{testimonial.condition}</p>
                 </div>
 
-                {/* Stars — pushed to right */}
+                {/* Stars */}
                 <div className="ml-auto flex gap-0.5">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={14} fill="#f4b21b" color="#f4b21b" />
+                    <Star key={i} size={15} fill="#f4b21b" color="#f4b21b" />
                   ))}
                 </div>
               </div>
 
               {/* Quote */}
-              <p className="mt-6 text-base italic leading-relaxed text-slate-600">
+              <p className="mt-5 text-[15px] sm:text-base italic leading-relaxed text-slate-700">
                 &ldquo;{testimonial.quote}&rdquo;
               </p>
 
-              {/* Result badge */}
+              {/* Location pill */}
               <div className="mt-6">
                 <span
-                  className="inline-block rounded-full px-4 py-1.5 text-sm font-medium"
+                  className="inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-sm font-medium shadow-sm"
                   style={{
-                    backgroundColor: "#eef5eb",
-                    color: "var(--reviva-green)",
+                    backgroundColor: "rgba(255,255,255,0.8)",
+                    color: "#374151",
                   }}
                 >
-                  ✓ {testimonial.result}
+                  📍 {testimonial.result}
                 </span>
               </div>
             </motion.article>

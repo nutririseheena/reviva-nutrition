@@ -2,46 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
-
-const durations = [
-  {
-    months: "3",
-    label: "Kickstart",
-    desc: "Ideal for a focused reset — build foundational habits and see early results.",
-    features: [
-      "Initial assessment + plan",
-      "12 weekly sessions",
-      "WhatsApp support",
-      "Guidelines document",
-    ],
-  },
-  {
-    months: "6",
-    label: "Transform",
-    desc: "The most popular choice — enough time to create deep, lasting change.",
-    features: [
-      "Initial assessment + plan",
-      "24 weekly sessions",
-      "Special occasion planning",
-      "WhatsApp support",
-      "Mid-program review",
-    ],
-    highlight: true,
-  },
-  {
-    months: "12",
-    label: "Evolve",
-    desc: "Comprehensive healing for complex conditions requiring a long-term approach.",
-    features: [
-      "Initial assessment + plan",
-      "48 weekly sessions",
-      "Special occasion planning",
-      "WhatsApp support",
-      "Quarterly reviews",
-      "Post-consultation document",
-    ],
-  },
-];
+import { programDurations } from "@/data/consult";
 
 export default function ProgramOptions() {
   return (
@@ -74,7 +35,7 @@ export default function ProgramOptions() {
         </motion.div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {durations.map((plan, index) => (
+          {programDurations.map((plan, index) => (
             <motion.div
               key={plan.months}
               className={`relative flex flex-col rounded-[28px] p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 ${

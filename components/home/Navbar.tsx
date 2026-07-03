@@ -5,13 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/consult", label: "Consult" },
-  { href: "/testimonials", label: "Testimonials" },
-];
+import { navLinks } from "@/data/site";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);

@@ -4,8 +4,7 @@ import { useEffect, useState } from "react";
 import { ArrowRight, Leaf } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-
-const roles = ["Nutritionist", "Dietician", "Coach", "Guide"];
+import { heroRoles } from "@/data/hero";
 
 function Typewriter() {
   const [displayed, setDisplayed] = useState("");
@@ -13,7 +12,7 @@ function Typewriter() {
   const [phase, setPhase] = useState<"typing" | "pausing" | "deleting">("typing");
 
   useEffect(() => {
-    const current = roles[wordIndex];
+    const current = heroRoles[wordIndex];
 
     if (phase === "typing") {
       if (displayed === current) {
@@ -32,7 +31,7 @@ function Typewriter() {
     if (phase === "deleting") {
       if (displayed === "") {
         const t = setTimeout(() => {
-          setWordIndex((prev) => (prev + 1) % roles.length);
+          setWordIndex((prev) => (prev + 1) % heroRoles.length);
           setPhase("typing");
         }, 0);
         return () => clearTimeout(t);
@@ -107,17 +106,27 @@ export default function Slide1() {
               </span>
             </motion.div>
 
-            <motion.p variants={item} className="text-lg font-medium text-slate-500">
-              Hi, I&apos;m Heena —
+            <motion.p
+              variants={item}
+              className="mt-2 italic"
+              style={{
+                fontFamily: "var(--font-heading)",
+                color: "var(--reviva-warm-brown)",
+                fontSize: "clamp(1.6rem, 3vw, 2.4rem)",
+                fontWeight: 400,
+                lineHeight: 1.2,
+              }}
+            >
+              Hi, Myself Heena —
             </motion.p>
 
             <motion.h1
               variants={item}
-              className="mt-1 font-bold leading-[1.05] tracking-tight"
+              className="mt-3 font-bold leading-[1.05] tracking-tight"
               style={{
                 fontFamily: "var(--font-heading)",
                 color: "var(--reviva-green)",
-                fontSize: "clamp(2.8rem, 7vw, 5.5rem)",
+                fontSize: "clamp(3.2rem, 7.5vw, 6rem)",
               }}
             >
               Your <Typewriter />
@@ -125,17 +134,16 @@ export default function Slide1() {
 
             <motion.p
               variants={item}
-              className="mt-5 max-w-lg text-xl font-semibold leading-snug text-slate-700"
+              className="mt-5 max-w-lg text-[18px]  leading-snug text-slate-700"
             >
-              Heal the root cause, not just the symptoms.
+              At Reviva Nutrition, Believe in the Power of Nutrition 🌱 Transform Your Health.
             </motion.p>
 
             <motion.p
               variants={item}
               className="mt-3 max-w-md text-base leading-relaxed text-slate-500"
             >
-              Personalized nutrition &amp; lifestyle guidance to restore energy, balance hormones,
-              improve digestion, and build lasting health.
+              Personalized Nutrition &bull; Sustainable Lifestyle Changes &bull; Long-Term Wellness
             </motion.p>
 
             <motion.div variants={item} className="mt-8 flex flex-wrap gap-3">
@@ -166,15 +174,27 @@ export default function Slide1() {
               className="mt-10 flex flex-wrap gap-8 border-t border-slate-200 pt-8"
             >
               {[
-                { value: "500+", label: "Clients Guided" },
-                { value: "10+", label: "Years Experience" },
-                { value: "95%", label: "Success Rate" },
+                { value: "5K+", label: "Clients Guided" },
+                { value: "5+", label: "Years Experience" },
+                { value: "98%", label: "Success Rate" },
               ].map(({ value, label }) => (
                 <div key={label}>
-                  <p className="text-2xl font-bold" style={{ color: "var(--reviva-green)" }}>
+                  <p
+                    className="text-4xl sm:text-5xl font-light"
+                    style={{
+                      color: "var(--reviva-warm-brown)",
+                      fontFamily: "var(--font-heading)",
+                    }}
+                  >
                     {value}
                   </p>
-                  <p className="mt-0.5 text-xs text-slate-500">{label}</p>
+                  <div
+                    className="mt-2 h-px w-12"
+                    style={{ backgroundColor: "rgba(124,66,51,0.25)" }}
+                  />
+                  <p className="mt-2 text-[11px] uppercase tracking-[0.15em] text-slate-400">
+                    {label}
+                  </p>
                 </div>
               ))}
             </motion.div>

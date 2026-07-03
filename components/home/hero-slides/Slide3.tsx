@@ -1,9 +1,9 @@
 "use client";
 
 import { ArrowRight, MonitorSmartphone, TrendingUp, Users, Star } from "lucide-react";
-import { ResponsiveContainer, AreaChart, Area, XAxis, YAxis, Tooltip } from "recharts";
+import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, Cell } from "recharts";
 import { motion } from "framer-motion";
-import { heroMetrics, heroGrowthData } from "@/data/hero";
+import { heroMetrics, outcomesData, barColors } from "@/data/hero";
 
 const leftVariants = {
   hidden: {},
@@ -29,7 +29,7 @@ export default function Slide3() {
       />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="grid items-center gap-8 py-10 sm:py-12 lg:grid-cols-[55%_45%] lg:gap-12 lg:py-0 lg:min-h-[700px]">
+        <div className="grid items-center gap-8 py-10 sm:py-12 lg:grid-cols-[52%_48%] lg:gap-12 lg:py-0 lg:min-h-[700px]">
           {/* Left: Text */}
           <motion.div variants={leftVariants} initial="hidden" animate="show">
             <motion.div
@@ -49,7 +49,17 @@ export default function Slide3() {
               </span>
             </motion.div>
 
-            <motion.p variants={item} className="text-lg font-medium text-slate-500">
+            <motion.p
+              variants={item}
+              className="mt-2 italic"
+              style={{
+                fontFamily: "var(--font-heading)",
+                color: "var(--reviva-warm-brown)",
+                fontSize: "clamp(1.2rem, 2.5vw, 2.0rem)",
+                fontWeight: 300,
+                lineHeight: 1.2,
+              }}
+            >
               Expert guidance —
             </motion.p>
 
@@ -64,7 +74,9 @@ export default function Slide3() {
             >
               From
               <br />
-              Anywhere.
+              <span className="italic" style={{ color: "var(--reviva-warm-brown)" }}>
+                Anywhere.
+              </span>
             </motion.h1>
 
             <motion.p
@@ -121,7 +133,7 @@ export default function Slide3() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.2, ease: "easeOut" }}
           >
-            <div className="relative w-full max-w-[250px] sm:max-w-[340px] lg:max-w-[500px]">
+            <div className="relative w-full max-w-[340px] sm:max-w-[500px] lg:max-w-[700px]">
               <div
                 className="absolute -inset-6 -z-10 rounded-[50px] blur-3xl"
                 style={{ backgroundColor: "rgba(47, 107, 45, 0.1)" }}
@@ -152,7 +164,7 @@ export default function Slide3() {
                         >
                           Client Progress Dashboard
                         </p>
-                        <p className="text-[9px] text-slate-400">Updated today</p>
+                        {/* <p className="text-[9px] text-slate-400">Updated today</p> */}
                       </div>
                       <div
                         className="rounded-full px-2 py-0.5 text-[9px] font-semibold text-white"
@@ -174,54 +186,57 @@ export default function Slide3() {
                         value={`${heroMetrics.successStories}+`}
                         label="Success"
                       />
-                      <MetricCard
-                        icon={Star}
-                        value={`${heroMetrics.satisfaction}%`}
-                        label="Satisfaction"
-                      />
+                      <MetricCard icon={Star} value={`${heroMetrics.rating}★`} label="Rating" />
                     </div>
 
-                    {/* Chart */}
+                    {/* Outcomes chart */}
                     <div className="rounded-xl border border-slate-100 bg-slate-50 p-2">
-                      <p className="mb-1 text-[9px] font-medium text-slate-500">
-                        Client Growth — 2024
-                      </p>
-                      <div className="h-[90px]">
+                      <div className="mb-1 flex items-center justify-between">
+                        <p className="text-[9px] font-semibold text-slate-600">
+                          Health Concerns Addressed Through Nutrition Care
+                        </p>
+                      </div>
+                      <div className="h-[220px]">
                         <ResponsiveContainer width="100%" height="100%">
-                          <AreaChart
-                            data={heroGrowthData}
-                            margin={{ top: 4, right: 4, bottom: 0, left: -20 }}
+                          <BarChart
+                            data={outcomesData}
+                            layout="vertical"
+                            margin={{ top: 0, right: 20, bottom: 0, left: 2 }}
+                            barSize={8}
                           >
-                            <defs>
-                              <linearGradient id="clientGradient" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="5%" stopColor="#2f6b2d" stopOpacity={0.3} />
-                                <stop offset="95%" stopColor="#2f6b2d" stopOpacity={0} />
-                              </linearGradient>
-                            </defs>
                             <XAxis
-                              dataKey="month"
-                              tick={{ fontSize: 7, fill: "#94a3b8" }}
+                              type="number"
+                              domain={[0, 300]}
+                              tick={{ fontSize: 6, fill: "#94a3b8" }}
                               axisLine={false}
                               tickLine={false}
+                              label={{
+                                value: "Number of Cases Handled",
+                                position: "insideBottom",
+                                // offset: -5,
+                                style: { fontSize: 8, fill: "#94a3b8" },
+                              }}
                             />
-                            <YAxis hide />
+                            <YAxis
+                              type="category"
+                              dataKey="condition"
+                              tick={{ fontSize: 7, fill: "#475569" }}
+                              axisLine={false}
+                              tickLine={false}
+                              width={68}
+                            />
                             <Tooltip
-                              contentStyle={{ fontSize: 10, padding: "2px 6px" }}
-                              itemStyle={{ fontSize: 9 }}
+                              contentStyle={{ fontSize: 9, padding: "2px 6px" }}
+                              formatter={(v) => [`${v} cases`, ""]}
                             />
-                            <Area
-                              type="monotone"
-                              dataKey="clients"
-                              stroke="#2f6b2d"
-                              strokeWidth={2}
-                              fill="url(#clientGradient)"
-                            />
-                          </AreaChart>
+                            <Bar dataKey="cases" radius={[0, 4, 4, 0]}>
+                              {outcomesData.map((_, i) => (
+                                <Cell key={i} fill={barColors[i % barColors.length]} />
+                              ))}
+                            </Bar>
+                          </BarChart>
                         </ResponsiveContainer>
                       </div>
-                      <p className="mt-1 text-center text-[9px] text-slate-400">
-                        Client Success Growth
-                      </p>
                     </div>
                   </div>
                 </div>
@@ -284,11 +299,11 @@ function MetricCard({
       className="rounded-xl border border-slate-100 p-2 text-center"
       style={{ background: "linear-gradient(135deg, #f0f7ef 0%, #ffffff 100%)" }}
     >
-      <Icon size={12} color="var(--reviva-gold)" className="mx-auto mb-1" />
-      <div className="text-sm font-bold" style={{ color: "var(--reviva-green)" }}>
+      <Icon size={10} color="var(--reviva-gold)" className="mx-auto mb-0.5" />
+      <div className="text-xs font-bold" style={{ color: "var(--reviva-green)" }}>
         {value}
       </div>
-      <div className="text-[9px] text-slate-500">{label}</div>
+      <div className="text-[8px] text-slate-500">{label}</div>
     </div>
   );
 }

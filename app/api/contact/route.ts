@@ -1,4 +1,5 @@
 import { Resend } from "resend";
+import { siteConfig } from "@/data/site";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -8,7 +9,7 @@ export async function POST(req: Request) {
 
     const { error } = await resend.emails.send({
       from: "Reviva Nutrition <onboarding@resend.dev>",
-      to: ["nutririseheena@gmail.com"],
+      to: [siteConfig.contact.email],
       subject: "New Consultation Request",
       html: `
         <h2>New Consultation Request</h2>
