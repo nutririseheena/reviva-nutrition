@@ -1,29 +1,31 @@
 export const testimonials = [
   {
-    name: "Lalitha - 65yrs",
-    condition: "Cholesterol & Weight Management",
+    name: "Padma — 69 Years",
+    condition: "Weight Management · Skin Infection · High BP · Insulin Resistance",
     quote:
-      "I was initially sceptical about consulting a dietitian, but choosing Dt. Heena was one of the best decisions I made. Her personalized guidance, regular follow-ups, and practical nutrition plan helped me achieve significant improvements in my cholesterol, triglycerides, and weight. The results have truly transformed my health and lifestyle.",
-    result: "Powai, Mumbai",
+      "At 69, I was struggling with high blood pressure, fatty liver, insulin resistance, joint pain, skin infections, and excess weight. One of my biggest achievements was discontinuing BP medication under medical supervision. Through REVIVA Nutrition's root-cause approach and personalized guidance, I achieved over 10 kg weight loss and significant improvements in my blood sugar, cholesterol, and liver health. My knee pain reduced, mobility improved, and I now feel more active and confident in my daily life. Thank you, Dt. Heena, for helping me reclaim my health naturally.",
+    result: "Mumbai",
   },
   {
-    name: "Sunita R.",
-    condition: "PCOS Support",
+    name: "Divya — 40 Years",
+    condition: "Hair & Skin Health · Chronic Sinus",
     quote:
-      "The guidance was practical, sustainable, and easy to follow. I finally feel more in control of my health.",
-    result: "Better lifestyle balance",
+      "Working with Dt. Heena transformed the way I understand health. Living in Hong Kong, I never realized that effective treatment and personalized nutrition guidance could be possible online. She helped me look beyond my sinus issues and uncover the deeper root causes affecting my overall well-being. Her unique blend of Ayurvedic wisdom and practical nutrition guidance empowered me to make lasting lifestyle changes that I continue to follow today. I am deeply grateful for her ongoing support, guidance, and genuine care.",
+    result: "Hong Kong",
   },
   {
-    name: "Meera K.",
-    condition: "Gut Health",
-    quote: "The root-cause approach completely changed how I think about nutrition and wellness.",
-    result: "Improved digestion",
+    name: "Flaviya D'Souza — 46 Years",
+    condition: "Weight Management · GERD · Diabetes",
+    quote:
+      "I joined REVIVA Nutrition for high cholesterol, borderline diabetes, and fluctuating weight. During the assessment, hidden concerns like fatty liver, kidney stones, and gallbladder stones were identified. With personalized dietary and lifestyle corrections, my weight reduced, cholesterol improved, and diabetes markers returned to normal. The journey also helped me understand the importance of nutrition, exercise, and discipline. I am grateful to Dietitian Heena and the REVIVA Nutrition team for their guidance and support.",
+    result: "Mumbai",
   },
   {
-    name: "Kavita S.",
-    condition: "Hormonal Wellness",
-    quote: "The support and accountability helped me stay consistent and make lasting changes.",
-    result: "Healthier daily habits",
+    name: "Anu — 40 Years",
+    condition: "Weight Management · PCOS · Alcoholic Fatty Liver",
+    quote:
+      "I initially joined REVIVA Nutrition for weight loss, but Dt. Heena's root-cause analysis revealed underlying issues including alcoholic fatty liver, irregular periods, brain fog, acidity, leg cramps, and back pain. Through a personalized one-year treatment plan combining Ayurvedic wisdom and modern nutrition, my liver health, kidney function, energy levels, and overall well-being improved significantly. The journey transformed not just my weight, but my health from within.",
+    result: "Hong Kong",
   },
 ];
 

@@ -167,15 +167,15 @@ export default function TestimonialsPreview() {
 
               {/* Quote icon */}
               <div className="absolute right-8 top-8 opacity-10">
-                <Quote size={40} color="var(--reviva-green)" />
+                <Quote size={48} color="var(--reviva-green)" />
               </div>
 
               {/* Avatar + Name */}
               <div className="flex items-center gap-4">
                 <div
-                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-base font-bold"
+                  className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-lg font-bold shadow-sm"
                   style={{
-                    backgroundColor: "#eef5eb",
+                    backgroundColor: "rgba(255,255,255,0.85)",
                     color: "var(--reviva-green)",
                   }}
                 >
@@ -183,32 +183,32 @@ export default function TestimonialsPreview() {
                 </div>
 
                 <div>
-                  <h3 className="font-semibold" style={{ color: "var(--reviva-green)" }}>
+                  <h3 className="text-base font-bold text-slate-800">
                     {testimonial.name}
                   </h3>
-                  <p className="text-sm text-slate-500">{testimonial.condition}</p>
+                  <p className="mt-0.5 text-sm text-slate-500">{testimonial.condition}</p>
                 </div>
 
                 {/* Stars */}
                 <div className="ml-auto flex gap-0.5">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={14} fill="#f4b21b" color="#f4b21b" />
+                    <Star key={i} size={15} fill="#f4b21b" color="#f4b21b" />
                   ))}
                 </div>
               </div>
 
               {/* Quote */}
-              <p className="mt-6 text-base italic leading-relaxed text-slate-600">
+              <p className="mt-5 text-[15px] sm:text-base italic leading-relaxed text-slate-700">
                 &ldquo;{testimonial.quote}&rdquo;
               </p>
 
-              {/* Result badge */}
+              {/* Location pill */}
               <div className="mt-6">
                 <span
-                  className="inline-block rounded-full px-4 py-1.5 text-sm font-medium"
+                  className="inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-sm font-medium shadow-sm"
                   style={{
-                    backgroundColor: "#eef5eb",
-                    color: "var(--reviva-green)",
+                    backgroundColor: "rgba(255,255,255,0.8)",
+                    color: "#374151",
                   }}
                 >
                   📍 {testimonial.result}
