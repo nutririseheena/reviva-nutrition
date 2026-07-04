@@ -10,7 +10,7 @@ import { processCards } from "@/data/process-cards";
 export default function ProcessCards() {
   return (
     <section className="py-24" style={{ backgroundColor: "#fdf8f4" }}>
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
         {/* Header */}
         <motion.div
           className="text-center"
@@ -22,7 +22,7 @@ export default function ProcessCards() {
           <p className="reviva-eyebrow">Your Healing Journey</p>
 
           <h2
-            className="mt-4 text-4xl md:text-5xl lg:text-6xl xl:text-[4.5rem] leading-tight"
+            className="mt-4 text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-[4.5rem] leading-tight"
             style={{
               color: "var(--reviva-green)",
               fontFamily: "var(--font-heading)",

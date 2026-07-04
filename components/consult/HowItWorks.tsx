@@ -6,7 +6,7 @@ import { consultStages } from "@/data/consult";
 export default function HowItWorks() {
   return (
     <section className="bg-white py-24">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
         {/* Header */}
         <motion.div
           className="text-center"

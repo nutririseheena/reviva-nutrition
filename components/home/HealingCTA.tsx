@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 export default function HealingCTA() {
   return (
     <section className="py-20 sm:py-24 md:py-32" style={{ backgroundColor: "var(--reviva-blush)" }}>
-      <div className="mx-auto max-w-4xl px-2 text-center">
+      <div className="mx-auto max-w-4xl px-6 lg:px-10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -19,7 +19,7 @@ export default function HealingCTA() {
             style={{
               color: "var(--reviva-green)",
               fontFamily: "var(--font-heading)",
-              fontSize: "clamp(1rem, 5vw, 4.5rem)",
+              fontSize: "clamp(1.8rem, 5vw, 4.5rem)",
             }}
           >
             Ready to Discover Root Cause and{" "}

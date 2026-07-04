@@ -10,7 +10,7 @@ export default function FaqAccordion() {
 
   return (
     <section className="bg-white py-24">
-      <div className="mx-auto max-w-3xl px-6">
+      <div className="mx-auto max-w-3xl px-6 lg:px-10">
         <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 24 }}

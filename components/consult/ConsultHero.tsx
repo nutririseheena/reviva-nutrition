@@ -17,7 +17,7 @@ export default function ConsultHero() {
         style={{ backgroundColor: "rgba(244,178,27,0.07)" }}
       />
 
-      <div className="relative mx-auto max-w-4xl px-6 text-center">
+      <div className="relative mx-auto max-w-4xl px-6 lg:px-10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

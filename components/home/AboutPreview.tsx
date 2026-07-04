@@ -7,9 +7,9 @@ import { motion } from "framer-motion";
 
 export default function AboutPreview() {
   return (
-    <section id="about-preview" className="bg-[var(--reviva-cream)] py-22">
-      <div className="mx-auto max-w-7xl px-5">
-        <div className="grid items-start gap-18 lg:grid-cols-2">
+    <section id="about-preview" className="bg-[var(--reviva-cream)] py-12 lg:py-22">
+      <div className="mx-auto max-w-7xl px-5 lg:px-10">
+        <div className="grid items-start gap-8 lg:gap-18 lg:grid-cols-2">
           {/* ── Left: Quote + Image ── */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -38,6 +38,7 @@ export default function AboutPreview() {
                 src="/images/about/about-preview.png"
                 alt="Heena — Reviva Nutrition"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover object-top"
               />
             </div>
@@ -53,7 +54,7 @@ export default function AboutPreview() {
           >
             <div className="mt-3">
               <p className="reviva-eyebrow">About</p>
-              <h2 className="reviva-display mt-1" style={{ fontSize: "clamp(4rem, 10vw, 8rem)" }}>
+              <h2 className="reviva-display mt-1" style={{ fontSize: "clamp(2.5rem, 8vw, 8rem)" }}>
                 Heena 🌻
               </h2>
             </div>

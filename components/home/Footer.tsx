@@ -8,7 +8,7 @@ import { navLinks, siteConfig } from "@/data/site";
 export default function Footer() {
   return (
     <footer className="text-white" style={{ backgroundColor: "var(--reviva-green-dark)" }}>
-      <div className="mx-auto max-w-7xl px-6 py-10">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10 py-10">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Logo + About */}
           <div>
@@ -16,8 +16,8 @@ export default function Footer() {
               src="/images/logo/reviva-logo.png"
               alt="Reviva Nutrition"
               width={140}
-              height={48}
-              className="h-auto brightness-0 invert"
+              height={74}
+              className="brightness-0 invert"
             />
 
             <p className="mt-4 text-sm leading-relaxed text-white/70">

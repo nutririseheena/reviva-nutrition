@@ -106,7 +106,7 @@ function Charts() {
           Specialization Areas
         </h3>
         <p className="mb-4 text-xs text-slate-400">Approximate client success rate by condition</p>
-        <ResponsiveContainer width="100%" height={240}>
+        <ResponsiveContainer width="100%" height={240} minWidth={0}>
           <BarChart data={specialtyBarData} layout="vertical" margin={{ left: 0, right: 16 }}>
             <CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="#f0f0f0" />
             <XAxis
@@ -142,7 +142,7 @@ function Charts() {
           Program Duration Breakdown
         </h3>
         <p className="mb-4 text-xs text-slate-400">Distribution of client program lengths</p>
-        <ResponsiveContainer width="100%" height={240}>
+        <ResponsiveContainer width="100%" height={240} minWidth={0}>
           <PieChart>
             <Pie
               data={programSplitData}
@@ -181,7 +181,7 @@ function Charts() {
 export default function AboutStatsCharts() {
   return (
     <section className="bg-white py-24">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 24 }}

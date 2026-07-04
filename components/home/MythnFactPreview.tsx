@@ -7,7 +7,7 @@ import { mythsFacts } from "@/data/consult";
 export default function ConsultationCTA() {
   return (
     <section id="consult-cta" className="py-24" style={{ backgroundColor: "#fdf8f4" }}>
-      <div className="mx-auto max-w-5xl px-6">
+      <div className="mx-auto max-w-5xl px-6 lg:px-10">
         {/* Header */}
         <motion.div
           className="text-center"
@@ -18,7 +18,7 @@ export default function ConsultationCTA() {
         >
           <p className="reviva-eyebrow">Myths &amp; Facts</p>
           <h2
-            className="mt-4 text-4xl md:text-5xl lg:text-6xl leading-tight"
+            className="mt-4 text-2xl sm:text-3xl md:text-5xl lg:text-6xl leading-tight"
             style={{ color: "var(--reviva-green)", fontFamily: "var(--font-heading)" }}
           >
             What if the truth about your health is{" "}
