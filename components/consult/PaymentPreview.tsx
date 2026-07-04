@@ -28,7 +28,7 @@ const upiApps = ["GPay", "Paytm", "PhonePe", "UPI"];
 export default function PaymentPreview() {
   return (
     <section className="bg-white py-24">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
         {/* Header */}
         <motion.div
           className="text-center"

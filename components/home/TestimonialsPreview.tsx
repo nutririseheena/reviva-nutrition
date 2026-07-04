@@ -10,7 +10,7 @@ import { homePillars, cardGradients, accentColors } from "@/data/home";
 export default function TestimonialsPreview() {
   return (
     <section className="py-24" style={{ backgroundColor: "#fdf8f4" }}>
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
         {/* ── Section header ── */}
         <motion.div
           className="text-center"

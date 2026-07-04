@@ -7,7 +7,7 @@ import { programDurations } from "@/data/consult";
 export default function ProgramOptions() {
   return (
     <section className="bg-[var(--reviva-cream)] py-24">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
         {/* Duration cards */}
         <motion.div
           className="text-center"

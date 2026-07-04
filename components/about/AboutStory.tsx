@@ -7,7 +7,7 @@ import { credentials, aboutSpecialties } from "@/data/about";
 export default function AboutStory() {
   return (
     <section id="story" className="bg-[var(--reviva-cream)] py-24">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid items-center gap-16 lg:grid-cols-2">
           {/* Image column */}
           <motion.div

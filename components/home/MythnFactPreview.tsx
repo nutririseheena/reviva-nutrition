@@ -7,7 +7,7 @@ import { mythsFacts } from "@/data/consult";
 export default function ConsultationCTA() {
   return (
     <section id="consult-cta" className="py-24" style={{ backgroundColor: "#fdf8f4" }}>
-      <div className="mx-auto max-w-5xl px-6">
+      <div className="mx-auto max-w-5xl px-6 lg:px-10">
         {/* Header */}
         <motion.div
           className="text-center"

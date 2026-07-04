@@ -80,13 +80,13 @@ export default function Slide1() {
       />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="grid items-center gap-8 py-10 sm:py-12 lg:grid-cols-[55%_45%] lg:gap-12 lg:py-0 lg:min-h-[700px]">
+        <div className="grid items-center gap-8 py-10 sm:py-12 lg:grid-cols-[55fr_45fr] lg:gap-12 lg:py-0 lg:min-h-[700px]">
           {/* Left: Text — shown second on mobile (order-2), first on desktop */}
           <motion.div
             variants={leftVariants}
             initial="hidden"
             animate="show"
-            className="order-2 lg:order-1"
+            className="order-2 lg:order-1 min-w-0"
           >
             {/* Intro chip */}
             <motion.div
@@ -202,7 +202,7 @@ export default function Slide1() {
 
           {/* Right: Portrait — shown first on mobile (order-1), second on desktop */}
           <motion.div
-            className="flex justify-center lg:justify-end order-1 lg:order-2"
+            className="flex justify-center lg:justify-end order-1 lg:order-2 min-w-0"
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.2, ease: "easeOut" }}

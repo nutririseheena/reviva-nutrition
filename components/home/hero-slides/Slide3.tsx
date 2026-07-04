@@ -32,9 +32,9 @@ export default function Slide3() {
       />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="grid items-center gap-8 py-10 sm:py-12 lg:grid-cols-[52%_48%] lg:gap-12 lg:py-0 lg:min-h-[700px]">
+        <div className="grid items-center gap-8 py-10 sm:py-12 lg:grid-cols-[52fr_48fr] lg:gap-12 lg:py-0 lg:min-h-[700px]">
           {/* Left: Text */}
-          <motion.div variants={leftVariants} initial="hidden" animate="show">
+          <motion.div variants={leftVariants} initial="hidden" animate="show" className="min-w-0">
             <motion.div
               variants={item}
               className="mb-4 inline-flex items-center gap-2 rounded-full border px-4 py-1.5"
@@ -131,7 +131,7 @@ export default function Slide3() {
 
           {/* Right: Laptop + Stats mockup */}
           <motion.div
-            className="flex justify-center lg:justify-end"
+            className="flex justify-center lg:justify-end min-w-0"
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.2, ease: "easeOut" }}

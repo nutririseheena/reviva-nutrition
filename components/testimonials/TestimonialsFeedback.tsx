@@ -6,7 +6,7 @@ import { ExternalLink, Star, MessageSquarePlus } from "lucide-react";
 export default function TestimonialsFeedback() {
   return (
     <section className="bg-white py-20">
-      <div className="mx-auto max-w-4xl px-6">
+      <div className="mx-auto max-w-4xl px-6 lg:px-10">
         <motion.div
           className="overflow-hidden rounded-[32px] p-8 md:p-12"
           style={{
