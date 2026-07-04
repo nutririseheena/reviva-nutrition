@@ -29,59 +29,65 @@ export default function Slide2() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.65, delay: 0.15 }}
             >
-              <div className="relative h-[600px] overflow-hidden rounded-[32px]">
+              <div className="relative h-[480px] sm:h-[560px] lg:h-[600px] overflow-hidden rounded-[32px]">
                 <Image
                   fill
+                  priority
                   src="/images/hero/sunset2.png"
                   alt="Lifestyle Diseases"
+                  sizes="(max-width: 640px) 100vw, 50vw"
                   className="object-cover object-[center_12%]"
                 />
                 <div className="absolute inset-0 bg-black/8" />{" "}
                 {/* Dim overlay for better text contrast */}
                 {/* Top Content */}
-                <div className="absolute inset-x-0 top-0 px-10 pt-8 text-center">
-                  <span className="inline-flex items-center rounded-full border border-white/30 bg-white/70 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#6a2b18] backdrop-blur-md">
+                <div className="absolute inset-x-0 top-0 px-5 sm:px-8 lg:px-10 pt-5 sm:pt-7 lg:pt-8 text-center">
+                  {/* <span className="inline-flex items-center rounded-full border border-white/30 bg-white/70 px-3 sm:px-4 py-1.5 text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.15em] text-[#6a2b18] backdrop-blur-md">
                     Without Nutrition
-                  </span>
+                  </span> */}
 
                   <h2
-                    className="mx-auto mt-8 max-w-[390px] text-[45px] leading-[0.95]"
+                    className="mx-auto mt-3 sm:mt-5 lg:mt-8 max-w-[390px] leading-[1.0]"
                     style={{
                       color: "#5c1f12",
                       fontFamily: "var(--font-heading)",
+                      fontSize: "clamp(22px, 5vw, 45px)",
                     }}
                   >
                     Sunset of
                     <br />
                     <span className="italic" style={{ color: "var(--reviva-terracotta)" }}>
-                      Lifestyle Diseases
+                      Health Issues
                     </span>
                   </h2>
 
-                  <p className="mx-auto mt-4 max-w-[400px] text-[14px] leading-7 text-slate-700 font-medium">
+                  <p className="mx-auto mt-2 sm:mt-3 lg:mt-4 max-w-[400px] text-[11px] sm:text-[13px] lg:text-[14px] leading-6 text-slate-700 font-medium">
                     When nutrition and lifestyle deviate, health issues begin.
                   </p>
                 </div>
-                {/* Bottom Badge */}
                 {/* Disease List */}
-                <div className="absolute left-[58%] top-[64%] -translate-x-1/2 -translate-y-1/2">
-                  <div className="w-[200px]">
+                <div className="absolute left-[58%] top-[53%] lg:top-[64%] -translate-x-1/2 -translate-y-1/2">
+                  <div className="w-[140px] sm:w-[170px] lg:w-[200px]">
                     <ul className="space-y-0">
                       {diseaseList.map(({ icon: Icon, label }, index) => (
                         <li
                           key={label}
-                          className={index === diseaseList.length - 1 ? "pt-[4px]" : "py-[4px]"}
+                          className={
+                            index === diseaseList.length - 1
+                              ? "pt-[2px] sm:pt-[4px]"
+                              : "py-[2px] sm:py-[4px]"
+                          }
                         >
-                          <div className="flex items-center gap-3">
-                            <Icon size={18} className="shrink-0 text-[#8d4a2a]" />
+                          <div className="flex items-center gap-1.5 sm:gap-3">
+                            <Icon size={13} className="shrink-0 text-[#8d4a2a]" />
 
-                            <span className="text-[15px] font-semibold text-[#6a2b18]">
+                            <span className="text-[11px] sm:text-[13px] lg:text-[15px] font-semibold text-[#6a2b18]">
                               {label}
                             </span>
                           </div>
 
                           {index !== diseaseList.length - 1 && (
-                            <div className="mt-2 ml-[28px] h-px w-[85px] bg-[#8d4a2a]/10" />
+                            <div className="mt-1 sm:mt-2 ml-[20px] sm:ml-[26px] h-px w-[60px] sm:w-[80px] lg:w-[85px] bg-[#8d4a2a]/10" />
                           )}
                         </li>
                       ))}
@@ -98,25 +104,27 @@ export default function Slide2() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.65, delay: 0.28 }}
             >
-              <div className="relative h-[600px] overflow-hidden rounded-[32px]">
+              <div className="relative h-[480px] sm:h-[560px] lg:h-[600px] overflow-hidden rounded-[32px]">
                 <Image
                   fill
                   src="/images/hero/sunrise2.png"
                   alt="Reviva Nutrition"
+                  sizes="(max-width: 640px) 100vw, 50vw"
                   className="object-cover object-center"
                 />
 
                 {/* Top Content */}
-                <div className="absolute inset-x-0 top-0 h-[250px] px-8 pt-8 text-center">
-                  <span className="inline-flex items-center rounded-full border border-white/30 bg-white/70 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.15em] text-[var(--reviva-green)] backdrop-blur-md">
+                <div className="absolute inset-x-0 top-0 h-[180px] sm:h-[220px] lg:h-[250px] px-5 sm:px-7 lg:px-8 pt-5 sm:pt-7 lg:pt-8 text-center">
+                  {/* <span className="inline-flex items-center rounded-full border border-white/30 bg-white/70 px-3 sm:px-4 py-1.5 text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.15em] text-[var(--reviva-green)] backdrop-blur-md">
                     With Right Nurition
-                  </span>
+                  </span> */}
 
                   <h2
-                    className="mx-auto mt-8 max-w-[450px] text-[45px] leading-[0.95]"
+                    className="mx-auto mt-3 sm:mt-5 lg:mt-8 max-w-[450px] leading-[1.0]"
                     style={{
                       color: "var(--reviva-green)",
                       fontFamily: "var(--font-heading)",
+                      fontSize: "clamp(22px, 5vw, 45px)",
                     }}
                   >
                     Sunrise of
@@ -126,19 +134,19 @@ export default function Slide2() {
                     </span>
                   </h2>
 
-                  <p className="mx-auto mt-4 max-w-[400px] text-[14px] leading-7 text-slate-700 font-medium">
+                  <p className="mx-auto mt-2 sm:mt-3 lg:mt-4 max-w-[400px] text-[11px] sm:text-[13px] lg:text-[14px] leading-6 text-slate-700 font-medium">
                     When nutrition and lifestyle align, health begins to thrive.
                   </p>
                 </div>
 
-                {/* Bottom Badge */}
-                <div className="absolute inset-x-0 bottom-[280px] px-8">
-                  <div className="grid grid-cols-4 gap-4">
+                {/* Pillars grid */}
+                <div className="absolute inset-x-0 bottom-[240px] sm:bottom-[290px] lg:bottom-[280px] px-4 sm:px-6 lg:px-8">
+                  <div className="grid grid-cols-2 gap-x-3 gap-y-3 sm:grid-cols-4 sm:gap-4">
                     {heroPillars.map(({ icon: Icon, label }) => (
                       <div key={label} className="text-center">
-                        <Icon size={18} className="mx-auto text-[var(--reviva-green)]" />
+                        <Icon size={16} className="mx-auto text-[var(--reviva-green)]" />
 
-                        <p className="mt-3 text-[14px] font-semibold leading-tight text-[var(--reviva-green)]">
+                        <p className="mt-2 text-[10px] sm:text-[12px] lg:text-[14px] font-semibold leading-tight text-[var(--reviva-green)]">
                           {label}
                         </p>
                       </div>

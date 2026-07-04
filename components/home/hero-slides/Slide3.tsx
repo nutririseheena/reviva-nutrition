@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { ArrowRight, MonitorSmartphone, TrendingUp, Users, Star } from "lucide-react";
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, Cell } from "recharts";
 import { motion } from "framer-motion";
@@ -16,6 +17,8 @@ const item = {
 };
 
 export default function Slide3() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
   return (
     <section className="relative overflow-hidden bg-[var(--reviva-cream)]">
       {/* Background decorations */}
@@ -197,7 +200,8 @@ export default function Slide3() {
                         </p>
                       </div>
                       <div className="h-[220px]">
-                        <ResponsiveContainer width="100%" height="100%">
+                        {mounted ? (
+                        <ResponsiveContainer width="100%" height="100%" minWidth={0}>
                           <BarChart
                             data={outcomesData}
                             layout="vertical"
@@ -236,6 +240,7 @@ export default function Slide3() {
                             </Bar>
                           </BarChart>
                         </ResponsiveContainer>
+                        ) : <div className="h-full" />}
                       </div>
                     </div>
                   </div>

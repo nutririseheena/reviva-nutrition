@@ -18,7 +18,7 @@ export default function ConsultationCTA() {
         >
           <p className="reviva-eyebrow">Myths &amp; Facts</p>
           <h2
-            className="mt-4 text-4xl md:text-5xl lg:text-6xl leading-tight"
+            className="mt-4 text-2xl sm:text-3xl md:text-5xl lg:text-6xl leading-tight"
             style={{ color: "var(--reviva-green)", fontFamily: "var(--font-heading)" }}
           >
             What if the truth about your health is{" "}

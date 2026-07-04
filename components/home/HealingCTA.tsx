@@ -19,7 +19,7 @@ export default function HealingCTA() {
             style={{
               color: "var(--reviva-green)",
               fontFamily: "var(--font-heading)",
-              fontSize: "clamp(1rem, 5vw, 4.5rem)",
+              fontSize: "clamp(1.8rem, 5vw, 4.5rem)",
             }}
           >
             Ready to Discover Root Cause and{" "}

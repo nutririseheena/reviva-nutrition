@@ -22,7 +22,7 @@ export default function TestimonialsPreview() {
           <p className="reviva-eyebrow">Foundation of Reviva</p>
 
           <h2
-            className="mt-4 text-4xl md:text-5xl lg:text-6xl xl:text-[4.5rem] leading-tight"
+            className="mt-4 text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-[4.5rem] leading-tight"
             style={{
               color: "var(--reviva-green)",
               fontFamily: "var(--font-heading)",
@@ -57,7 +57,13 @@ export default function TestimonialsPreview() {
                 }}
               >
                 <div className="relative h-[500px] overflow-hidden rounded-[32px]">
-                  <Image fill src={pillar.image} alt={pillar.title} className="object-cover" />
+                  <Image
+                    fill
+                    src={pillar.image}
+                    alt={pillar.title}
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover"
+                  />
 
                   {/* Top Content */}
                   <div className="absolute inset-x-0 top-0 h-[210px] px-8 pt-8 text-center">
@@ -183,9 +189,7 @@ export default function TestimonialsPreview() {
                 </div>
 
                 <div>
-                  <h3 className="text-base font-bold text-slate-800">
-                    {testimonial.name}
-                  </h3>
+                  <h3 className="text-base font-bold text-slate-800">{testimonial.name}</h3>
                   <p className="mt-0.5 text-sm text-slate-500">{testimonial.condition}</p>
                 </div>
 

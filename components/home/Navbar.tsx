@@ -17,8 +17,8 @@ export default function Navbar() {
       if (!ticking) {
         requestAnimationFrame(() => {
           setScrolled((prev) => {
-            if (!prev && window.scrollY > 50) return true;
-            if (prev && window.scrollY < 30) return false;
+            if (!prev && window.scrollY > 80) return true;
+            if (prev && window.scrollY < 50) return false;
             return prev;
           });
           ticking = false;
@@ -40,8 +40,11 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header
-      className="sticky top-0 z-50 backdrop-blur-md"
+    <>
+      {/* Spacer keeps page content below the fixed navbar */}
+      <div className="h-24" aria-hidden="true" />
+      <header
+        className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md"
       style={{
         backgroundColor: scrolled ? "rgba(250,248,242,0.92)" : "rgba(250,248,242,1)",
         boxShadow: scrolled ? "0 1px 12px rgba(47,107,45,0.10)" : "none",
@@ -51,11 +54,10 @@ export default function Navbar() {
     >
       <div className="mx-auto max-w-7xl px-6">
         <div
-          className="flex items-center justify-between"
+          className="flex items-center justify-between overflow-hidden"
           style={{
-            height: scrolled ? "64px" : "96px",
+            height: scrolled ? "76px" : "96px",
             transition: "height 350ms ease",
-            willChange: "height",
           }}
         >
           {/* Logo */}
@@ -70,9 +72,8 @@ export default function Navbar() {
               width={180}
               height={60}
               priority
-              className={`h-auto transition-all duration-300 ${
-                scrolled ? "w-[140px]" : "w-[165px]"
-              }`}
+              style={{ height: "auto" }}
+              className={`transition-all duration-[350ms] ${scrolled ? "w-[95px] sm:w-[120px] lg:w-[140px]" : "w-[110px] sm:w-[140px] lg:w-[165px]"}`}
             />
           </Link>
 
@@ -146,6 +147,7 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+      </header>
+    </>
   );
 }

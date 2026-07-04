@@ -22,7 +22,7 @@ export default function ProcessCards() {
           <p className="reviva-eyebrow">Your Healing Journey</p>
 
           <h2
-            className="mt-4 text-4xl md:text-5xl lg:text-6xl xl:text-[4.5rem] leading-tight"
+            className="mt-4 text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-[4.5rem] leading-tight"
             style={{
               color: "var(--reviva-green)",
               fontFamily: "var(--font-heading)",

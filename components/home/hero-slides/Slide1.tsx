@@ -126,7 +126,7 @@ export default function Slide1() {
               style={{
                 fontFamily: "var(--font-heading)",
                 color: "var(--reviva-green)",
-                fontSize: "clamp(3.2rem, 7.5vw, 6rem)",
+                fontSize: "clamp(2.2rem, 7.5vw, 6rem)",
               }}
             >
               Your <Typewriter />
@@ -171,16 +171,16 @@ export default function Slide1() {
 
             <motion.div
               variants={item}
-              className="mt-10 flex flex-wrap gap-8 border-t border-slate-200 pt-8"
+              className="mt-10 flex flex-nowrap gap-4 sm:gap-8 border-t border-slate-200 pt-8"
             >
               {[
                 { value: "5K+", label: "Clients Guided" },
                 { value: "5+", label: "Years Experience" },
                 { value: "98%", label: "Success Rate" },
               ].map(({ value, label }) => (
-                <div key={label}>
+                <div key={label} className="flex-1 min-w-0">
                   <p
-                    className="text-4xl sm:text-5xl font-light"
+                    className="text-3xl sm:text-5xl font-light"
                     style={{
                       color: "var(--reviva-warm-brown)",
                       fontFamily: "var(--font-heading)",
@@ -189,10 +189,10 @@ export default function Slide1() {
                     {value}
                   </p>
                   <div
-                    className="mt-2 h-px w-12"
+                    className="mt-2 h-px w-8 sm:w-12"
                     style={{ backgroundColor: "rgba(124,66,51,0.25)" }}
                   />
-                  <p className="mt-2 text-[11px] uppercase tracking-[0.15em] text-slate-400">
+                  <p className="mt-2 text-[9px] sm:text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.15em] text-slate-400">
                     {label}
                   </p>
                 </div>

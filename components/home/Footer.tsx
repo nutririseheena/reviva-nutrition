@@ -16,8 +16,8 @@ export default function Footer() {
               src="/images/logo/reviva-logo.png"
               alt="Reviva Nutrition"
               width={140}
-              height={48}
-              className="h-auto brightness-0 invert"
+              height={74}
+              className="brightness-0 invert"
             />
 
             <p className="mt-4 text-sm leading-relaxed text-white/70">
