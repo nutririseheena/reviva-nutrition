@@ -59,9 +59,9 @@ body {
 
 /* Small uppercase eyebrow / section label */
 .reviva-eyebrow {
-  font-size: 1rem;
+  font-size: clamp(1rem, 3.5vw, 3rem);
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--reviva-terracotta);
 }
@@ -138,4 +138,22 @@ body {
 
 .animate-cursor-blink {
   animation: cursor-blink 0.85s step-end infinite;
+}
+
+/*
+ * Hero slide heights — responsive to viewport so content never overflows
+ * on short Windows laptop viewports (e.g. 768 px physical at 100 % zoom).
+ * Only activates at the lg breakpoint (1024 px+); mobile is unchanged.
+ */
+@media (min-width: 1024px) {
+  .hero-slide-min-h {
+    /* Exact height (not min-height) so every slide is identical — no layout
+       shift when the slider auto-advances between slides.
+       Caps at the available viewport so content is never cut on short screens. */
+    height: min(700px, calc(100dvh - 96px));
+  }
+  .hero-slide-img-h {
+    /* 196 px = 96 px navbar + ~100 px for CTA row + gap overhead */
+    height: min(600px, calc(100dvh - 196px));
+  }
 }

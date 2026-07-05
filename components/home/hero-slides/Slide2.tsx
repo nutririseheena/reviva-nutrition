@@ -19,17 +19,17 @@ export default function Slide2() {
       />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="flex flex-col py-10 sm:py-12 lg:py-0 lg:min-h-[700px] lg:justify-center gap-6 lg:gap-7">
+        <div className="flex flex-col py-10 sm:py-12 lg:py-0 lg:justify-center gap-6 lg:gap-7 hero-slide-min-h">
           {/* ── Two image cards ── */}
           <div className="grid gap-6 sm:grid-cols-2 lg:gap-6">
             {/* Sunset card — Lifestyle Diseases */}
             <motion.div
-              className="overflow-hidden rounded-[32px] border border-[#eadfcf] bg-[#fdf8ef] shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-lg"
-              initial={{ opacity: 0, x: -28 }}
-              animate={{ opacity: 1, x: 0 }}
+              className="overflow-hidden rounded-[32px] border border-[#eadfcf] bg-[#fdf8ef] shadow-sm"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 0.65, delay: 0.15 }}
             >
-              <div className="relative h-[480px] sm:h-[560px] lg:h-[600px] overflow-hidden rounded-[32px]">
+              <div className="relative h-[480px] sm:h-[560px] hero-slide-img-h overflow-hidden rounded-[32px]">
                 <Image
                   fill
                   priority
@@ -99,12 +99,12 @@ export default function Slide2() {
 
             {/* Sunrise card — Reviva Pillars */}
             <motion.div
-              className="overflow-hidden rounded-[32px] border border-[#d9e5d3] bg-[#fdf8ef] shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-lg"
-              initial={{ opacity: 0, x: 28 }}
-              animate={{ opacity: 1, x: 0 }}
+              className="overflow-hidden rounded-[32px] border border-[#d9e5d3] bg-[#fdf8ef] shadow-sm"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 0.65, delay: 0.28 }}
             >
-              <div className="relative h-[480px] sm:h-[560px] lg:h-[600px] overflow-hidden rounded-[32px]">
+              <div className="relative h-[480px] sm:h-[560px] hero-slide-img-h overflow-hidden rounded-[32px]">
                 <Image
                   fill
                   src="/images/hero/sunrise2.png"

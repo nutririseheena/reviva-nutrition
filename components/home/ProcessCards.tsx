@@ -28,13 +28,13 @@ export default function ProcessCards() {
               fontFamily: "var(--font-heading)",
             }}
           >
-            Nourishing Health Through the{" "}
+            Nourishing Health Through the<br></br>{" "}
             <span className="italic" style={{ color: "var(--reviva-warm-brown)" }}>
               Power of Nutrition
             </span>
           </h2>
 
-          <p className="mx-auto mt-5 max-w-xl text-lg sm:text-xl text-slate-500">
+          <p className="mx-auto mt-5 max-w-l text-lg sm:text-xl text-slate-500">
             Four purposeful steps designed to help you heal, restore, and thrive.
           </p>
         </motion.div>

@@ -5,7 +5,6 @@ import WhatsAppFloat from "@/components/home/WhatsAppFloat";
 import TestimonialsHero from "@/components/testimonials/TestimonialsHero";
 import TestimonialsGrid from "@/components/testimonials/TestimonialsGrid";
 import TestimonialsFeedback from "@/components/testimonials/TestimonialsFeedback";
-import ConsultationCTA from "@/components/home/MythnFactPreview";
 
 export const metadata: Metadata = {
   title: "Testimonials — Reviva Nutrition",
@@ -21,7 +20,6 @@ export default function TestimonialsPage() {
         <TestimonialsHero />
         <TestimonialsGrid />
         <TestimonialsFeedback />
-        <ConsultationCTA />
       </main>
       <Footer />
       <WhatsAppFloat />
