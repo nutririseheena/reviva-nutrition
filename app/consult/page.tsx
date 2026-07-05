@@ -6,7 +6,7 @@ import ConsultHero from "@/components/consult/ConsultHero";
 import HowItWorks from "@/components/consult/HowItWorks";
 import ProgramOptions from "@/components/consult/ProgramOptions";
 import FaqAccordion from "@/components/consult/FaqAccordion";
-import ConsultationCTA from "@/components/home/MythnFactPreview";
+import ConsultaionCTA from "@/components/consult/ConsultationCTA";
 import PaymentPreview from "@/components/consult/PaymentPreview";
 
 export const metadata: Metadata = {
@@ -24,9 +24,7 @@ export default function ConsultPage() {
         <HowItWorks />
         <ProgramOptions />
         <FaqAccordion />
-        <div id="book">
-          <ConsultationCTA />
-        </div>
+        <ConsultaionCTA />
         <PaymentPreview />
       </main>
       <Footer />

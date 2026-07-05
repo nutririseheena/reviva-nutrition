@@ -80,7 +80,7 @@ export default function Slide1() {
       />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="grid items-center gap-8 py-10 sm:py-12 lg:grid-cols-[55fr_45fr] lg:gap-12 lg:py-0 lg:min-h-[700px]">
+        <div className="grid items-center gap-8 py-10 sm:py-12 lg:grid-cols-[55fr_45fr] lg:gap-12 lg:py-0 hero-slide-min-h">
           {/* Left: Text — shown second on mobile (order-2), first on desktop */}
           <motion.div
             variants={leftVariants}

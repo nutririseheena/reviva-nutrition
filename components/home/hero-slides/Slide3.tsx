@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useSyncExternalStore } from "react";
 import { ArrowRight, MonitorSmartphone, TrendingUp, Users, Star } from "lucide-react";
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, Cell } from "recharts";
 import { motion } from "framer-motion";
@@ -17,8 +17,11 @@ const item = {
 };
 
 export default function Slide3() {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => { setMounted(true); }, []);
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
   return (
     <section className="relative overflow-hidden bg-[var(--reviva-cream)]">
       {/* Background decorations */}
@@ -32,7 +35,7 @@ export default function Slide3() {
       />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="grid items-center gap-8 py-10 sm:py-12 lg:grid-cols-[52fr_48fr] lg:gap-12 lg:py-0 lg:min-h-[700px]">
+        <div className="grid items-center gap-8 py-10 sm:py-12 lg:grid-cols-[52fr_48fr] lg:gap-12 lg:py-0 hero-slide-min-h">
           {/* Left: Text */}
           <motion.div variants={leftVariants} initial="hidden" animate="show" className="min-w-0">
             <motion.div
@@ -106,6 +109,20 @@ export default function Slide3() {
                 style={{ backgroundColor: "var(--reviva-green)" }}
               >
                 Book Online Consultation
+                <ArrowRight size={17} />
+              </button>
+              <button
+                onClick={() =>
+                  window.open(
+                    "https://www.google.com/search?sca_esv=6391c1416c05a982&sxsrf=APpeQntUlSbolTqwq8ZwBRBS4Cg7MZ7NCg:1783176070950&si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-_4vahOp4Alli6gBTdd6JxAKfcS1nfpsaBac69EBOuz-IiKJbWvgUs1FSJRuCcUlyU9eqPEOTvwmZcPhDfKzOGVeBmeaNlUscUnxzvXik-eTBmE7piw%3D%3D&q=Reviva+Nutrition+Reviews&sa=X&ved=2ahUKEwjvoJ_CoLmVAxWiyDgGHWVnEPUQ0bkNegQIHBAF&biw=1440&bih=818&dpr=2#lrd=0x6aa5ee23c80f1b8f:0x9626852ff3da4cb3,1,,,,",
+                    "_blank",
+                    "noopener,noreferrer"
+                  )
+                }
+                className="flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white shadow-md transition-all hover:scale-105 hover:shadow-lg"
+                style={{ backgroundColor: "var(--reviva-green)" }}
+              >
+                Google Reviews
                 <ArrowRight size={17} />
               </button>
             </motion.div>
@@ -201,46 +218,48 @@ export default function Slide3() {
                       </div>
                       <div className="h-[220px]">
                         {mounted ? (
-                        <ResponsiveContainer width="100%" height="100%" minWidth={0}>
-                          <BarChart
-                            data={outcomesData}
-                            layout="vertical"
-                            margin={{ top: 0, right: 20, bottom: 0, left: 2 }}
-                            barSize={8}
-                          >
-                            <XAxis
-                              type="number"
-                              domain={[0, 300]}
-                              tick={{ fontSize: 6, fill: "#94a3b8" }}
-                              axisLine={false}
-                              tickLine={false}
-                              label={{
-                                value: "Number of Cases Handled",
-                                position: "insideBottom",
-                                // offset: -5,
-                                style: { fontSize: 8, fill: "#94a3b8" },
-                              }}
-                            />
-                            <YAxis
-                              type="category"
-                              dataKey="condition"
-                              tick={{ fontSize: 7, fill: "#475569" }}
-                              axisLine={false}
-                              tickLine={false}
-                              width={68}
-                            />
-                            <Tooltip
-                              contentStyle={{ fontSize: 9, padding: "2px 6px" }}
-                              formatter={(v) => [`${v} cases`, ""]}
-                            />
-                            <Bar dataKey="cases" radius={[0, 4, 4, 0]}>
-                              {outcomesData.map((_, i) => (
-                                <Cell key={i} fill={barColors[i % barColors.length]} />
-                              ))}
-                            </Bar>
-                          </BarChart>
-                        </ResponsiveContainer>
-                        ) : <div className="h-full" />}
+                          <ResponsiveContainer width="100%" height="100%" minWidth={0}>
+                            <BarChart
+                              data={outcomesData}
+                              layout="vertical"
+                              margin={{ top: 0, right: 20, bottom: 0, left: 2 }}
+                              barSize={8}
+                            >
+                              <XAxis
+                                type="number"
+                                domain={[0, 300]}
+                                tick={{ fontSize: 6, fill: "#94a3b8" }}
+                                axisLine={false}
+                                tickLine={false}
+                                label={{
+                                  value: "Number of Cases Handled",
+                                  position: "insideBottom",
+                                  // offset: -5,
+                                  style: { fontSize: 8, fill: "#94a3b8" },
+                                }}
+                              />
+                              <YAxis
+                                type="category"
+                                dataKey="condition"
+                                tick={{ fontSize: 7, fill: "#475569" }}
+                                axisLine={false}
+                                tickLine={false}
+                                width={68}
+                              />
+                              <Tooltip
+                                contentStyle={{ fontSize: 9, padding: "2px 6px" }}
+                                formatter={(v) => [`${v} cases`, ""]}
+                              />
+                              <Bar dataKey="cases" radius={[0, 4, 4, 0]}>
+                                {outcomesData.map((_, i) => (
+                                  <Cell key={i} fill={barColors[i % barColors.length]} />
+                                ))}
+                              </Bar>
+                            </BarChart>
+                          </ResponsiveContainer>
+                        ) : (
+                          <div className="h-full" />
+                        )}
                       </div>
                     </div>
                   </div>

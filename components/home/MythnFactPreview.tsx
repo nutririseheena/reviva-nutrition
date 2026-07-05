@@ -4,7 +4,7 @@ import { X, Check } from "lucide-react";
 import { motion } from "framer-motion";
 import { mythsFacts } from "@/data/consult";
 
-export default function ConsultationCTA() {
+export default function MythnFactPreview() {
   return (
     <section id="consult-cta" className="py-24" style={{ backgroundColor: "#fdf8f4" }}>
       <div className="mx-auto max-w-5xl px-6 lg:px-10">
