@@ -28,7 +28,7 @@ const upiApps = ["GPay", "Paytm", "PhonePe", "UPI"];
 export default function PaymentPreview() {
   return (
     <section className="bg-white py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+      <div className="mx-auto max-w-7xl page-pad">
         {/* Header */}
         <motion.div
           className="text-center"
@@ -48,7 +48,7 @@ export default function PaymentPreview() {
           </span>
 
           <h2
-            className="mt-4 text-4xl md:text-5xl lg:text-6xl"
+            className="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
             style={{
               color: "var(--reviva-green)",
               fontFamily: "var(--font-heading)",
@@ -154,7 +154,7 @@ export default function PaymentPreview() {
                 <p className="text-xs font-medium uppercase tracking-widest text-white/50">
                   Send to UPI number
                 </p>
-                <p className="mt-2 text-5xl font-bold tracking-wide text-white">
+                <p className="mt-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide text-white break-all">
                   {siteConfig.payment.upi}
                 </p>
                 <p className="mt-1 text-sm text-white/60">Any UPI app · Instant transfer</p>

@@ -23,7 +23,7 @@ export default function Slide3() {
     () => false
   );
   return (
-    <section className="relative overflow-hidden bg-[var(--reviva-cream)]">
+    <section className="hero-s3-section relative overflow-hidden bg-[var(--reviva-cream)]">
       {/* Background decorations */}
       <div
         className="pointer-events-none absolute -top-32 -right-32 h-[520px] w-[520px] rounded-full blur-3xl"
@@ -34,7 +34,7 @@ export default function Slide3() {
         style={{ backgroundColor: "rgba(244, 178, 27, 0.06)" }}
       />
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+      <div className="relative mx-auto max-w-7xl page-pad">
         <div className="grid items-center gap-8 py-10 sm:py-12 lg:grid-cols-[52fr_48fr] lg:gap-12 lg:py-0 hero-slide-min-h">
           {/* Left: Text */}
           <motion.div variants={leftVariants} initial="hidden" animate="show" className="min-w-0">
@@ -75,7 +75,7 @@ export default function Slide3() {
               style={{
                 fontFamily: "var(--font-heading)",
                 color: "var(--reviva-green)",
-                fontSize: "clamp(2.8rem, 7vw, 5.5rem)",
+                fontSize: "clamp(2.4rem, min(7vw, 7.5dvh), 5rem)",
               }}
             >
               From
@@ -129,7 +129,7 @@ export default function Slide3() {
 
             <motion.div
               variants={item}
-              className="mt-10 flex flex-wrap gap-8 border-t border-slate-200 pt-8"
+              className="mt-10 hero-s3-meet-wrap flex flex-wrap gap-4 sm:gap-8 border-t border-slate-200 pt-8"
             >
               {[
                 { value: "Video", label: "Consultations" },
@@ -137,7 +137,10 @@ export default function Slide3() {
                 { value: "Plans", label: "Sent Digitally" },
               ].map(({ value, label }) => (
                 <div key={label}>
-                  <p className="text-base font-bold" style={{ color: "var(--reviva-green)" }}>
+                  <p
+                    className="text-base font-bold hero-s3-meet-num"
+                    style={{ color: "var(--reviva-green)" }}
+                  >
                     {value}
                   </p>
                   <p className="mt-0.5 text-xs text-slate-500">{label}</p>

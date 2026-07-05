@@ -7,7 +7,7 @@ import { credentials, aboutSpecialties } from "@/data/about";
 export default function AboutStory() {
   return (
     <section id="story" className="bg-[var(--reviva-cream)] py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+      <div className="mx-auto max-w-7xl page-pad">
         <div className="grid items-center gap-16 lg:grid-cols-2">
           {/* Image column */}
           <motion.div
@@ -23,7 +23,7 @@ export default function AboutStory() {
                 alt="Heena — Reviva Nutrition"
                 width={800}
                 height={900}
-                className="h-full w-full object-cover"
+                className="w-full h-auto"
               />
               {/* Floating credential card */}
               <div className="absolute bottom-6 left-6 right-6 rounded-2xl bg-white/95 px-5 py-4 shadow-lg backdrop-blur-sm border border-white">
@@ -66,7 +66,7 @@ export default function AboutStory() {
             </span>
 
             <h2
-              className="mt-4 text-4xl md:text-5xl leading-tight"
+              className="mt-4 text-3xl sm:text-4xl md:text-5xl leading-tight"
               style={{ color: "var(--reviva-green)", fontFamily: "var(--font-heading)" }}
             >
               Nutrition That Heals

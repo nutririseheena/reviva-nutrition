@@ -20,7 +20,9 @@ export default function TrustTicker() {
         {items.map((name, i) => (
           <span key={i} className="inline-flex shrink-0 items-center gap-2.5 px-6">
             <Leaf size={15} color="var(--reviva-gold)" className="shrink-0" />
-            <span className="text-[18px] font-semibold tracking-wide text-white/90">{name}</span>
+            <span className="text-sm sm:text-base lg:text-[18px] font-semibold tracking-wide text-white/90">
+              {name}
+            </span>
             <span className="ml-3 text-white/25 text-base select-none">·</span>
           </span>
         ))}

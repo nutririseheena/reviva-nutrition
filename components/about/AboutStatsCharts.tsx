@@ -181,7 +181,7 @@ function Charts() {
 export default function AboutStatsCharts() {
   return (
     <section className="bg-white py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+      <div className="mx-auto max-w-7xl page-pad">
         <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 24 }}
@@ -196,7 +196,7 @@ export default function AboutStatsCharts() {
             By the Numbers
           </span>
           <h2
-            className="mt-4 text-4xl md:text-5xl"
+            className="mt-4 text-3xl sm:text-4xl md:text-5xl"
             style={{ color: "var(--reviva-green)", fontFamily: "var(--font-heading)" }}
           >
             Results That Speak
