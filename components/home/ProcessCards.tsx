@@ -10,7 +10,7 @@ import { processCards } from "@/data/process-cards";
 export default function ProcessCards() {
   return (
     <section className="py-24" style={{ backgroundColor: "#fdf8f4" }}>
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+      <div className="mx-auto max-w-7xl page-pad">
         {/* Header */}
         <motion.div
           className="text-center"

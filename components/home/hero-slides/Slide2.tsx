@@ -7,7 +7,7 @@ import { diseaseList, heroPillars } from "@/data/hero";
 
 export default function Slide2() {
   return (
-    <section className="relative overflow-hidden bg-[var(--reviva-cream)]">
+    <section className="hero-slide-section relative overflow-hidden bg-[var(--reviva-cream)]">
       {/* Background blobs — matches Slide1/Slide3 */}
       <div
         className="pointer-events-none absolute -top-32 -right-32 h-[620px] w-[520px] rounded-full blur-3xl"
@@ -18,10 +18,10 @@ export default function Slide2() {
         style={{ backgroundColor: "rgba(47, 107, 45, 0.05)" }}
       />
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+      <div className="relative mx-auto max-w-7xl page-pad">
         <div className="flex flex-col py-10 sm:py-12 lg:py-0 lg:justify-center gap-6 lg:gap-7 hero-slide-min-h">
           {/* ── Two image cards ── */}
-          <div className="grid gap-6 sm:grid-cols-2 lg:gap-6">
+          <div className="grid gap-6 sm:grid-cols-2 lg:gap-6 hero-s2-card-grid">
             {/* Sunset card — Lifestyle Diseases */}
             <motion.div
               className="overflow-hidden rounded-[32px] border border-[#eadfcf] bg-[#fdf8ef] shadow-sm"
@@ -36,22 +36,18 @@ export default function Slide2() {
                   src="/images/hero/sunset2.png"
                   alt="Lifestyle Diseases"
                   sizes="(max-width: 640px) 100vw, 50vw"
-                  className="object-cover object-[center_12%]"
+                  className="object-cover object-[center_30%]"
                 />
                 <div className="absolute inset-0 bg-black/8" />{" "}
                 {/* Dim overlay for better text contrast */}
-                {/* Top Content */}
+                {/* Top Content + Disease List — single flowing block so list always sits below text */}
                 <div className="absolute inset-x-0 top-0 px-5 sm:px-8 lg:px-10 pt-5 sm:pt-7 lg:pt-8 text-center">
-                  {/* <span className="inline-flex items-center rounded-full border border-white/30 bg-white/70 px-3 sm:px-4 py-1.5 text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.15em] text-[#6a2b18] backdrop-blur-md">
-                    Without Nutrition
-                  </span> */}
-
                   <h2
-                    className="mx-auto mt-3 sm:mt-5 lg:mt-8 max-w-[390px] leading-[1.0]"
+                    className="mx-auto leading-[1.0]"
                     style={{
                       color: "#5c1f12",
                       fontFamily: "var(--font-heading)",
-                      fontSize: "clamp(22px, 5vw, 45px)",
+                      fontSize: "clamp(22px, min(5vw, 6dvh), 45px)",
                     }}
                   >
                     Sunset of
@@ -64,11 +60,10 @@ export default function Slide2() {
                   <p className="mx-auto mt-2 sm:mt-3 lg:mt-4 max-w-[400px] text-[11px] sm:text-[13px] lg:text-[14px] leading-6 text-slate-700 font-medium">
                     When nutrition and lifestyle deviate, health issues begin.
                   </p>
-                </div>
-                {/* Disease List */}
-                <div className="absolute left-[58%] top-[53%] lg:top-[64%] -translate-x-1/2 -translate-y-1/2">
-                  <div className="w-[140px] sm:w-[170px] lg:w-[200px]">
-                    <ul className="space-y-0">
+
+                  {/* Disease List */}
+                  <div className="mt-3 sm:mt-4 lg:mt-5 flex justify-center hero-s2-disease-list">
+                    <ul className="space-y-0 text-left">
                       {diseaseList.map(({ icon: Icon, label }, index) => (
                         <li
                           key={label}
@@ -80,12 +75,10 @@ export default function Slide2() {
                         >
                           <div className="flex items-center gap-1.5 sm:gap-3">
                             <Icon size={13} className="shrink-0 text-[#8d4a2a]" />
-
                             <span className="text-[11px] sm:text-[13px] lg:text-[15px] font-semibold text-[#6a2b18]">
                               {label}
                             </span>
                           </div>
-
                           {index !== diseaseList.length - 1 && (
                             <div className="mt-1 sm:mt-2 ml-[20px] sm:ml-[26px] h-px w-[60px] sm:w-[80px] lg:w-[85px] bg-[#8d4a2a]/10" />
                           )}
@@ -113,18 +106,14 @@ export default function Slide2() {
                   className="object-cover object-center"
                 />
 
-                {/* Top Content */}
-                <div className="absolute inset-x-0 top-0 h-[180px] sm:h-[220px] lg:h-[250px] px-5 sm:px-7 lg:px-8 pt-5 sm:pt-7 lg:pt-8 text-center">
-                  {/* <span className="inline-flex items-center rounded-full border border-white/30 bg-white/70 px-3 sm:px-4 py-1.5 text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.15em] text-[var(--reviva-green)] backdrop-blur-md">
-                    With Right Nurition
-                  </span> */}
-
+                {/* Top Content + Pillars — single flowing block so pillars always sit below text */}
+                <div className="absolute inset-x-0 top-0 px-5 sm:px-7 lg:px-10 pt-5 sm:pt-7 lg:pt-9 text-center">
                   <h2
-                    className="mx-auto mt-3 sm:mt-5 lg:mt-8 max-w-[450px] leading-[1.0]"
+                    className="mx-auto leading-[1.0]"
                     style={{
                       color: "var(--reviva-green)",
                       fontFamily: "var(--font-heading)",
-                      fontSize: "clamp(22px, 5vw, 45px)",
+                      fontSize: "clamp(22px, min(5vw, 6dvh), 45px)",
                     }}
                   >
                     Sunrise of
@@ -137,16 +126,16 @@ export default function Slide2() {
                   <p className="mx-auto mt-2 sm:mt-3 lg:mt-4 max-w-[400px] text-[11px] sm:text-[13px] lg:text-[14px] leading-6 text-slate-700 font-medium">
                     When nutrition and lifestyle align, health begins to thrive.
                   </p>
-                </div>
 
-                {/* Pillars grid */}
-                <div className="absolute inset-x-0 bottom-[240px] sm:bottom-[290px] lg:bottom-[280px] px-4 sm:px-6 lg:px-8">
-                  <div className="grid grid-cols-2 gap-x-3 gap-y-3 sm:grid-cols-4 sm:gap-4">
+                  {/* Pillars */}
+                  <div className="mt-3 sm:mt-4 lg:mt-6 grid grid-cols-4 gap-x-2 sm:gap-x-4 lg:gap-x-6">
                     {heroPillars.map(({ icon: Icon, label }) => (
-                      <div key={label} className="text-center">
-                        <Icon size={16} className="mx-auto text-[var(--reviva-green)]" />
-
-                        <p className="mt-2 text-[10px] sm:text-[12px] lg:text-[14px] font-semibold leading-tight text-[var(--reviva-green)]">
+                      <div key={label} className="flex flex-col items-center gap-1 sm:gap-2">
+                        <Icon
+                          size={14}
+                          className="text-[var(--reviva-green)] sm:size-[16px] lg:size-[18px]"
+                        />
+                        <p className="text-[9px] sm:text-[11px] lg:text-[13px] font-semibold leading-tight text-[var(--reviva-green)]">
                           {label}
                         </p>
                       </div>

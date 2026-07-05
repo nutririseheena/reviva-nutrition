@@ -8,7 +8,7 @@ import { allTestimonials } from "@/data/testimonials";
 export default function TestimonialsGrid() {
   return (
     <section className="bg-[var(--reviva-cream)] py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+      <div className="mx-auto max-w-7xl page-pad">
         {/* Grid */}
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {allTestimonials.map((t, index) => (

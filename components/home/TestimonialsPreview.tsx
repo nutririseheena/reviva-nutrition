@@ -10,7 +10,7 @@ import { homePillars, cardGradients, accentColors } from "@/data/home";
 export default function TestimonialsPreview() {
   return (
     <section className="py-24" style={{ backgroundColor: "#fdf8f4" }}>
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+      <div className="mx-auto max-w-7xl page-pad">
         {/* ── Section header ── */}
         <motion.div
           className="text-center"
@@ -22,10 +22,11 @@ export default function TestimonialsPreview() {
           <p className="reviva-eyebrow">Foundation of Reviva</p>
 
           <h2
-            className="mt-4 text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-[4.5rem] leading-tight"
+            className="mt-4 whitespace-nowrap leading-tight"
             style={{
               color: "var(--reviva-green)",
               fontFamily: "var(--font-heading)",
+              fontSize: "clamp(1.6rem, 4.5vw, 3.5rem)",
             }}
           >
             Three Pillars That Turn{" "}
@@ -56,7 +57,7 @@ export default function TestimonialsPreview() {
                   delay: index * 0.15,
                 }}
               >
-                <div className="relative h-[500px] overflow-hidden rounded-[32px]">
+                <div className="relative h-[500px] md:h-[580px] lg:h-[500px] overflow-hidden rounded-[32px]">
                   <Image
                     fill
                     src={pillar.image}
@@ -66,7 +67,7 @@ export default function TestimonialsPreview() {
                   />
 
                   {/* Top Content */}
-                  <div className="absolute inset-x-0 top-0 h-[210px] px-8 pt-8 text-center">
+                  <div className="absolute inset-x-0 top-0 h-[210px] md:h-[285px] lg:h-[210px] px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 text-center">
                     <div
                       className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border-2"
                       style={{
@@ -80,7 +81,7 @@ export default function TestimonialsPreview() {
                     </div>
 
                     <h3
-                      className="mt-4 text-2xl md:text-3xl tracking-[0.06em]"
+                      className="mt-4 text-xl md:text-xl lg:text-2xl xl:text-3xl tracking-[0.06em]"
                       style={{
                         color: "var(--reviva-green)",
                         fontFamily: "var(--font-heading)",
@@ -89,7 +90,7 @@ export default function TestimonialsPreview() {
                       {pillar.title}
                     </h3>
 
-                    <p className="mx-auto mt-4 max-w-[260px] text-sm sm:text-[15px] leading-7 text-slate-700">
+                    <p className="mx-auto mt-3 max-w-full md:max-w-[200px] lg:max-w-[260px] text-sm leading-6 text-slate-700">
                       {pillar.description}
                     </p>
                   </div>
@@ -127,7 +128,7 @@ export default function TestimonialsPreview() {
         >
           <div>
             <h2
-              className="mt-4 text-4xl md:text-5xl lg:text-6xl xl:text-[4.5rem] leading-tight"
+              className="mt-4 text-3xl md:text-4xl lg:text-5xl xl:text-[4.2rem] leading-tight"
               style={{
                 color: "var(--reviva-green)",
                 fontFamily: "var(--font-heading)",

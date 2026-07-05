@@ -6,9 +6,9 @@ import { ExternalLink, Star, MessageSquarePlus } from "lucide-react";
 export default function TestimonialsFeedback() {
   return (
     <section className="bg-white py-20">
-      <div className="mx-auto max-w-4xl px-6 lg:px-10">
+      <div className="mx-auto max-w-4xl page-pad">
         <motion.div
-          className="overflow-hidden rounded-[32px] p-8 md:p-12"
+          className="relative overflow-hidden rounded-[32px] p-8 md:p-12"
           style={{
             background: "linear-gradient(135deg, var(--reviva-green) 0%, #1e4a1c 100%)",
           }}
