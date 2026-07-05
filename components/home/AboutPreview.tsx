@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 export default function AboutPreview() {
   return (
     <section id="about-preview" className="bg-[var(--reviva-cream)] py-12 lg:py-22">
-      <div className="mx-auto max-w-7xl page-pad">
+      <div className="mx-auto max-w-7xl px-5 lg:px-10">
         <div className="grid items-start gap-8 lg:gap-18 lg:grid-cols-2">
           {/* ── Left: Quote + Image ── */}
           <motion.div

@@ -68,7 +68,7 @@ const item = {
 
 export default function Slide1() {
   return (
-    <section className="hero-slide-section relative overflow-hidden bg-[var(--reviva-cream)]">
+    <section className="relative overflow-hidden bg-[var(--reviva-cream)]">
       {/* Background decoration */}
       <div
         className="pointer-events-none absolute -top-32 -right-32 h-[520px] w-[520px] rounded-full blur-3xl"
@@ -79,8 +79,8 @@ export default function Slide1() {
         style={{ backgroundColor: "rgba(244, 178, 27, 0.06)" }}
       />
 
-      <div className="relative mx-auto max-w-7xl page-pad">
-        <div className="grid items-center gap-8 py-10 sm:py-12 lg:grid-cols-[55fr_45fr] lg:gap-12 lg:py-0 hero-slide-min-h hero-s1-grid">
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="grid items-center gap-8 py-10 sm:py-12 lg:grid-cols-[55fr_45fr] lg:gap-12 lg:py-0 hero-slide-min-h">
           {/* Left: Text — shown second on mobile (order-2), first on desktop */}
           <motion.div
             variants={leftVariants}
@@ -122,11 +122,11 @@ export default function Slide1() {
 
             <motion.h1
               variants={item}
-              className="mt-3 font-bold leading-[1.05] tracking-tight whitespace-nowrap"
+              className="mt-3 font-bold leading-[1.05] tracking-tight"
               style={{
                 fontFamily: "var(--font-heading)",
                 color: "var(--reviva-green)",
-                fontSize: "clamp(2.0rem, 4.5vw, 3.5rem)",
+                fontSize: "clamp(2.2rem, 7.5vw, 6rem)",
               }}
             >
               Your <Typewriter />
@@ -134,14 +134,14 @@ export default function Slide1() {
 
             <motion.p
               variants={item}
-              className="mt-5 max-w-lg text-base sm:text-lg leading-snug text-slate-700 hero-s1-desc"
+              className="mt-5 max-w-lg text-[18px]  leading-snug text-slate-700"
             >
               At Reviva Nutrition, Believe in the Power of Nutrition 🌱 Transform Your Health.
             </motion.p>
 
             <motion.p
               variants={item}
-              className="mt-3 max-w-md text-base leading-relaxed text-slate-500 hero-s1-tags"
+              className="mt-3 max-w-md text-base leading-relaxed text-slate-500"
             >
               Personalized Nutrition &bull; Sustainable Lifestyle Changes &bull; Long-Term Wellness
             </motion.p>
@@ -171,7 +171,7 @@ export default function Slide1() {
 
             <motion.div
               variants={item}
-              className="hero-stat-wrap mt-10 flex flex-nowrap gap-4 sm:gap-8 border-t border-slate-200 pt-8"
+              className="mt-10 flex flex-nowrap gap-4 sm:gap-8 border-t border-slate-200 pt-8"
             >
               {[
                 { value: "5K+", label: "Clients Guided" },
@@ -180,7 +180,7 @@ export default function Slide1() {
               ].map(({ value, label }) => (
                 <div key={label} className="flex-1 min-w-0">
                   <p
-                    className="hero-stat-num text-3xl sm:text-5xl font-light"
+                    className="text-3xl sm:text-5xl font-light"
                     style={{
                       color: "var(--reviva-warm-brown)",
                       fontFamily: "var(--font-heading)",
@@ -207,7 +207,7 @@ export default function Slide1() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.2, ease: "easeOut" }}
           >
-            <div className="relative w-full max-w-[280px] sm:max-w-[340px] lg:max-w-[420px] hero-s1-portrait">
+            <div className="relative w-full max-w-[280px] sm:max-w-[340px] lg:max-w-[420px]">
               {/* Glow behind portrait */}
               <div
                 className="absolute -inset-6 -z-10 rounded-[50px] blur-3xl"
@@ -226,7 +226,7 @@ export default function Slide1() {
                   />
               */}
               <div
-                className="aspect-[3/4] lg:aspect-auto w-full hero-slide-img-h overflow-hidden rounded-[36px] shadow-2xl relative"
+                className="aspect-[3/4] w-full overflow-hidden rounded-[36px] shadow-2xl relative"
                 style={{
                   background:
                     "linear-gradient(165deg, #d6ebd2 0%, #9dbf98 40%, var(--reviva-green) 75%, var(--reviva-green-dark) 100%)",

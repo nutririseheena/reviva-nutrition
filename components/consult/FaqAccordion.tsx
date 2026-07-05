@@ -10,7 +10,7 @@ export default function FaqAccordion() {
 
   return (
     <section className="bg-white py-24">
-      <div className="mx-auto max-w-3xl page-pad">
+      <div className="mx-auto max-w-3xl px-6 lg:px-10">
         <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 24 }}
@@ -25,7 +25,7 @@ export default function FaqAccordion() {
             FAQs
           </span>
           <h2
-            className="mt-4 text-3xl sm:text-4xl md:text-5xl"
+            className="mt-4 text-4xl md:text-5xl"
             style={{ color: "var(--reviva-green)", fontFamily: "var(--font-heading)" }}
           >
             Common Questions

@@ -9,7 +9,7 @@ import { youtubeTopics } from "@/data/about-stats";
 export default function AboutYoutube() {
   return (
     <section className="bg-[var(--reviva-cream)] py-24">
-      <div className="mx-auto max-w-7xl page-pad">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <motion.div
           className="flex flex-col items-start gap-2 md:flex-row md:items-end md:justify-between"
           initial={{ opacity: 0, y: 24 }}
@@ -26,7 +26,7 @@ export default function AboutYoutube() {
               On YouTube
             </span>
             <h2
-              className="mt-4 text-3xl sm:text-4xl md:text-5xl"
+              className="mt-4 text-4xl md:text-5xl"
               style={{ color: "var(--reviva-green)", fontFamily: "var(--font-heading)" }}
             >
               Learn With Me

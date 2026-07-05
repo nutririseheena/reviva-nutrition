@@ -6,7 +6,7 @@ import { consultStages } from "@/data/consult";
 export default function HowItWorks() {
   return (
     <section className="bg-white py-24">
-      <div className="mx-auto max-w-7xl page-pad">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
         {/* Header */}
         <motion.div
           className="text-center"
@@ -50,7 +50,7 @@ export default function HowItWorks() {
                 {/* Large number */}
                 <div className="flex items-start gap-6 md:flex-col md:items-center md:gap-4">
                   <span
-                    className="text-[4rem] sm:text-[6rem] leading-none font-bold select-none opacity-15"
+                    className="text-[6rem] leading-none font-bold select-none opacity-15"
                     style={{ fontFamily: "var(--font-heading)", color: stage.color }}
                   >
                     {stage.number}

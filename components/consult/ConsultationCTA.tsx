@@ -85,7 +85,7 @@ export default function ConsultationCTA() {
 
   return (
     <section id="consult-cta" className="bg-[var(--reviva-cream)] py-24">
-      <div className="mx-auto max-w-7xl page-pad">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <motion.div
           className="relative overflow-hidden rounded-[28px] sm:rounded-[40px] p-5 sm:p-8 lg:p-12"
           style={{ backgroundColor: "var(--reviva-green)" }}
@@ -118,7 +118,7 @@ export default function ConsultationCTA() {
               </span>
 
               <h2
-                className="mt-5 text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight"
+                className="mt-5 text-4xl md:text-5xl lg:text-6xl leading-tight"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 Start Your Healing

@@ -7,7 +7,7 @@ import { programDurations } from "@/data/consult";
 export default function ProgramOptions() {
   return (
     <section className="bg-[var(--reviva-cream)] py-24">
-      <div className="mx-auto max-w-7xl page-pad">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
         {/* Duration cards */}
         <motion.div
           className="text-center"
@@ -23,7 +23,7 @@ export default function ProgramOptions() {
             Choose Your Program
           </span>
           <h2
-            className="mt-4 text-3xl sm:text-4xl md:text-5xl"
+            className="mt-4 text-4xl md:text-5xl"
             style={{ color: "var(--reviva-green)", fontFamily: "var(--font-heading)" }}
           >
             Pick Your Duration
@@ -107,7 +107,7 @@ export default function ProgramOptions() {
           transition={{ duration: 0.6 }}
         >
           <h3
-            className="text-center text-2xl sm:text-3xl md:text-4xl"
+            className="text-center text-3xl md:text-4xl"
             style={{ color: "var(--reviva-green)", fontFamily: "var(--font-heading)" }}
           >
             Your Guide to Better Health

@@ -52,7 +52,7 @@ export default function Navbar() {
           transition: "background-color 350ms ease, box-shadow 350ms ease, border-color 350ms ease",
         }}
       >
-        <div className="mx-auto max-w-7xl page-pad">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div
             className="flex items-center justify-between overflow-hidden"
             style={{

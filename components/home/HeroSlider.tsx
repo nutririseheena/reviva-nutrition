@@ -96,8 +96,7 @@ export default function HeroSlider() {
         <ChevronRight className="h-5 w-5 text-[var(--reviva-green)]" />
       </button>
 
-      {/* Dots — normal flow below the slide; hero-slide-min-h is sized to
-          leave exactly this space so slide + dots = 100dvh - navbar */}
+      {/* Dots */}
       <div
         className="flex justify-center gap-2.5 py-4"
         style={{ backgroundColor: "var(--reviva-cream)" }}

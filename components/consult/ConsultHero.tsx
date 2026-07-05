@@ -17,7 +17,7 @@ export default function ConsultHero() {
         style={{ backgroundColor: "rgba(244,178,27,0.07)" }}
       />
 
-      <div className="relative mx-auto max-w-4xl page-pad text-center">
+      <div className="relative mx-auto max-w-4xl px-6 lg:px-10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -31,7 +31,7 @@ export default function ConsultHero() {
           </span>
 
           <h1
-            className="mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight"
+            className="mt-6 text-5xl md:text-6xl lg:text-7xl leading-tight"
             style={{ color: "var(--reviva-green)", fontFamily: "var(--font-heading)" }}
           >
             Your Path to
