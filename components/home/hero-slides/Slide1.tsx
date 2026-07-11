@@ -112,8 +112,8 @@ export default function Slide1() {
               style={{
                 fontFamily: "var(--font-heading)",
                 color: "var(--reviva-warm-brown)",
-                fontSize: "clamp(1.6rem, 3vw, 2.4rem)",
-                fontWeight: 400,
+                fontSize: "clamp(2rem, 3.8vw, 3rem)",
+                fontWeight: 700,
                 lineHeight: 1.2,
               }}
             >

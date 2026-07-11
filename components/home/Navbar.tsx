@@ -54,7 +54,7 @@ export default function Navbar() {
       >
         <div className="mx-auto max-w-7xl page-pad">
           <div
-            className="flex items-center justify-between overflow-hidden"
+            className="flex items-center justify-between"
             style={{
               height: scrolled ? "76px" : "96px",
               transition: "height 350ms ease",
@@ -92,7 +92,7 @@ export default function Navbar() {
 
             {/* Desktop CTA */}
             <Link
-              href="/consult"
+              href="/consult#consult-cta"
               className="hidden md:inline-flex items-center rounded-full px-6 py-3 text-base font-semibold text-white shadow-sm transition-all hover:scale-105 hover:shadow-md"
               style={{ backgroundColor: "var(--reviva-gold)" }}
             >
@@ -136,7 +136,7 @@ export default function Navbar() {
                   </Link>
                 ))}
                 <Link
-                  href="/consult"
+                  href="/consult#consult-cta"
                   onClick={() => setMobileOpen(false)}
                   className="mt-3 flex justify-center rounded-full py-3 text-base font-semibold text-white transition hover:opacity-90"
                   style={{ backgroundColor: "var(--reviva-gold)" }}
