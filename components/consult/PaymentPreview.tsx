@@ -101,7 +101,7 @@ export default function PaymentPreview() {
               transition={{ duration: 0.5, delay: 0.4 }}
             >
               <Link
-                href="/consult"
+                href="/consult#consult-cta"
                 className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white transition-all hover:scale-105"
                 style={{ backgroundColor: "var(--reviva-green)" }}
               >

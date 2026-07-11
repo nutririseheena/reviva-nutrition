@@ -85,7 +85,7 @@ export default function TestimonialsGrid() {
         >
           <p className="text-lg text-slate-600 mb-6">Ready to write your own success story?</p>
           <Link
-            href="/consult"
+            href="/consult#consult-cta"
             className="inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-semibold text-white shadow-md transition-all hover:scale-105 hover:shadow-lg"
             style={{ backgroundColor: "var(--reviva-green)" }}
           >

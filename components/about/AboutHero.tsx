@@ -37,7 +37,7 @@ export default function AboutHero() {
 
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href="/consult"
+              href="/consult#consult-cta"
               className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-semibold text-[var(--reviva-green)] shadow-md transition-all hover:scale-105 hover:shadow-lg"
               style={{ backgroundColor: "var(--reviva-gold)" }}
             >

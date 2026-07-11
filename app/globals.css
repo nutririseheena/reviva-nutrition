@@ -184,89 +184,86 @@ body {
   }
 }
 
-/* ── Hero element overrides at short desktop heights ────────────────────────
- * No proportional zoom — each slide's key elements are individually
- * tightened at specific viewport heights so all content stays visible.
+/* ── Hero Proportional Scaling System ───────────────────────────────────────
+ * Below 710 px viewport height (desktop lg+) the entire hero section is
+ * scaled proportionally via zoom. The slide grid is pinned at its design
+ * height (660 px) and the section zooms down to fill the available height.
  *
- * Classes by slide:
- *   Slide 1 — .hero-stat-num, .hero-stat-wrap
- *   Slide 2 — .hero-s2-disease-list
- *   Slide 3 — .hero-s3-section, .hero-s3-meet-num, .hero-s3-meet-wrap
+ * Formula: zoom = (viewport_height − 138 px) ÷ 660 px
+ *   138 px = 96 px navbar + 42 px dots bar  (py-4 + h-2.5)
+ *   660 px = designed slide grid height  (hero-slide-min-h max)
+ *   560 px = designed image height       (hero-slide-img-h max)
+ *
+ * Because zoom scales the element's coordinate system, width: auto block
+ * elements stay full-viewport-width while height shrinks to exactly
+ * (viewport_height − 138 px). Every child — text, images, cards, gaps,
+ * paddings, blobs — scales together. No property is overridden individually.
+ *
+ * Slide 1 & 2 use .hero-slide-section; Slide 3 uses .hero-s3-section.
  * ─────────────────────────────────────────────────────────────────────────── */
 
-/* Slide 1: first step-down — stat numbers at ≤ 709 px */
-@media (min-width: 1024px) and (max-height: 709px) {
-  .hero-stat-num {
-    font-size: 2.2rem;
-    line-height: 1.8;
-  }
-  .hero-stat-wrap {
-    margin-top: 2rem;
-    padding-top: 0.5rem;
-  }
-  /* Widen left text column and slim the portrait so text fits on one line
-     and the photo looks like a portrait (not a square). */
-  .hero-s1-grid {
-    grid-template-columns: 60fr 40fr;
-  }
-  .hero-s1-desc {
-    max-width: none;
-  }
-  .hero-s1-tags {
-    max-width: none;
-  }
-  .hero-s1-portrait {
-    max-width: 340px;
-  }
-  /* Slide 2: constrain card-grid width so each card is taller than wide
-     (~398 px wide × 471 px tall ≈ portrait 1.18 ratio). */
-  .hero-s2-card-grid {
-    max-width: 820px;
-    margin-inline: auto;
-  }
+/* Pin heights to design maximums so zoom can scale them to an exact fit */
+@media (min-width: 1024px) and (max-height: 710px) {
+  .hero-slide-min-h { height: 660px; }
+  .hero-slide-img-h { height: 560px; }
 }
 
-/* Slide 3: outer section at ≤ 690 px */
+/* 710 px — zoom = 572 ÷ 660 ≈ 0.867 */
+@media (min-width: 1024px) and (max-height: 710px) {
+  .hero-slide-section,
+  .hero-s3-section { zoom: 0.867; }
+}
+
+/* 690 px — zoom = 552 ÷ 660 ≈ 0.836 */
 @media (min-width: 1024px) and (max-height: 690px) {
-  .hero-s3-section {
-    zoom: 1;
-  }
+  .hero-slide-section,
+  .hero-s3-section { zoom: 0.836; }
 }
 
-/* Slide 1 + 2: tighter step-down at ≤ 685 px */
-@media (min-width: 1024px) and (max-height: 685px) {
-  .hero-stat-num {
-    font-size: 1.875rem;
-    line-height: 1.1;
-  }
-  .hero-stat-wrap {
-    margin-top: 0.5rem;
-    padding-top: 0.5rem;
-  }
-  .hero-s2-disease-list {
-    font-size: 0.875rem;
-    line-height: 1.2;
-  }
-}
-
-/* Slide 3: tighten meet section at ≤ 670 px */
+/* 670 px — zoom = 532 ÷ 660 ≈ 0.806 */
 @media (min-width: 1024px) and (max-height: 670px) {
-  .hero-s3-section {
-    zoom: 1;
-  }
-  .hero-s3-meet-num {
-    font-size: 0.875rem;
-    line-height: 1.2;
-  }
-  .hero-s3-meet-wrap {
-    margin-top: 0.5rem;
-    padding-top: 0.5rem;
-  }
+  .hero-slide-section,
+  .hero-s3-section { zoom: 0.806; }
 }
 
-/* Floor — explicit zoom reset at ≤ 629 px */
-@media (min-width: 1024px) and (max-height: 629px) {
-  .hero-slide-section {
-    zoom: 1;
-  }
+/* 650 px — zoom = 512 ÷ 660 ≈ 0.776 */
+@media (min-width: 1024px) and (max-height: 650px) {
+  .hero-slide-section,
+  .hero-s3-section { zoom: 0.776; }
+}
+
+/* 630 px — zoom = 492 ÷ 660 ≈ 0.745 */
+@media (min-width: 1024px) and (max-height: 630px) {
+  .hero-slide-section,
+  .hero-s3-section { zoom: 0.745; }
+}
+
+/* 610 px — zoom = 472 ÷ 660 ≈ 0.715 */
+@media (min-width: 1024px) and (max-height: 610px) {
+  .hero-slide-section,
+  .hero-s3-section { zoom: 0.715; }
+}
+
+/* 590 px — zoom = 452 ÷ 660 ≈ 0.685 */
+@media (min-width: 1024px) and (max-height: 590px) {
+  .hero-slide-section,
+  .hero-s3-section { zoom: 0.685; }
+}
+
+/* 570 px — zoom = 432 ÷ 660 ≈ 0.655 */
+@media (min-width: 1024px) and (max-height: 570px) {
+  .hero-slide-section,
+  .hero-s3-section { zoom: 0.655; }
+}
+
+/* 550 px — zoom = 412 ÷ 660 ≈ 0.624 */
+@media (min-width: 1024px) and (max-height: 550px) {
+  .hero-slide-section,
+  .hero-s3-section { zoom: 0.624; }
+}
+
+/* 530 px — zoom = 392 ÷ 660 ≈ 0.594 */
+@media (min-width: 1024px) and (max-height: 530px) {
+  .hero-slide-section,
+  .hero-s3-section { zoom: 0.594; }
 }
