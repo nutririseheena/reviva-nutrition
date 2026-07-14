@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Navbar from "@/components/home/Navbar";
 import Footer from "@/components/home/Footer";
 import WhatsAppFloat from "@/components/home/WhatsAppFloat";
+import ConsultBanner from "@/components/consult/ConsultBanner";
 import ConsultHero from "@/components/consult/ConsultHero";
+import HealingJourney from "@/components/consult/HealingJourney";
 import HowItWorks from "@/components/consult/HowItWorks";
 import ProgramOptions from "@/components/consult/ProgramOptions";
 import FaqAccordion from "@/components/consult/FaqAccordion";
@@ -20,6 +22,8 @@ export default function ConsultPage() {
     <>
       <Navbar />
       <main className="overflow-x-hidden">
+        <ConsultBanner />
+        <HealingJourney />
         <ConsultHero />
         <HowItWorks />
         <ProgramOptions />

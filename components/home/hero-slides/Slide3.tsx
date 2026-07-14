@@ -5,6 +5,7 @@ import { ArrowRight, MonitorSmartphone, TrendingUp, Users, Star } from "lucide-r
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, Cell } from "recharts";
 import { motion } from "framer-motion";
 import { heroMetrics, outcomesData, barColors } from "@/data/hero";
+import { siteConfig } from "@/data/site";
 
 const leftVariants = {
   hidden: {},
@@ -113,15 +114,29 @@ export default function Slide3() {
               </button>
               <button
                 onClick={() =>
-                  window.open(
-                    "https://www.google.com/search?sca_esv=6391c1416c05a982&sxsrf=APpeQntUlSbolTqwq8ZwBRBS4Cg7MZ7NCg:1783176070950&si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-_4vahOp4Alli6gBTdd6JxAKfcS1nfpsaBac69EBOuz-IiKJbWvgUs1FSJRuCcUlyU9eqPEOTvwmZcPhDfKzOGVeBmeaNlUscUnxzvXik-eTBmE7piw%3D%3D&q=Reviva+Nutrition+Reviews&sa=X&ved=2ahUKEwjvoJ_CoLmVAxWiyDgGHWVnEPUQ0bkNegQIHBAF&biw=1440&bih=818&dpr=2#lrd=0x6aa5ee23c80f1b8f:0x9626852ff3da4cb3,1,,,,",
-                    "_blank",
-                    "noopener,noreferrer"
-                  )
+                  window.open(siteConfig.googleReview.url, "_blank", "noopener,noreferrer")
                 }
                 className="flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white shadow-md transition-all hover:scale-105 hover:shadow-lg"
-                style={{ backgroundColor: "var(--reviva-green)" }}
+                style={{ borderColor: "#dadce0", color: "#3c4043" }}
               >
+                <svg width="16" height="16" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill="#EA4335"
+                    d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"
+                  />
+                  <path
+                    fill="#4285F4"
+                    d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"
+                  />
+                  <path
+                    fill="#FBBC05"
+                    d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"
+                  />
+                  <path
+                    fill="#34A853"
+                    d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"
+                  />
+                </svg>
                 Google Reviews
                 <ArrowRight size={17} />
               </button>
