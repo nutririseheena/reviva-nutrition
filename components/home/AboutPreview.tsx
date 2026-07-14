@@ -54,8 +54,18 @@ export default function AboutPreview() {
           >
             <div className="mt-3">
               <p className="reviva-eyebrow">About</p>
-              <h2 className="reviva-display mt-1 leading-none" style={{ fontSize: "clamp(2.5rem, 8vw, 8rem)" }}>
-                Heena<span role="img" aria-label="sunflower" style={{ fontSize: "0.85em", fontStyle: "normal", marginLeft: "0.08em" }}>🌻</span>
+              <h2
+                className="reviva-display mt-1 leading-none"
+                style={{ fontSize: "clamp(2.5rem, 8vw, 8rem)" }}
+              >
+                Heena
+                <span
+                  role="img"
+                  aria-label="sunflower"
+                  style={{ fontSize: "0.85em", fontStyle: "normal", marginLeft: "0.08em" }}
+                >
+                  🌻
+                </span>
               </h2>
             </div>
 

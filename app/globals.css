@@ -204,66 +204,90 @@ body {
 
 /* Pin heights to design maximums so zoom can scale them to an exact fit */
 @media (min-width: 1024px) and (max-height: 710px) {
-  .hero-slide-min-h { height: 660px; }
-  .hero-slide-img-h { height: 560px; }
+  .hero-slide-min-h {
+    height: 660px;
+  }
+  .hero-slide-img-h {
+    height: 560px;
+  }
 }
 
 /* 710 px — zoom = 572 ÷ 660 ≈ 0.867 */
 @media (min-width: 1024px) and (max-height: 710px) {
   .hero-slide-section,
-  .hero-s3-section { zoom: 0.867; }
+  .hero-s3-section {
+    zoom: 0.867;
+  }
 }
 
 /* 690 px — zoom = 552 ÷ 660 ≈ 0.836 */
 @media (min-width: 1024px) and (max-height: 690px) {
   .hero-slide-section,
-  .hero-s3-section { zoom: 0.836; }
+  .hero-s3-section {
+    zoom: 0.836;
+  }
 }
 
 /* 670 px — zoom = 532 ÷ 660 ≈ 0.806 */
 @media (min-width: 1024px) and (max-height: 670px) {
   .hero-slide-section,
-  .hero-s3-section { zoom: 0.806; }
+  .hero-s3-section {
+    zoom: 0.806;
+  }
 }
 
 /* 650 px — zoom = 512 ÷ 660 ≈ 0.776 */
 @media (min-width: 1024px) and (max-height: 650px) {
   .hero-slide-section,
-  .hero-s3-section { zoom: 0.776; }
+  .hero-s3-section {
+    zoom: 0.776;
+  }
 }
 
 /* 630 px — zoom = 492 ÷ 660 ≈ 0.745 */
 @media (min-width: 1024px) and (max-height: 630px) {
   .hero-slide-section,
-  .hero-s3-section { zoom: 0.745; }
+  .hero-s3-section {
+    zoom: 0.745;
+  }
 }
 
 /* 610 px — zoom = 472 ÷ 660 ≈ 0.715 */
 @media (min-width: 1024px) and (max-height: 610px) {
   .hero-slide-section,
-  .hero-s3-section { zoom: 0.715; }
+  .hero-s3-section {
+    zoom: 0.715;
+  }
 }
 
 /* 590 px — zoom = 452 ÷ 660 ≈ 0.685 */
 @media (min-width: 1024px) and (max-height: 590px) {
   .hero-slide-section,
-  .hero-s3-section { zoom: 0.685; }
+  .hero-s3-section {
+    zoom: 0.685;
+  }
 }
 
 /* 570 px — zoom = 432 ÷ 660 ≈ 0.655 */
 @media (min-width: 1024px) and (max-height: 570px) {
   .hero-slide-section,
-  .hero-s3-section { zoom: 0.655; }
+  .hero-s3-section {
+    zoom: 0.655;
+  }
 }
 
 /* 550 px — zoom = 412 ÷ 660 ≈ 0.624 */
 @media (min-width: 1024px) and (max-height: 550px) {
   .hero-slide-section,
-  .hero-s3-section { zoom: 0.624; }
+  .hero-s3-section {
+    zoom: 0.624;
+  }
 }
 
 /* 530 px — zoom = 392 ÷ 660 ≈ 0.594 */
 @media (min-width: 1024px) and (max-height: 530px) {
   .hero-slide-section,
-  .hero-s3-section { zoom: 0.594; }
+  .hero-s3-section {
+    zoom: 0.594;
+  }
 }
