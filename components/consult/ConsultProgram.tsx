@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Calendar, Clock3 } from "lucide-react";
+import { ArrowRight, Calendar, MapPin, Video } from "lucide-react";
 
 export default function ConsultHero() {
   return (
-    <section className="relative overflow-hidden bg-[var(--reviva-cream)] py-24 md:py-32">
+    <section className="relative overflow-hidden bg-[var(--reviva-cream)] py-24 md:py-28">
       {/* Background decoration */}
       <div
         className="pointer-events-none absolute -top-32 -right-32 h-[500px] w-[500px] rounded-full blur-3xl"
@@ -23,20 +23,20 @@ export default function ConsultHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <span
-            className="inline-block rounded-full px-4 py-1.5 text-sm font-semibold uppercase tracking-wider"
-            style={{ backgroundColor: "var(--reviva-gold-light)", color: "var(--reviva-green)" }}
-          >
-            Consultation Programs
-          </span>
+          <p className="reviva-eyebrow">Consultation Programs</p>
 
           <h1
-            className="mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight"
-            style={{ color: "var(--reviva-green)", fontFamily: "var(--font-heading)" }}
+            className="mt-6 leading-[1.06] whitespace-nowrap"
+            style={{
+              color: "var(--reviva-green)",
+              fontFamily: "var(--font-heading)",
+              fontSize: "clamp(2rem, 4.8vw, 4.5rem)",
+            }}
           >
-            Your Path to
-            <br />
-            <span style={{ color: "var(--reviva-gold)" }}>Lasting Health</span>
+            Your Path to{" "}
+            <span className="italic" style={{ color: "var(--reviva-warm-brown)" }}>
+              Lasting Health
+            </span>
           </h1>
 
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
@@ -51,24 +51,22 @@ export default function ConsultHero() {
               3, 6 or 12 month programs
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-700 shadow-sm">
-              <Clock3 size={14} color="var(--reviva-green)" />
-              Online &amp; in-person
+              <MapPin size={14} color="var(--reviva-green)" />
+              Offline Consultation
             </span>
-            <span
-              className="inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-semibold shadow-sm"
-              style={{ backgroundColor: "var(--reviva-gold-light)", color: "var(--reviva-green)" }}
-            >
-              Quick online consultation
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-700 shadow-sm">
+              <Video size={14} color="var(--reviva-green)" />
+              Online Consultation
             </span>
           </div>
 
           <div className="mt-10">
             <Link
-              href="#book"
+              href="/consult#consult-form"
               className="inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-semibold text-white shadow-md transition-all hover:scale-105 hover:shadow-lg"
               style={{ backgroundColor: "var(--reviva-green)" }}
             >
-              Book Online Consultation
+              Book Consultation
               <ArrowRight size={18} />
             </Link>
           </div>

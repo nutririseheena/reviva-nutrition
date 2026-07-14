@@ -107,7 +107,7 @@ export default function Footer() {
             </p>
 
             <Link
-              href="/consult#consult-cta"
+              href="/consult#consult-form"
               className="mt-4 inline-flex items-center rounded-full px-5 py-2.5 text-sm font-semibold transition-all hover:scale-105"
               style={{
                 backgroundColor: "var(--reviva-gold)",

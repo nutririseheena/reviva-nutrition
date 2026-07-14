@@ -84,7 +84,7 @@ export default function ConsultationCTA() {
   }
 
   return (
-    <section id="consult-cta" className="bg-[var(--reviva-cream)] py-24">
+    <section id="consult-form" className="bg-[var(--reviva-cream)] py-24">
       <div className="mx-auto max-w-7xl page-pad">
         <motion.div
           className="relative overflow-hidden rounded-[28px] sm:rounded-[40px] p-5 sm:p-8 lg:p-12"

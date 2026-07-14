@@ -104,7 +104,7 @@ export default function Slide3() {
             <motion.div variants={item} className="mt-8 flex flex-wrap gap-3">
               <button
                 onClick={() =>
-                  document.getElementById("consult-cta")?.scrollIntoView({ behavior: "smooth" })
+                  document.getElementById("consult-form")?.scrollIntoView({ behavior: "smooth" })
                 }
                 className="flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white shadow-md transition-all hover:scale-105 hover:shadow-lg"
                 style={{ backgroundColor: "var(--reviva-green)" }}

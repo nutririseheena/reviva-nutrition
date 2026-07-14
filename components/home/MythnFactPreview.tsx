@@ -6,7 +6,7 @@ import { mythsFacts } from "@/data/consult";
 
 export default function MythnFactPreview() {
   return (
-    <section id="consult-cta" className="py-24" style={{ backgroundColor: "#fdf8f4" }}>
+    <section id="consult-form" className="py-24" style={{ backgroundColor: "#fdf8f4" }}>
       <div className="mx-auto max-w-5xl page-pad">
         {/* Header */}
         <motion.div

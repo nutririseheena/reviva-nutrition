@@ -29,7 +29,7 @@ export default function HealingCTA() {
           </h2>
 
           <Link
-            href="/consult#consult-cta"
+            href="/consult#consult-form"
             className="mt-10 inline-flex items-center gap-2 rounded-full px-7 py-3.5 sm:px-8 sm:py-4 text-base sm:text-lg font-semibold text-white transition-all hover:scale-105"
             style={{
               backgroundColor: "var(--reviva-green)",
