@@ -13,7 +13,7 @@ interface FieldErrors {
 function validate(name: string, phone: string, email: string): FieldErrors {
   const errs: FieldErrors = {};
   if (!name.trim() || name.trim().length < 2) {
-    errs.name = "Please enter your full name (at least 2 characters).";
+    errs.name = "Please enter your full name";
   }
   const digits = phone.replace(/\D/g, "");
   if (!phone.trim()) {
@@ -32,8 +32,13 @@ export default function ConsultationCTA() {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [concern, setConcern] = useState("");
+  const [duration, setDuration] = useState("");
+  const [agreeTerms, setAgreeTerms] = useState(false);
+  const [agreeProcess, setAgreeProcess] = useState(false);
+  const [agreeRefunds, setAgreeRefunds] = useState(false);
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [loading, setLoading] = useState(false);
+  const allChecked = agreeTerms && agreeProcess && agreeRefunds;
   const [submitError, setSubmitError] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
@@ -60,6 +65,7 @@ export default function ConsultationCTA() {
           name: name.trim(),
           phone: phone.trim(),
           email: email.trim(),
+          duration,
           concern,
         }),
       });
@@ -77,7 +83,11 @@ export default function ConsultationCTA() {
     setName("");
     setPhone("");
     setEmail("");
+    setDuration("");
     setConcern("");
+    setAgreeTerms(false);
+    setAgreeProcess(false);
+    setAgreeRefunds(false);
     setFieldErrors({});
     setSubmitError("");
     setSubmitted(false);
@@ -275,6 +285,40 @@ export default function ConsultationCTA() {
                       </div>
 
                       <div>
+                        <label className="mb-1.5 block text-xs font-medium text-slate-600">
+                          Program Duration
+                        </label>
+                        <div className="relative">
+                          <select
+                            value={duration}
+                            onChange={(e) => setDuration(e.target.value)}
+                            className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-[#2f6b2d] focus:bg-white appearance-none cursor-pointer"
+                            style={{
+                              color: duration ? "inherit" : "#94a3b8",
+                              paddingRight: duration ? "2.5rem" : "1rem",
+                            }}
+                          >
+                            <option value="" disabled>
+                              Select a program duration
+                            </option>
+                            <option value="3 Months">3 Months</option>
+                            <option value="6 Months">6 Months</option>
+                            <option value="12 Months">12 Months</option>
+                          </select>
+                          {duration && (
+                            <button
+                              type="button"
+                              onClick={() => setDuration("")}
+                              className="absolute right-3 top-1/2 -translate-y-1/2 flex h-7 w-7 items-center justify-center rounded-full text-[1rem] font-light text-slate-400 transition hover:bg-slate-200 hover:text-slate-600"
+                              aria-label="Clear duration"
+                            >
+                              &#x2715;
+                            </button>
+                          )}
+                        </div>
+                      </div>
+
+                      <div>
                         <label className="mb-1 block text-xs font-medium text-slate-600">
                           Health Concern
                         </label>
@@ -290,10 +334,38 @@ export default function ConsultationCTA() {
                         />
                       </div>
 
+                      {/* Consent checkboxes */}
+                      <div className="space-y-2.5">
+                        <CheckboxRow
+                          id="agreeProcess"
+                          checked={agreeProcess}
+                          onChange={setAgreeProcess}
+                          label="I have read the"
+                          linkText="Consultation Process"
+                          href="/terms-and-conditions#consultation-process"
+                        />
+                        <CheckboxRow
+                          id="agreeTerms"
+                          checked={agreeTerms}
+                          onChange={setAgreeTerms}
+                          label="I agree to accept the"
+                          linkText="Terms & Conditions"
+                          href="/terms-and-conditions#important-terms"
+                        />
+                        <CheckboxRow
+                          id="agreeRefunds"
+                          checked={agreeRefunds}
+                          onChange={setAgreeRefunds}
+                          label="I have read the"
+                          linkText="Returns, Refunds & Cancellations Policy"
+                          href="/terms-and-conditions#refunds-policy"
+                        />
+                      </div>
+
                       <button
                         type="submit"
-                        disabled={loading}
-                        className="flex w-full items-center justify-center gap-2 rounded-xl py-3.5 text-sm font-semibold text-white shadow-sm transition-all hover:opacity-90 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-70"
+                        disabled={loading || !allChecked}
+                        className="flex w-full items-center justify-center gap-2 rounded-xl py-3.5 text-sm font-semibold text-white shadow-sm transition-all hover:opacity-90 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-50"
                         style={{ backgroundColor: "var(--reviva-green)" }}
                       >
                         {loading ? (
@@ -334,5 +406,46 @@ function Benefit({ text }: { text: string }) {
       <CheckCircle size={17} color="var(--reviva-gold)" className="shrink-0" />
       <span className="text-white/90">{text}</span>
     </li>
+  );
+}
+
+function CheckboxRow({
+  id,
+  checked,
+  onChange,
+  label,
+  linkText,
+  href,
+}: {
+  id: string;
+  checked: boolean;
+  onChange: (v: boolean) => void;
+  label: string;
+  linkText: string;
+  href: string;
+}) {
+  return (
+    <label htmlFor={id} className="flex cursor-pointer items-start gap-2.5">
+      <input
+        id={id}
+        type="checkbox"
+        checked={checked}
+        onChange={(e) => onChange(e.target.checked)}
+        className="mt-0.5 h-4 w-4 shrink-0 cursor-pointer accent-[#2f6b2d]"
+      />
+      <span className="text-xs leading-snug text-slate-600">
+        {label}{" "}
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-medium"
+          style={{ color: "var(--reviva-green)" }}
+          onClick={(e) => e.stopPropagation()}
+        >
+          {linkText}
+        </a>
+      </span>
+    </label>
   );
 }

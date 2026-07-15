@@ -5,11 +5,8 @@ import WhatsAppFloat from "@/components/home/WhatsAppFloat";
 import ConsultBanner from "@/components/consult/ConsultBanner";
 import HealingJourney from "@/components/consult/HealingJourney";
 import HowItWorks from "@/components/consult/HowItWorks";
-import ProgramOptions from "@/components/consult/ProgramOptions";
-import FaqAccordion from "@/components/consult/FaqAccordion";
 import ConsultaionCTA from "@/components/consult/ConsultationCTA";
 import PaymentPreview from "@/components/consult/PaymentPreview";
-import ConsultProgram from "@/components/consult/ConsultProgram";
 
 export const metadata: Metadata = {
   title: "Consult — Reviva Nutrition",
@@ -24,10 +21,7 @@ export default function ConsultPage() {
       <main className="overflow-x-hidden">
         <ConsultBanner />
         <HealingJourney />
-        <ConsultProgram />
         <HowItWorks />
-        <ProgramOptions />
-        <FaqAccordion />
         <ConsultaionCTA />
         <PaymentPreview />
       </main>

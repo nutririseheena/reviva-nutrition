@@ -22,6 +22,14 @@ const specializations = [
     src: "/images/consult/healing4.png",
     alt: "Pediatric & Adolescent Nutrition — Reviva Nutrition",
   },
+  {
+    src: "/images/consult/healing5.png",
+    alt: "Senior Nutrition — Reviva Nutrition",
+  },
+  {
+    src: "/images/consult/healing6.png",
+    alt: "Mental Health & Wellbeing — Reviva Nutrition",
+  },
 ];
 
 export default function HealingJourney() {
@@ -74,7 +82,7 @@ export default function HealingJourney() {
         </motion.div>
 
         {/* ── 2×2 image grid ── */}
-        <div className="mt-12 sm:mt-16 mx-auto max-w-4xl grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
+        <div className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8">
           {specializations.map((spec, index) => (
             <motion.div
               key={spec.alt}
@@ -86,15 +94,15 @@ export default function HealingJourney() {
             >
               {/* Image card */}
               <div
-                className="group overflow-hidden rounded-[24px] transition-transform duration-500 hover:-translate-y-1"
+                className="group relative aspect-[3/4] overflow-hidden rounded-[24px] transition-transform duration-500 hover:-translate-y-1"
                 style={{ boxShadow: "var(--shadow-card)" }}
               >
                 <Image
                   src={spec.src}
                   alt={spec.alt}
-                  width={800}
-                  height={580}
-                  className="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.02]"
+                  fill
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
                 />
               </div>
 

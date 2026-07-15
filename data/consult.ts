@@ -1,4 +1,4 @@
-import { ClipboardCheck, MessageSquare, HeartHandshake } from "lucide-react";
+import { ClipboardCheck, Activity, Target, Calendar, TrendingUp, Star } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 export interface ConsultStage {
@@ -16,31 +16,75 @@ export const consultStages: ConsultStage[] = [
     icon: ClipboardCheck,
     color: "var(--reviva-green)",
     points: [
-      "Fill the \u201cGetting to Know You\u201d health assessment to help us understand your eating patterns, workout routine, and health goals.",
-      "An appointment schedule is generated for the full program duration based on your time and day preferences.",
-      "A document with easy-to-implement guidelines is shared before your very first session.",
+      "Dietary Analysis",
+      "Health Symptoms Review",
+      "Medical & Health History",
+      "Medication Review",
+      "Lifestyle Assessment",
     ],
   },
   {
     number: "2",
-    phase: "THE CONSULTATION STAGE",
-    icon: MessageSquare,
+    phase: "Blood Biomarker Assessment & Recovery Strategy",
+    icon: Activity,
     color: "var(--reviva-gold)",
     points: [
-      "An in-depth first session where we work together to create an eating plan that is both sustainable and a cultural fit.",
-      "Weekly interactions to review and refine your meal and exercise plans based on how your body responds.",
-      "Special meal planning for occasions like work travel, holidays, weddings, and festivals.",
+      "Detailed Blood Report Analysis",
+      "Identification of Nutritional & Metabolic Gaps",
+      "Personalized Recovery Roadmap",
     ],
   },
   {
     number: "3",
-    phase: "THE POST-CONSULTATION STAGE",
-    icon: HeartHandshake,
-    color: "var(--reviva-green)",
+    phase: "Personalized Treatment Process",
+    icon: Target,
+    color: "var(--reviva-rose)",
     points: [
-      "We maintain a lifelong relationship with you and are available for support whenever you need it.",
-      "A comprehensive post-consultation document summarizing all learnings from the program.",
-      "Practical guidelines for most situations you will face going forward — so you're never left without answers.",
+      "Dietary & Lifestyle Gap Analysis linked with Blood Biomarker Assessment",
+      "Vikrati Analysis (Vata • Pitta • Kapha) integrated with Food Analysis",
+      "Personalized Diet Plan combining Ayurvedic Wisdom & Modern Nutrition Science",
+      "Customized Yoga, Mudra, Cardio & Strength Training Recommendations",
+      "Weekly Diet Follow-Up & Progress Tracking",
+      "Monthly Performance Evaluation",
+      "Periodic Blood Biomarker Assessment",
+      "Counseling & Guidance for Treatment Deviations and Challenges",
+      "Regular Motivation & Accountability Support to Help You Achieve Your Health Goals",
+    ],
+  },
+];
+
+export const durationCards = [
+  {
+    months: "3 Months",
+    label: "Build the Foundation",
+    icon: Calendar,
+    points: [
+      "Focus on habit-building and consistency",
+      "Regular check-ins & plan adjustments",
+      "Support to overcome early challenges",
+      "Track progress & celebrate small wins",
+    ],
+  },
+  {
+    months: "6 Months",
+    label: "Strengthen & Optimize",
+    icon: TrendingUp,
+    points: [
+      "Deepen results with personalized tweaks",
+      "Advanced nutrition & lifestyle strategies",
+      "Sustained motivation & accountability",
+      "Improved energy, gut health & balance",
+    ],
+  },
+  {
+    months: "12 Months",
+    label: "Sustain & Thrive",
+    icon: Star,
+    points: [
+      "Long-term wellness & prevention focus",
+      "Refine for your evolving goals",
+      "Build a lifestyle that lasts a lifetime",
+      "Enjoy lasting transformation & confidence",
     ],
   },
 ];
