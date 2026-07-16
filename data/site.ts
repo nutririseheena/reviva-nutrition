@@ -30,4 +30,5 @@ export const navLinks = [
   { href: "/about", label: "About" },
   { href: "/consult", label: "Consult" },
   { href: "/testimonials", label: "Testimonials" },
+  { href: "/terms-and-conditions", label: "Terms & Conditions" },
 ];

@@ -78,19 +78,21 @@ export default function TermsAndConditions() {
                 </NumberedItem>
                 <NumberedItem n={3}>
                   Consultation appointments are scheduled between{" "}
-                  <Strong>11:00 AM and 6:30 PM (IST)</Strong>.
+                  <Strong>11:00AM and 6:30PM (IST)</Strong>.
                 </NumberedItem>
                 <NumberedItem n={4}>
+                  Consultations are conducted only <Strong>5 days a week</Strong>.
+                </NumberedItem>
+                <NumberedItem n={5}>
                   Appointments are confirmed <Strong>only after successful payment</Strong> and are
                   subject to availability.
                 </NumberedItem>
-                <NumberedItem n={5}>
+                <NumberedItem n={6}>
                   <Strong>Consultation Waiting Period</Strong>
                   <ul className="mt-3 space-y-2 pl-1">
                     <BulletItem>
                       Limited appointments available to ensure personalized care.
                     </BulletItem>
-                    <BulletItem>Consultations are conducted only 5 days a week.</BulletItem>
                     <BulletItem>
                       Book your consultation in advance to secure your preferred slot.
                     </BulletItem>
@@ -135,47 +137,71 @@ export default function TermsAndConditions() {
             <motion.div {...fadeUp}>
               <SectionHeader icon={<ShieldAlert size={22} />} title="Important Terms" />
 
-              <div className="mt-8 space-y-4">
-                <TermCard title="Natural Healing Approach">
-                  Our focus is on improving your health through personalized nutrition and lifestyle
-                  changes. Dietary supplements may be recommended when appropriate, but their use is
-                  entirely optional and should be discussed with your physician if required.
+              <div className="mt-8 space-y-1">
+                <TermCard title="1. Medical Disclaimer">
+                  Nutrition guidance is complementary and does not replace medical diagnosis,
+                  treatment, or the advice of a qualified physician.
                 </TermCard>
 
-                <TermCard title="Client Responsibility">
-                  We provide guidance and personalized nutrition plans; however, your results depend
-                  on your commitment to following the recommended diet and lifestyle practices.
+                <TermCard title="2. Personalized Nutrition Care">
+                  Every nutrition plan is personalized based on your health assessment. Individual
+                  recommendations and results may vary.
                 </TermCard>
 
-                <TermCard title="Results Disclaimer">
-                  We do not guarantee specific weight loss or health outcomes. Every individual
-                  responds differently based on their health condition, consistency, and lifestyle.
-                  Our goal is to create sustainable habits that support long-term health rather than
-                  short-term results.
+                <TermCard title="3. Sustainable Healing">
+                  We believe in sustainable healing — not quick fixes. Lasting health transformation
+                  requires consistency, patience, and lifestyle changes.
                 </TermCard>
 
-                <TermCard title="Lifestyle-Based Nutrition">
-                  Our nutrition plans are designed to be practical, sustainable, and suitable for
-                  lifelong healthy living — not temporary diet plans.
+                <TermCard title="4. Results & Expectations">
+                  We do not guarantee specific health outcomes, weight loss, or disease reversal.
+                  Progress depends on your health condition, adherence to the plan, and individual
+                  response.
                 </TermCard>
 
-                <TermCard title="Payment Policy">
-                  Full payment is required at the time of enrollment to confirm your participation
-                  in the program.
+                <TermCard title="5. Client Responsibility">
+                  Successful outcomes require your active participation and commitment to following
+                  the prescribed nutrition and lifestyle recommendations.
                 </TermCard>
 
-                <DisclaimerCard
-                  title="Medical Disclaimer"
-                  text="Nutrition guidance is complementary and does not replace medical diagnosis, treatment, or the advice of a qualified physician."
-                />
-                <DisclaimerCard
-                  title="Healing Takes Time"
-                  text="We believe in sustainable healing — not quick fixes. Lasting health transformation requires consistency, patience, and healthy lifestyle changes."
-                />
-                <DisclaimerCard
-                  title="Realistic Expectations"
-                  text="Our root-cause approach supports long-term health through personalized nutrition. Results vary from person to person, so please do not expect dramatic changes within a few weeks or a month."
-                />
+                <TermCard title="6. Dietary Supplements">
+                  Supplements may be recommended when appropriate, but they are optional and should
+                  not be considered a substitute for a balanced diet or medical treatment.
+                </TermCard>
+
+                <TermCard title="7. Consultation Policy">
+                  Appointments are available in person or via video consultation and are confirmed
+                  only after payment.
+                </TermCard>
+
+                <TermCard title="8. Payment & Refund Policy">
+                  All program fees are payable in advance and are non-refundable, non-transferable,
+                  and non-cancellable.
+                </TermCard>
+
+                <TermCard title="9. Technical Issues">
+                  If unforeseen technical issues occur from either the client&apos;s or Reviva
+                  Nutrition&apos;s side, both parties will cooperate to reschedule the consultation
+                  at the earliest mutually convenient time.
+                </TermCard>
+
+                <TermCard title="10. Consultation Waiting Period">
+                  To maintain high-quality personalized care, we accept only a limited number of
+                  clients. We recommend booking your consultation in advance.
+                </TermCard>
+
+                <TermCard title="11. Testimonials & Results">
+                  Testimonials shared on our website or social media reflect individual experiences
+                  and should not be interpreted as guaranteed or typical outcomes.
+                </TermCard>
+
+                <TermCard title="12. Professional Ethics">
+                  Reviva Nutrition follows ethical, evidence-informed nutrition practices and does
+                  not claim guaranteed cures, miracle treatments, or assured outcomes. Our
+                  recommendations are designed to support long-term health through personalized
+                  nutrition and lifestyle modifications while complementing, not replacing,
+                  appropriate medical care.
+                </TermCard>
               </div>
             </motion.div>
           </div>
@@ -190,10 +216,12 @@ export default function TermsAndConditions() {
                 title="Returns, Refunds &amp; Cancellations Policy"
               />
 
-              <p className="mt-6 text-base leading-relaxed text-slate-600">
-                Returns, refunds, cancellations, or transfers are{" "}
-                <Strong>not permitted under any circumstances</Strong>, including but not limited
-                to:
+              <p
+                className="mt-6 text-lg font-bold leading-relaxed"
+                style={{ color: "var(--reviva-terracotta)" }}
+              >
+                Returns, refunds, cancellations, or transfers are not permitted under any
+                circumstances
               </p>
 
               <div className="mt-6 space-y-3">
@@ -210,8 +238,8 @@ export default function TermsAndConditions() {
                   participation.
                 </PolicyItem>
                 <PolicyItem>
-                  Technical issues related to the client&apos;s device, internet connection, or
-                  software environment.
+                  In case of unforeseen technical issues from either side, the consultation will be
+                  rescheduled with mutual cooperation and understanding.
                 </PolicyItem>
                 <PolicyItem>
                   Failure to review the program details, eligibility criteria, or terms and
@@ -220,7 +248,7 @@ export default function TermsAndConditions() {
               </div>
 
               <div
-                className="mt-8 rounded-2xl px-6 py-5 text-center text-sm font-semibold leading-relaxed"
+                className="mt-8 rounded-2xl px-6 py-5 text-center text-base font-semibold leading-relaxed"
                 style={{
                   backgroundColor: "rgba(193,99,74,0.08)",
                   color: "var(--reviva-terracotta)",
@@ -284,7 +312,7 @@ function NumberedItem({ n, children }: { n: number; children: React.ReactNode })
 
 function BulletItem({ children }: { children: React.ReactNode }) {
   return (
-    <li className="flex items-start gap-2 text-sm text-slate-500">
+    <li className="flex items-start gap-2 text-base text-slate-500">
       <span
         className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full"
         style={{ backgroundColor: "var(--reviva-gold)" }}
@@ -297,21 +325,10 @@ function BulletItem({ children }: { children: React.ReactNode }) {
 function TermCard({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div className="py-2">
-      <p className="text-sm font-semibold" style={{ color: "var(--reviva-green)" }}>
+      <p className="text-base font-semibold" style={{ color: "var(--reviva-green)" }}>
         {title}
       </p>
-      <p className="mt-1.5 text-sm leading-relaxed text-slate-500">{children}</p>
-    </div>
-  );
-}
-
-function DisclaimerCard({ title, text }: { title: string; text: string }) {
-  return (
-    <div className="py-2">
-      <p className="text-sm font-semibold" style={{ color: "var(--reviva-green)" }}>
-        {title}
-      </p>
-      <p className="mt-1.5 text-sm leading-relaxed text-slate-500">{text}</p>
+      <p className="mt-1.5 text-base leading-relaxed text-slate-500">{children}</p>
     </div>
   );
 }
@@ -323,7 +340,7 @@ function PolicyItem({ children }: { children: React.ReactNode }) {
         className="mt-[5px] h-2 w-2 shrink-0 rounded-full"
         style={{ backgroundColor: "var(--reviva-terracotta)" }}
       />
-      <p className="text-sm leading-relaxed text-slate-600">{children}</p>
+      <p className="text-base leading-relaxed text-slate-600">{children}</p>
     </div>
   );
 }

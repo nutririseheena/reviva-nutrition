@@ -213,7 +213,7 @@ export default function HowItWorks() {
                         return (
                           <div
                             key={card.months}
-                            className="rounded-2xl p-5"
+                            className="flex flex-col rounded-2xl p-5"
                             style={{ backgroundColor: "rgba(47,107,45,0.06)" }}
                           >
                             <div className="flex items-center gap-3 mb-3">
@@ -235,11 +235,11 @@ export default function HowItWorks() {
                                 </p>
                               </div>
                             </div>
-                            <ul className="space-y-2">
+                            <ul className="space-y-2 flex-1">
                               {card.points.map((pt, j) => (
                                 <li
                                   key={j}
-                                  className="flex items-start gap-2 text-sm text-slate-500 leading-relaxed"
+                                  className="flex items-start gap-2 text-xs text-slate-500 leading-relaxed"
                                 >
                                   <span
                                     className="mt-1.5 h-1 w-1 shrink-0 rounded-full"
@@ -249,6 +249,23 @@ export default function HowItWorks() {
                                 </li>
                               ))}
                             </ul>
+                            {card.note && (
+                              <p
+                                className="mt-4 pt-3 text-xs leading-relaxed italic"
+                                style={{
+                                  borderTop: "1px solid rgba(47,107,45,0.15)",
+                                  color: "var(--reviva-warm-brown)",
+                                }}
+                              >
+                                <span
+                                  className="not-italic font-semibold"
+                                  style={{ color: "var(--reviva-green)" }}
+                                >
+                                  Note:
+                                </span>{" "}
+                                {card.note}
+                              </p>
+                            )}
                           </div>
                         );
                       })}
