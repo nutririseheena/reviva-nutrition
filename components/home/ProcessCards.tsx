@@ -66,7 +66,7 @@ export default function ProcessCards() {
               transition={{ duration: 0.5, delay: index * 0.11 }}
             >
               <Link
-                href="/consult#consult-cta"
+                href="/consult#consult-form"
                 className="group relative block overflow-hidden rounded-[28px] shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
                 aria-label={card.title}
               >
@@ -110,7 +110,7 @@ export default function ProcessCards() {
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <Link
-            href="/consult#consult-cta"
+            href="/consult#consult-form"
             className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-base font-semibold text-white shadow-sm transition-all hover:scale-105 hover:shadow-md"
             style={{ backgroundColor: "var(--reviva-green)" }}
           >

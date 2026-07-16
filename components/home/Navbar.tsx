@@ -92,7 +92,7 @@ export default function Navbar() {
 
             {/* Desktop CTA */}
             <Link
-              href="/consult#consult-cta"
+              href="/consult#consult-form"
               className="hidden md:inline-flex items-center rounded-full px-6 py-3 text-base font-semibold text-white shadow-sm transition-all hover:scale-105 hover:shadow-md"
               style={{ backgroundColor: "var(--reviva-gold)" }}
             >
@@ -136,7 +136,7 @@ export default function Navbar() {
                   </Link>
                 ))}
                 <Link
-                  href="/consult#consult-cta"
+                  href="/consult#consult-form"
                   onClick={() => setMobileOpen(false)}
                   className="mt-3 flex justify-center rounded-full py-3 text-base font-semibold text-white transition hover:opacity-90"
                   style={{ backgroundColor: "var(--reviva-gold)" }}

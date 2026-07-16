@@ -1,4 +1,4 @@
-import { ClipboardCheck, MessageSquare, HeartHandshake } from "lucide-react";
+import { ClipboardCheck, Activity, Target, Calendar, TrendingUp, Star } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 export interface ConsultStage {
@@ -16,32 +16,79 @@ export const consultStages: ConsultStage[] = [
     icon: ClipboardCheck,
     color: "var(--reviva-green)",
     points: [
-      "Fill the \u201cGetting to Know You\u201d health assessment to help us understand your eating patterns, workout routine, and health goals.",
-      "An appointment schedule is generated for the full program duration based on your time and day preferences.",
-      "A document with easy-to-implement guidelines is shared before your very first session.",
+      "Dietary Analysis",
+      "Health Symptoms Review",
+      "Medical & Health History",
+      "Medication Review",
+      "Lifestyle Assessment",
     ],
   },
   {
     number: "2",
-    phase: "THE CONSULTATION STAGE",
-    icon: MessageSquare,
+    phase: "Blood Biomarker Assessment & Recovery Strategy",
+    icon: Activity,
     color: "var(--reviva-gold)",
     points: [
-      "An in-depth first session where we work together to create an eating plan that is both sustainable and a cultural fit.",
-      "Weekly interactions to review and refine your meal and exercise plans based on how your body responds.",
-      "Special meal planning for occasions like work travel, holidays, weddings, and festivals.",
+      "Detailed Blood Report Analysis",
+      "Identification of Nutritional & Metabolic Gaps",
+      "Personalized Recovery Roadmap",
     ],
   },
   {
     number: "3",
-    phase: "THE POST-CONSULTATION STAGE",
-    icon: HeartHandshake,
-    color: "var(--reviva-green)",
+    phase: "Personalized Treatment Process",
+    icon: Target,
+    color: "var(--reviva-rose)",
     points: [
-      "We maintain a lifelong relationship with you and are available for support whenever you need it.",
-      "A comprehensive post-consultation document summarizing all learnings from the program.",
-      "Practical guidelines for most situations you will face going forward — so you're never left without answers.",
+      "Dietary & Lifestyle Gap Analysis linked with Blood Biomarker Assessment",
+      "Vikrati Analysis (Vata • Pitta • Kapha) integrated with Food Analysis",
+      "Personalized Diet Plan combining Ayurvedic Wisdom & Modern Nutrition Science",
+      "Customized Yoga, Mudra, Cardio & Strength Training Recommendations",
+      "Weekly Diet Follow-Up & Progress Tracking",
+      "Monthly Performance Evaluation",
+      "Periodic Blood Biomarker Assessment",
+      "Counseling & Guidance for Treatment Deviations and Challenges",
+      "Regular Motivation & Accountability Support to Help You Achieve Your Health Goals",
     ],
+  },
+];
+
+export const durationCards = [
+  {
+    months: "3 Months",
+    label: "Start Your Healing Journey",
+    icon: Calendar,
+    points: [
+      "Build the foundation for better health",
+      "Overcome early health challenges",
+      "Develop sustainable eating habits",
+      "Recommended support: Up to 3 months",
+    ],
+    note: "Best for mild to moderate health concerns or those beginning their nutrition journey.",
+  },
+  {
+    months: "6 Months",
+    label: "Deepen Your Transformation",
+    icon: TrendingUp,
+    points: [
+      "Strengthen healthy lifestyle habits",
+      "Monitor progress and refine your plan",
+      "Support deeper healing and recovery",
+      "Recommended support: Up to 6 months",
+    ],
+    note: "Ideal for chronic or multiple health concerns requiring continued nutrition support.",
+  },
+  {
+    months: "12 Months",
+    label: "Live Your Healthiest Life",
+    icon: Star,
+    points: [
+      "Turn lasting wellness into your new lifestyle",
+      "Prevent relapse through regular guidance",
+      "Build lifelong healthy habits",
+      "Recommended support: Up to 12 months",
+    ],
+    note: "Designed for long-term lifestyle transformation and continued wellness support.",
   },
 ];
 

@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { CheckCircle, MessageCircle, Phone, Mail, Loader2, PartyPopper } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
+import { CheckCircle, MessageCircle, Phone, Mail, Loader2, PartyPopper, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface FieldErrors {
@@ -13,7 +13,7 @@ interface FieldErrors {
 function validate(name: string, phone: string, email: string): FieldErrors {
   const errs: FieldErrors = {};
   if (!name.trim() || name.trim().length < 2) {
-    errs.name = "Please enter your full name (at least 2 characters).";
+    errs.name = "Please enter your full name";
   }
   const digits = phone.replace(/\D/g, "");
   if (!phone.trim()) {
@@ -27,13 +27,97 @@ function validate(name: string, phone: string, email: string): FieldErrors {
   return errs;
 }
 
+const durationOptions = [
+  { value: "3 Months", label: "3 Months", sub: "Start Your Healing Journey" },
+  { value: "6 Months", label: "6 Months", sub: "Deepen Your Transformation" },
+  { value: "12 Months", label: "12 Months", sub: "Live Your Healthiest Life" },
+];
+
+function DurationDropdown({
+  value,
+  onChange,
+}: {
+  value: string;
+  onChange: (v: string) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    }
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, []);
+
+  const selected = durationOptions.find((o) => o.value === value);
+
+  return (
+    <div className="relative" ref={ref}>
+      <button
+        type="button"
+        onClick={() => setOpen((p) => !p)}
+        className="w-full flex items-center justify-between rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-xs outline-none transition focus:border-[#2f6b2d] focus:bg-white cursor-pointer"
+        style={{ color: selected ? "inherit" : "#94a3b8" }}
+      >
+        {selected ? (
+          <span>
+            <span>{selected.label}</span>
+            {" | "}
+            <span>{selected.sub}</span>
+          </span>
+        ) : (
+          <span>Select a program duration</span>
+        )}
+        <span className="flex items-center gap-1 ml-2 shrink-0">
+          {value && (
+            <span
+              role="button"
+              onClick={(e) => { e.stopPropagation(); onChange(""); }}
+              className="flex h-6 w-6 items-center justify-center rounded-full text-sm text-slate-400 hover:bg-slate-200 hover:text-slate-600"
+              aria-label="Clear duration"
+            >
+              &#x2715;
+            </span>
+          )}
+          <ChevronDown size={16} className={`text-slate-400 transition-transform ${open ? "rotate-180" : ""}`} />
+        </span>
+      </button>
+
+      {open && (
+        <div className="absolute z-50 mt-1 w-full rounded-xl border border-slate-200 bg-white shadow-lg overflow-hidden">
+          {durationOptions.map((opt) => (
+            <button
+              key={opt.value}
+              type="button"
+              onClick={() => { onChange(opt.value); setOpen(false); }}
+              className="w-full px-4 py-3 text-left text-xs hover:bg-slate-50 transition border-b border-slate-100 last:border-b-0"
+              style={{ color: value === opt.value ? "#2f6b2d" : "#1a1a1a" }}
+            >
+              <span className="font-medium">{opt.label}</span>
+              {" | "}
+              <span className="font-bold">{opt.sub}</span>
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function ConsultationCTA() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [concern, setConcern] = useState("");
+  const [duration, setDuration] = useState("");
+  const [agreeTerms, setAgreeTerms] = useState(false);
+  const [agreeProcess, setAgreeProcess] = useState(false);
+  const [agreeRefunds, setAgreeRefunds] = useState(false);
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [loading, setLoading] = useState(false);
+  const allChecked = agreeTerms && agreeProcess && agreeRefunds;
   const [submitError, setSubmitError] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
@@ -60,6 +144,7 @@ export default function ConsultationCTA() {
           name: name.trim(),
           phone: phone.trim(),
           email: email.trim(),
+          duration,
           concern,
         }),
       });
@@ -77,14 +162,18 @@ export default function ConsultationCTA() {
     setName("");
     setPhone("");
     setEmail("");
+    setDuration("");
     setConcern("");
+    setAgreeTerms(false);
+    setAgreeProcess(false);
+    setAgreeRefunds(false);
     setFieldErrors({});
     setSubmitError("");
     setSubmitted(false);
   }
 
   return (
-    <section id="consult-cta" className="bg-[var(--reviva-cream)] py-24">
+    <section id="consult-form" className="bg-[var(--reviva-cream)] py-24">
       <div className="mx-auto max-w-7xl page-pad">
         <motion.div
           className="relative overflow-hidden rounded-[28px] sm:rounded-[40px] p-5 sm:p-8 lg:p-12"
@@ -275,6 +364,15 @@ export default function ConsultationCTA() {
                       </div>
 
                       <div>
+                        <label className="mb-1.5 block text-xs font-medium text-slate-600">
+                          Program Duration
+                        </label>
+                        <div className="relative">
+                          <DurationDropdown value={duration} onChange={setDuration} />
+                        </div>
+                      </div>
+
+                      <div>
                         <label className="mb-1 block text-xs font-medium text-slate-600">
                           Health Concern
                         </label>
@@ -290,10 +388,38 @@ export default function ConsultationCTA() {
                         />
                       </div>
 
+                      {/* Consent checkboxes */}
+                      <div className="space-y-2.5">
+                        <CheckboxRow
+                          id="agreeProcess"
+                          checked={agreeProcess}
+                          onChange={setAgreeProcess}
+                          label="I have read the"
+                          linkText="Consultation Process"
+                          href="/terms-and-conditions#consultation-process"
+                        />
+                        <CheckboxRow
+                          id="agreeTerms"
+                          checked={agreeTerms}
+                          onChange={setAgreeTerms}
+                          label="I agree to accept the"
+                          linkText="Terms & Conditions"
+                          href="/terms-and-conditions#important-terms"
+                        />
+                        <CheckboxRow
+                          id="agreeRefunds"
+                          checked={agreeRefunds}
+                          onChange={setAgreeRefunds}
+                          label="I have read the"
+                          linkText="Returns, Refunds & Cancellations Policy"
+                          href="/terms-and-conditions#refunds-policy"
+                        />
+                      </div>
+
                       <button
                         type="submit"
-                        disabled={loading}
-                        className="flex w-full items-center justify-center gap-2 rounded-xl py-3.5 text-sm font-semibold text-white shadow-sm transition-all hover:opacity-90 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-70"
+                        disabled={loading || !allChecked}
+                        className="flex w-full items-center justify-center gap-2 rounded-xl py-3.5 text-sm font-semibold text-white shadow-sm transition-all hover:opacity-90 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-50"
                         style={{ backgroundColor: "var(--reviva-green)" }}
                       >
                         {loading ? (
@@ -334,5 +460,46 @@ function Benefit({ text }: { text: string }) {
       <CheckCircle size={17} color="var(--reviva-gold)" className="shrink-0" />
       <span className="text-white/90">{text}</span>
     </li>
+  );
+}
+
+function CheckboxRow({
+  id,
+  checked,
+  onChange,
+  label,
+  linkText,
+  href,
+}: {
+  id: string;
+  checked: boolean;
+  onChange: (v: boolean) => void;
+  label: string;
+  linkText: string;
+  href: string;
+}) {
+  return (
+    <label htmlFor={id} className="flex cursor-pointer items-start gap-2.5">
+      <input
+        id={id}
+        type="checkbox"
+        checked={checked}
+        onChange={(e) => onChange(e.target.checked)}
+        className="mt-0.5 h-4 w-4 shrink-0 cursor-pointer accent-[#2f6b2d]"
+      />
+      <span className="text-xs leading-snug text-slate-600">
+        {label}{" "}
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-medium"
+          style={{ color: "var(--reviva-green)" }}
+          onClick={(e) => e.stopPropagation()}
+        >
+          {linkText}
+        </a>
+      </span>
+    </label>
   );
 }
