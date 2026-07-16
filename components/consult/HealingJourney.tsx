@@ -15,7 +15,7 @@ const specializations = [
     alt: "Digestive & Gut Health — Reviva Nutrition",
   },
   {
-    src: "/images/consult/healing3.png",
+    src: "/images/consult/healing_3.png",
     alt: "Women's Health — Reviva Nutrition",
   },
   {

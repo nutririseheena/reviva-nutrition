@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 import { FaLinkedinIn, FaInstagram, FaYoutube, FaFacebookF } from "react-icons/fa";
-import { navLinks, siteConfig } from "@/data/site";
+import { footerLinks, siteConfig } from "@/data/site";
 
 export default function Footer() {
   return (
@@ -55,7 +55,7 @@ export default function Footer() {
             </h3>
 
             <ul className="mt-4 space-y-2.5">
-              {navLinks.map((link) => (
+              {footerLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}

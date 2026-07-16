@@ -305,14 +305,14 @@ function NumberedItem({ n, children }: { n: number; children: React.ReactNode })
       >
         {n}
       </span>
-      <div className="text-base leading-relaxed text-slate-600">{children}</div>
+      <div className="text-lg leading-relaxed text-slate-600">{children}</div>
     </div>
   );
 }
 
 function BulletItem({ children }: { children: React.ReactNode }) {
   return (
-    <li className="flex items-start gap-2 text-base text-slate-500">
+    <li className="flex items-start gap-2 text-lg text-slate-500">
       <span
         className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full"
         style={{ backgroundColor: "var(--reviva-gold)" }}
@@ -325,10 +325,10 @@ function BulletItem({ children }: { children: React.ReactNode }) {
 function TermCard({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div className="py-2">
-      <p className="text-base font-semibold" style={{ color: "var(--reviva-green)" }}>
+      <p className="text-lg font-semibold" style={{ color: "var(--reviva-green)" }}>
         {title}
       </p>
-      <p className="mt-1.5 text-base leading-relaxed text-slate-500">{children}</p>
+      <p className="mt-1.5 text-lg leading-relaxed text-slate-500">{children}</p>
     </div>
   );
 }
@@ -340,7 +340,7 @@ function PolicyItem({ children }: { children: React.ReactNode }) {
         className="mt-[5px] h-2 w-2 shrink-0 rounded-full"
         style={{ backgroundColor: "var(--reviva-terracotta)" }}
       />
-      <p className="text-base leading-relaxed text-slate-600">{children}</p>
+      <p className="text-lg leading-relaxed text-slate-600">{children}</p>
     </div>
   );
 }

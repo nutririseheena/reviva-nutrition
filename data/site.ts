@@ -11,6 +11,7 @@ export const siteConfig = {
 
   payment: {
     upi: "9930548506",
+    upi_id: "8291694827@upi",
   },
 
   googleReview: {
@@ -26,6 +27,14 @@ export const siteConfig = {
 };
 
 export const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/consult", label: "Consult" },
+  { href: "/testimonials", label: "Testimonials" },
+  { href: "/about#invite-form", label: "Invite" },
+];
+
+export const footerLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/consult", label: "Consult" },

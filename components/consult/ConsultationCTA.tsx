@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { CheckCircle, MessageCircle, Phone, Mail, Loader2, PartyPopper } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
+import { CheckCircle, MessageCircle, Phone, Mail, Loader2, PartyPopper, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface FieldErrors {
@@ -25,6 +25,85 @@ function validate(name: string, phone: string, email: string): FieldErrors {
     errs.email = "Please enter a valid email address.";
   }
   return errs;
+}
+
+const durationOptions = [
+  { value: "3 Months", label: "3 Months", sub: "Start Your Healing Journey" },
+  { value: "6 Months", label: "6 Months", sub: "Deepen Your Transformation" },
+  { value: "12 Months", label: "12 Months", sub: "Live Your Healthiest Life" },
+];
+
+function DurationDropdown({
+  value,
+  onChange,
+}: {
+  value: string;
+  onChange: (v: string) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    }
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, []);
+
+  const selected = durationOptions.find((o) => o.value === value);
+
+  return (
+    <div className="relative" ref={ref}>
+      <button
+        type="button"
+        onClick={() => setOpen((p) => !p)}
+        className="w-full flex items-center justify-between rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-xs outline-none transition focus:border-[#2f6b2d] focus:bg-white cursor-pointer"
+        style={{ color: selected ? "inherit" : "#94a3b8" }}
+      >
+        {selected ? (
+          <span>
+            <span>{selected.label}</span>
+            {" | "}
+            <span>{selected.sub}</span>
+          </span>
+        ) : (
+          <span>Select a program duration</span>
+        )}
+        <span className="flex items-center gap-1 ml-2 shrink-0">
+          {value && (
+            <span
+              role="button"
+              onClick={(e) => { e.stopPropagation(); onChange(""); }}
+              className="flex h-6 w-6 items-center justify-center rounded-full text-sm text-slate-400 hover:bg-slate-200 hover:text-slate-600"
+              aria-label="Clear duration"
+            >
+              &#x2715;
+            </span>
+          )}
+          <ChevronDown size={16} className={`text-slate-400 transition-transform ${open ? "rotate-180" : ""}`} />
+        </span>
+      </button>
+
+      {open && (
+        <div className="absolute z-50 mt-1 w-full rounded-xl border border-slate-200 bg-white shadow-lg overflow-hidden">
+          {durationOptions.map((opt) => (
+            <button
+              key={opt.value}
+              type="button"
+              onClick={() => { onChange(opt.value); setOpen(false); }}
+              className="w-full px-4 py-3 text-left text-xs hover:bg-slate-50 transition border-b border-slate-100 last:border-b-0"
+              style={{ color: value === opt.value ? "#2f6b2d" : "#1a1a1a" }}
+            >
+              <span className="font-medium">{opt.label}</span>
+              {" | "}
+              <span className="font-bold">{opt.sub}</span>
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default function ConsultationCTA() {
@@ -289,32 +368,7 @@ export default function ConsultationCTA() {
                           Program Duration
                         </label>
                         <div className="relative">
-                          <select
-                            value={duration}
-                            onChange={(e) => setDuration(e.target.value)}
-                            className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-[#2f6b2d] focus:bg-white appearance-none cursor-pointer"
-                            style={{
-                              color: duration ? "inherit" : "#94a3b8",
-                              paddingRight: duration ? "2.5rem" : "1rem",
-                            }}
-                          >
-                            <option value="" disabled>
-                              Select a program duration
-                            </option>
-                            <option value="3 Months">3 Months</option>
-                            <option value="6 Months">6 Months</option>
-                            <option value="12 Months">12 Months</option>
-                          </select>
-                          {duration && (
-                            <button
-                              type="button"
-                              onClick={() => setDuration("")}
-                              className="absolute right-3 top-1/2 -translate-y-1/2 flex h-7 w-7 items-center justify-center rounded-full text-[1rem] font-light text-slate-400 transition hover:bg-slate-200 hover:text-slate-600"
-                              aria-label="Clear duration"
-                            >
-                              &#x2715;
-                            </button>
-                          )}
+                          <DurationDropdown value={duration} onChange={setDuration} />
                         </div>
                       </div>
 

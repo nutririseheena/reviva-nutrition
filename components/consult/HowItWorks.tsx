@@ -90,9 +90,9 @@ export default function HowItWorks() {
                     className="leading-snug"
                     style={{
                       fontFamily: "var(--font-heading)",
-                      fontSize: "clamp(1.1rem, 1.8vw, 1.35rem)",
+                      fontSize: "clamp(1.2rem, 1.9vw, 1.4rem)",
                       color: "var(--reviva-green)",
-                      fontWeight: 600,
+                      fontWeight: 900,
                     }}
                   >
                     Consultation with Dietitian{" "}
