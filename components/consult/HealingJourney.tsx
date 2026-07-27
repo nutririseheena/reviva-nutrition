@@ -46,7 +46,7 @@ export default function HealingJourney() {
           viewport={{ once: false, amount: 0.15 }}
           transition={{ duration: 0.65, ease: "easeOut" }}
         >
-          <p className="reviva-eyebrow">Healing Specializations</p>
+          
           <h2
             className="mt-4 leading-[1.06] whitespace-nowrap"
             style={{
