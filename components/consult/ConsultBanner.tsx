@@ -18,14 +18,15 @@ export default function ConsultBanner() {
         className="relative overflow-hidden"
       >
         {/* ── Background image — fills the full banner width ── */}
-        <div className="relative aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/8]">
+        <div className="relative w-full">
           <Image
             src="/images/consult/consult_template.png"
             alt="Welcome to Reviva Nutrition Consultation Room — with Dietician Heena"
-            fill
+            width={1920}
+            height={1080}
             priority
             sizes="100vw"
-            className="object-cover object-center"
+            className="w-full h-auto max-h-[90vh] object-cover object-center"
           />
         </div>
 

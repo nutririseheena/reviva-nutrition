@@ -68,7 +68,7 @@ export default function HowItWorks() {
 
             {/* Step 2 */}
             <motion.div
-              className="relative rounded-2xl p-7 overflow-hidden flex flex-col justify-center"
+              className="relative rounded-2xl p-7 text-left overflow-hidden"
               style={{
                 backgroundColor: "var(--reviva-cream)",
                 borderLeft: "4px solid var(--reviva-gold)",
@@ -78,50 +78,40 @@ export default function HowItWorks() {
               viewport={{ once: false, amount: 0.15 }}
               transition={{ duration: 0.55, delay: 0.2 }}
             >
-              <div className="flex items-start gap-3">
+              <div className="flex items-center gap-3 mb-4">
                 <span
                   className="shrink-0 inline-flex h-9 w-9 items-center justify-center rounded-full text-sm font-bold text-white"
                   style={{ backgroundColor: "var(--reviva-gold)" }}
                 >
                   2
                 </span>
-                <div>
-                  <p
-                    className="leading-snug"
-                    style={{
-                      fontFamily: "var(--font-heading)",
-                      fontSize: "clamp(1.2rem, 1.9vw, 1.4rem)",
-                      color: "var(--reviva-green)",
-                      fontWeight: 900,
-                    }}
-                  >
-                    Consultation with Dietitian{" "}
-                    <span className="italic" style={{ color: "var(--reviva-warm-brown)" }}>
-                      Heena
-                    </span>{" "}
-                    &amp; Reviva Nutrition Team
-                  </p>
-                  <div className="mt-3 flex flex-wrap justify-center gap-2">
-                    <span
-                      className="inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-sm"
-                      style={{
-                        backgroundColor: "rgba(244,178,27,0.15)",
-                        color: "var(--reviva-green)",
-                      }}
-                    >
-                      <MapPin size={14} color="var(--reviva-green)" /> Offline Consultation
-                    </span>
-                    <span
-                      className="inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-sm"
-                      style={{
-                        backgroundColor: "rgba(244,178,27,0.15)",
-                        color: "var(--reviva-green)",
-                      }}
-                    >
-                      <Video size={14} color="var(--reviva-green)" /> Online Consultation
-                    </span>
-                  </div>
-                </div>
+                <p className="font-semibold text-slate-800 text-lg">
+                  Consult with Dt.{" "}
+                  <span className="italic" style={{ color: "var(--reviva-warm-brown)" }}>
+                    Heena
+                  </span>{" "}
+                  &amp; Reviva Nutrition Team
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-2 pl-12">
+                <span
+                  className="inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-sm font-semibold"
+                  style={{
+                    backgroundColor: "rgba(244,178,27,0.15)",
+                    color: "var(--reviva-green)",
+                  }}
+                >
+                  <MapPin size={14} color="var(--reviva-green)" /> Offline Consultation
+                </span>
+                <span
+                  className="inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-sm font-semibold"
+                  style={{
+                    backgroundColor: "rgba(244,178,27,0.15)",
+                    color: "var(--reviva-green)",
+                  }}
+                >
+                  <Video size={14} color="var(--reviva-green)" /> Online Consultation
+                </span>
               </div>
             </motion.div>
           </div>
@@ -170,9 +160,9 @@ export default function HowItWorks() {
 
                 {/* Content */}
                 <div>
-                  <div className="flex items-center gap-3 mb-4">
+                  <div className="flex items-center gap-4 mb-4">
                     <div
-                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl"
+                      className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl"
                       style={{
                         backgroundColor:
                           stage.color === "var(--reviva-gold)"
@@ -180,10 +170,10 @@ export default function HowItWorks() {
                             : "rgba(47,107,45,0.1)",
                       }}
                     >
-                      <Icon size={20} color={stage.color} />
+                      <Icon size={34} color={stage.color} />
                     </div>
                     <h3
-                      className="text-base font-bold uppercase tracking-widest"
+                      className="text-2xl font-bold uppercase tracking-widest"
                       style={{ color: stage.color }}
                     >
                       {stage.phase}
@@ -208,29 +198,38 @@ export default function HowItWorks() {
                   {/* Duration sub-cards — only inside stage 3 */}
                   {stage.number === "3" && (
                     <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
-                      {durationCards.map((card) => {
+                      {durationCards.map((card, ci) => {
                         const CardIcon = card.icon;
+                        const cardPalette = [
+                          { color: "var(--reviva-green)",      bg: "#ffffff", border: "var(--reviva-green)",      iconBg: "rgba(47,107,45,0.12)" },
+                          { color: "var(--reviva-gold)",       bg: "#ffffff", border: "var(--reviva-gold)",       iconBg: "rgba(244,178,27,0.15)" },
+                          { color: "var(--reviva-terracotta)", bg: "#ffffff", border: "var(--reviva-terracotta)", iconBg: "rgba(193,99,74,0.12)" },
+                        ];
+                        const pal = cardPalette[ci] ?? cardPalette[0];
                         return (
                           <div
                             key={card.months}
                             className="flex flex-col rounded-2xl p-5"
-                            style={{ backgroundColor: "rgba(47,107,45,0.06)" }}
+                            style={{
+                              backgroundColor: pal.bg,
+                              borderLeft: `4px solid ${pal.border}`,
+                            }}
                           >
                             <div className="flex items-center gap-3 mb-3">
                               <div
                                 className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl"
-                                style={{ backgroundColor: "rgba(47,107,45,0.15)" }}
+                                style={{ backgroundColor: pal.iconBg }}
                               >
-                                <CardIcon size={18} color="var(--reviva-green)" />
+                                <CardIcon size={18} color={pal.color} />
                               </div>
                               <div>
                                 <p
-                                  className="text-sm font-bold uppercase tracking-widest"
-                                  style={{ color: "var(--reviva-green)" }}
+                                  className="text-lg font-bold uppercase tracking-widest"
+                                  style={{ color: pal.color }}
                                 >
                                   {card.months}
                                 </p>
-                                <p className="text-base font-semibold text-slate-700">
+                                <p className="text-sm font-semibold text-slate-700">
                                   {card.label}
                                 </p>
                               </div>
@@ -243,9 +242,14 @@ export default function HowItWorks() {
                                 >
                                   <span
                                     className="mt-1.5 h-1 w-1 shrink-0 rounded-full"
-                                    style={{ backgroundColor: "var(--reviva-green)" }}
+                                    style={{ backgroundColor: pal.color }}
                                   />
-                                  {pt}
+                                  {pt.startsWith("Recommended support:") ? (
+                                    <span>
+                                      <span className="font-bold text-slate-700">Recommended support:</span>
+                                      {pt.slice("Recommended support:".length)}
+                                    </span>
+                                  ) : pt}
                                 </li>
                               ))}
                             </ul>
@@ -253,13 +257,13 @@ export default function HowItWorks() {
                               <p
                                 className="mt-4 pt-3 text-xs leading-relaxed italic"
                                 style={{
-                                  borderTop: "1px solid rgba(47,107,45,0.15)",
+                                  borderTop: `1px solid ${pal.iconBg}`,
                                   color: "var(--reviva-warm-brown)",
                                 }}
                               >
                                 <span
                                   className="not-italic font-semibold"
-                                  style={{ color: "var(--reviva-green)" }}
+                                  style={{ color: pal.color }}
                                 >
                                   Note:
                                 </span>{" "}
