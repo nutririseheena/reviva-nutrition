@@ -1,0 +1,28 @@
+import { Resend } from "resend";
+import { siteConfig } from "@/data/site";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+export async function POST(req: Request) {
+  try {
+    const { name, phone, email, message } = await req.json();
+
+    const { error } = await resend.emails.send({
+      from: "Reviva Nutrition <onboarding@resend.dev>",
+      to: [siteConfig.contact.email],
+      subject: "New Speaking Invitation Request",
+      html: `
+        <h2>New Speaking Invitation Request</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Email:</strong> ${email || "Not provided"}</p>
+        <p><strong>Details:</strong> ${message}</p>
+      `,
+    });
+
+    if (error) return Response.json({ success: false }, { status: 500 });
+    return Response.json({ success: true });
+  } catch {
+    return Response.json({ success: false }, { status: 500 });
+  }
+}

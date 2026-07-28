@@ -1,7 +1,15 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { CheckCircle, MessageCircle, Phone, Mail, Loader2, PartyPopper, ChevronDown } from "lucide-react";
+import {
+  CheckCircle,
+  MessageCircle,
+  Phone,
+  Mail,
+  Loader2,
+  PartyPopper,
+  ChevronDown,
+} from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface FieldErrors {
@@ -33,13 +41,7 @@ const durationOptions = [
   { value: "12 Months", label: "12 Months", sub: "Live Your Healthiest Life" },
 ];
 
-function DurationDropdown({
-  value,
-  onChange,
-}: {
-  value: string;
-  onChange: (v: string) => void;
-}) {
+function DurationDropdown({ value, onChange }: { value: string; onChange: (v: string) => void }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -74,14 +76,20 @@ function DurationDropdown({
           {value && (
             <span
               role="button"
-              onClick={(e) => { e.stopPropagation(); onChange(""); }}
+              onClick={(e) => {
+                e.stopPropagation();
+                onChange("");
+              }}
               className="flex h-6 w-6 items-center justify-center rounded-full text-sm text-slate-400 hover:bg-slate-200 hover:text-slate-600"
               aria-label="Clear duration"
             >
               &#x2715;
             </span>
           )}
-          <ChevronDown size={16} className={`text-slate-400 transition-transform ${open ? "rotate-180" : ""}`} />
+          <ChevronDown
+            size={16}
+            className={`text-slate-400 transition-transform ${open ? "rotate-180" : ""}`}
+          />
         </span>
       </button>
 
@@ -91,7 +99,10 @@ function DurationDropdown({
             <button
               key={opt.value}
               type="button"
-              onClick={() => { onChange(opt.value); setOpen(false); }}
+              onClick={() => {
+                onChange(opt.value);
+                setOpen(false);
+              }}
               className="w-full px-4 py-3 text-left text-xs hover:bg-slate-50 transition border-b border-slate-100 last:border-b-0"
               style={{ color: value === opt.value ? "#2f6b2d" : "#1a1a1a" }}
             >

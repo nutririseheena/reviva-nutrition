@@ -40,3 +40,19 @@ export const tickerSpecialties = [
   "Heart Health",
   "Sports Nutrition",
 ];
+
+export interface ImpactPhoto {
+  src?: string; // add real image path here when available
+  alt: string;
+  url?: string; // optional — opens in new tab when clicked
+}
+
+export const impactPhotos: ImpactPhoto[] = [
+  { src: "/images/about/impact1.png", alt: "Impact photo 1", url: "" },
+  { src: "/images/about/impact2.png", alt: "Impact photo 2", url: "https://www.youtube.com/shorts/6TfHleXIOx8" },
+  { src: "/images/about/impact3.png", alt: "Impact photo 3", url: "" },
+  { src: "/images/about/impact4.png", alt: "Impact photo 4", url: "https://www.facebook.com/share/p/1Cjj8SRASF/" },
+  { src: "/images/about/impact5.png", alt: "Impact photo 5", url: "" },
+  { src: "/images/about/impact6.png", alt: "Impact photo 6", url: "https://www.instagram.com/tv/CO-4GO1lSEQ/?igsh=MWtydTB2eTJ5eGZ5aQ==" },
+  { src: "/images/about/impact7.png", alt: "Impact photo 7", url: "" },
+];
