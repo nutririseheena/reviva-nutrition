@@ -201,9 +201,24 @@ export default function HowItWorks() {
                       {durationCards.map((card, ci) => {
                         const CardIcon = card.icon;
                         const cardPalette = [
-                          { color: "var(--reviva-green)",      bg: "#ffffff", border: "var(--reviva-green)",      iconBg: "rgba(47,107,45,0.12)" },
-                          { color: "var(--reviva-gold)",       bg: "#ffffff", border: "var(--reviva-gold)",       iconBg: "rgba(244,178,27,0.15)" },
-                          { color: "var(--reviva-terracotta)", bg: "#ffffff", border: "var(--reviva-terracotta)", iconBg: "rgba(193,99,74,0.12)" },
+                          {
+                            color: "var(--reviva-green)",
+                            bg: "#ffffff",
+                            border: "var(--reviva-green)",
+                            iconBg: "rgba(47,107,45,0.12)",
+                          },
+                          {
+                            color: "var(--reviva-gold)",
+                            bg: "#ffffff",
+                            border: "var(--reviva-gold)",
+                            iconBg: "rgba(244,178,27,0.15)",
+                          },
+                          {
+                            color: "var(--reviva-terracotta)",
+                            bg: "#ffffff",
+                            border: "var(--reviva-terracotta)",
+                            iconBg: "rgba(193,99,74,0.12)",
+                          },
                         ];
                         const pal = cardPalette[ci] ?? cardPalette[0];
                         return (
@@ -229,9 +244,7 @@ export default function HowItWorks() {
                                 >
                                   {card.months}
                                 </p>
-                                <p className="text-sm font-semibold text-slate-700">
-                                  {card.label}
-                                </p>
+                                <p className="text-sm font-semibold text-slate-700">{card.label}</p>
                               </div>
                             </div>
                             <ul className="space-y-2 flex-1">
@@ -246,10 +259,14 @@ export default function HowItWorks() {
                                   />
                                   {pt.startsWith("Recommended support:") ? (
                                     <span>
-                                      <span className="font-bold text-slate-700">Recommended support:</span>
+                                      <span className="font-bold text-slate-700">
+                                        Recommended support:
+                                      </span>
                                       {pt.slice("Recommended support:".length)}
                                     </span>
-                                  ) : pt}
+                                  ) : (
+                                    pt
+                                  )}
                                 </li>
                               ))}
                             </ul>

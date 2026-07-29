@@ -167,6 +167,15 @@ body {
   animation: cursor-blink 0.85s step-end infinite;
 }
 
+/* ── Scrollbar hide — used by horizontal scroll strips ── */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /*
  * Hero slide heights — responsive to viewport so content never overflows
  * on short Windows laptop viewports (e.g. 768 px physical at 100 % zoom).

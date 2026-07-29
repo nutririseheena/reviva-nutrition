@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import Navbar from "@/components/home/Navbar";
 import Footer from "@/components/home/Footer";
 import WhatsAppFloat from "@/components/home/WhatsAppFloat";
-import AboutHero from "@/components/about/AboutHero";
-import AboutStory from "@/components/about/AboutStory";
-import AboutStatsCharts from "@/components/about/AboutStatsCharts";
-import AboutYoutube from "@/components/about/AboutYoutube";
+import AboutHeroBanner from "@/components/about/AboutHeroBanner";
+import AboutBio from "@/components/about/AboutBio";
+import AboutImpact from "@/components/about/AboutImpact";
+import AboutInvite from "@/components/about/AboutInvite";
 
 export const metadata: Metadata = {
   title: "About — Reviva Nutrition",
@@ -18,10 +18,10 @@ export default function AboutPage() {
     <>
       <Navbar />
       <main className="overflow-x-hidden">
-        <AboutHero />
-        <AboutStory />
-        <AboutStatsCharts />
-        <AboutYoutube />
+        <AboutHeroBanner />
+        <AboutBio />
+        <AboutImpact />
+        <AboutInvite />
       </main>
       <Footer />
       <WhatsAppFloat />
