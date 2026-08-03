@@ -31,7 +31,7 @@ export const navLinks = [
   { href: "/about", label: "About" },
   { href: "/consult", label: "Consult" },
   { href: "/testimonials", label: "Testimonials" },
-  { href: "/about#invite-form", label: "Invite" },
+  { href: "/about#invite-form", label: "Invite Heena" },
 ];
 
 export const footerLinks = [

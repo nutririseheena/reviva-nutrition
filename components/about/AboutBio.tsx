@@ -53,17 +53,27 @@ export default function AboutBio() {
         >
           <p>
             Growing up in a family with a rich legacy of the{" "}
-            <span className="reviva-italic-em" style={{ fontSize: "1.15em" }}>
+            <span className="font-bold" style={{ color: "var(--reviva-warm-brown)" }}>
               Unani healing system
             </span>
             , I developed a deep respect for nature and its healing wisdom from an early age. My
             passion for research, love for nature, and curiosity to uncover the root causes of
-            health challenges inspired me to become a Clinical Dietitian.
+            health challenges inspired me to become a{" "}
+            <span className="font-semibold" style={{ color: "var(--reviva-warm-brown)" }}>
+              Clinical Dietitian
+            </span>
+            .
           </p>
           <p>
-            I believe true healing begins with the right approach, consistency, and discipline.
-            Through Reviva Nutrition, my mission is to help people reconnect with the healing power
-            of nutrition and build a healthier, more balanced life.
+            I believe true healing begins with the{" "}
+            <span className="font-semibold" style={{ color: "var(--reviva-warm-brown)" }}>
+              right approach, consistency, and discipline
+            </span>
+            . Through Reviva Nutrition, my mission is to help people reconnect with the{" "}
+            <span className="font-semibold" style={{ color: "var(--reviva-terracotta)" }}>
+              healing power of nutrition
+            </span>{" "}
+            and build a healthier, more balanced life.
           </p>
           <p>
             Beyond my profession, I enjoy travelling, sports, music, and continuous
