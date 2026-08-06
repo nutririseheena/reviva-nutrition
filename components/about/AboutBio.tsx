@@ -11,8 +11,8 @@ const fadeUp = {
 
 export default function AboutBio() {
   return (
-    <section className="bg-[var(--reviva-cream)]">
-      <div className="mx-auto max-w-7xl flex flex-col lg:flex-row divide-y lg:divide-y-0 lg:divide-x divide-[var(--reviva-blush-deep)]">
+    <section className="bg-[var(--reviva-cream)] px-4 sm:px-8 lg:px-20">
+      <div className="w-full flex flex-col lg:flex-row divide-y lg:divide-y-0 lg:divide-x divide-[var(--reviva-blush-deep)]">
         {/* ── Left panel — name + credentials ── */}
         <motion.div
           {...fadeUp}
@@ -25,7 +25,7 @@ export default function AboutBio() {
 
           <h1
             className="reviva-display leading-[1.05] whitespace-nowrap"
-            style={{ fontSize: "clamp(2.4rem, 4.6vw, 4.8rem)" }}
+            style={{ fontSize: "clamp(2.4rem, 4.6vw, 4.8rem)", color: "var(--reviva-gold-dark)" }}
           >
             Dt. Heena Yadav
           </h1>
@@ -65,11 +65,11 @@ export default function AboutBio() {
         </motion.div>
 
         {/* ── Right panel — bio + aim ── */}
-        <div className="lg:flex-1 flex flex-col justify-center px-8 py-14 sm:px-12 lg:px-14 lg:py-20">
+        <div className="lg:flex-1 flex flex-col justify-center px-8 py-14 sm:px-10 lg:pl-14 lg:pr-0 lg:py-20">
           <motion.div
             {...fadeUp}
             transition={{ duration: 0.7, ease: "easeOut" as const, delay: 0.1 }}
-            className="space-y-5 text-[17px] leading-[1.75] text-stone-600 max-w-2xl text-justify"
+            className="space-y-5 text-[17px] leading-[1.75] text-stone-600 text-justify"
           >
             <p>
               Growing up in a family with a rich legacy of the{" "}

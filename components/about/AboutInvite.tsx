@@ -106,7 +106,7 @@ export default function AboutInvite() {
     <>
       <section
         id="invite-form"
-        className="bg-[var(--reviva-blush)] py-16 sm:py-20 lg:py-28 scroll-mt-24"
+        className="bg-[var(--reviva-cream-dark)] py-16 sm:py-20 lg:py-28 scroll-mt-24"
       >
         <div className="page-pad">
           <motion.div
@@ -117,7 +117,7 @@ export default function AboutInvite() {
             className="text-center"
           >
             <h2
-              className="font-bold text-[var(--reviva-warm-brown)] leading-[1.1] mb-6"
+              className="font-bold text-[var(--reviva-green)] leading-[1.1] mb-6"
               style={{ fontSize: "clamp(3rem, 7vw, 6rem)" }}
             >
               Nutrition{" "}
@@ -141,10 +141,10 @@ export default function AboutInvite() {
               {VENUES.map((v) => (
                 <span
                   key={v}
-                  className="px-4 py-1.5 rounded-full text-sm font-medium text-[var(--reviva-warm-brown)]"
+                  className="px-4 py-1.5 rounded-full text-sm font-medium text-[var(--reviva-green)]"
                   style={{
-                    border: "1px solid rgba(193,99,74,0.35)",
-                    backgroundColor: "rgba(193,99,74,0.07)",
+                    border: "1px solid rgba(47,107,45,0.35)",
+                    backgroundColor: "rgba(47,107,45,0.07)",
                   }}
                 >
                   {v}
@@ -154,8 +154,12 @@ export default function AboutInvite() {
 
             <button
               onClick={() => setOpen(true)}
-              className="inline-block rounded-full bg-[var(--reviva-warm-brown)] text-[var(--reviva-cream)] text-sm font-semibold tracking-widest uppercase transition-all hover:bg-[var(--reviva-terracotta)] hover:scale-105 active:scale-95"
-              style={{ padding: "0.9rem 2.4rem" }}
+              className="inline-block rounded-full text-[var(--reviva-green-dark)] text-sm font-semibold tracking-widest uppercase transition-all hover:scale-105 active:scale-95"
+              style={{
+                padding: "0.9rem 2.4rem",
+                backgroundColor: "var(--reviva-gold)",
+                boxShadow: "0 4px 20px rgba(244,178,27,0.35)",
+              }}
             >
               Invite Heena
             </button>
