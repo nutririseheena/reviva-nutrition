@@ -39,5 +39,6 @@ export const footerLinks = [
   { href: "/about", label: "About" },
   { href: "/consult", label: "Consult" },
   { href: "/testimonials", label: "Testimonials" },
+  { href: "/contact", label: "Contact Us" },
   { href: "/terms-and-conditions", label: "Terms & Conditions" },
 ];
