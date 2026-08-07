@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { CreditCard, Lock, Sprout, ClipboardList } from "lucide-react";
+import { CreditCard, Lock, ClipboardList } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { siteConfig } from "@/data/site";
 

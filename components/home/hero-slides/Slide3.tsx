@@ -4,6 +4,7 @@ import { useSyncExternalStore } from "react";
 import { ArrowRight, MonitorSmartphone, TrendingUp, Users, Star } from "lucide-react";
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, Cell } from "recharts";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { heroMetrics, outcomesData, barColors } from "@/data/hero";
 import { siteConfig } from "@/data/site";
 
@@ -102,16 +103,14 @@ export default function Slide3() {
             </motion.p>
 
             <motion.div variants={item} className="mt-8 flex flex-wrap gap-3">
-              <button
-                onClick={() =>
-                  document.getElementById("consult-form")?.scrollIntoView({ behavior: "smooth" })
-                }
+              <Link
+                href="/contact"
                 className="flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white shadow-md transition-all hover:scale-105 hover:shadow-lg"
                 style={{ backgroundColor: "var(--reviva-green)" }}
               >
                 Book Online Consultation
                 <ArrowRight size={17} />
-              </button>
+              </Link>
               <button
                 onClick={() =>
                   window.open(siteConfig.googleReview.url, "_blank", "noopener,noreferrer")

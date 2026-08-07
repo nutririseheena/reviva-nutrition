@@ -31,7 +31,7 @@ export const navLinks = [
   { href: "/about", label: "About" },
   { href: "/consult", label: "Consult" },
   { href: "/testimonials", label: "Testimonials" },
-  { href: "/about#invite-form", label: "Invite" },
+  { href: "/about#invite-form", label: "Invite Heena" },
 ];
 
 export const footerLinks = [
@@ -39,5 +39,6 @@ export const footerLinks = [
   { href: "/about", label: "About" },
   { href: "/consult", label: "Consult" },
   { href: "/testimonials", label: "Testimonials" },
+  { href: "/contact", label: "Contact Us" },
   { href: "/terms-and-conditions", label: "Terms & Conditions" },
 ];

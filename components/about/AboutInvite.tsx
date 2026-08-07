@@ -22,8 +22,7 @@ function validate(f: FormState): Errors {
   const e: Errors = {};
   if (!f.name.trim()) e.name = "Name is required";
   if (!f.phone.trim()) e.phone = "Phone is required";
-  else if (!/^\+?[\d\s\-().\/]{7,15}$/.test(f.phone.trim()))
-    e.phone = "Enter a valid phone number";
+  else if (!/^\+?[\d\s\-().\/]{7,15}$/.test(f.phone.trim())) e.phone = "Enter a valid phone number";
   if (f.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email.trim()))
     e.email = "Enter a valid email";
   if (!f.message.trim()) e.message = "Please tell us more";
@@ -44,11 +43,15 @@ export default function AboutInvite() {
     } else {
       document.body.style.overflow = "";
     }
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [open]);
 
   useEffect(() => {
-    const handler = (e: KeyboardEvent) => { if (e.key === "Escape") closeModal(); };
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeModal();
+    };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
   }, []);
@@ -64,13 +67,20 @@ export default function AboutInvite() {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
     if (errors[name as keyof FormState])
-      setErrors((prev) => { const n = { ...prev }; delete n[name as keyof FormState]; return n; });
+      setErrors((prev) => {
+        const n = { ...prev };
+        delete n[name as keyof FormState];
+        return n;
+      });
   }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const errs = validate(form);
-    if (Object.keys(errs).length) { setErrors(errs); return; }
+    if (Object.keys(errs).length) {
+      setErrors(errs);
+      return;
+    }
     setStatus("loading");
     try {
       const res = await fetch("/api/invite", {
@@ -96,7 +106,7 @@ export default function AboutInvite() {
     <>
       <section
         id="invite-form"
-        className="bg-[var(--reviva-blush)] py-16 sm:py-20 lg:py-28 scroll-mt-24"
+        className="bg-[var(--reviva-cream-dark)] py-16 sm:py-20 lg:py-28 scroll-mt-24"
       >
         <div className="page-pad">
           <motion.div
@@ -107,11 +117,14 @@ export default function AboutInvite() {
             className="text-center"
           >
             <h2
-              className="font-bold text-[var(--reviva-warm-brown)] leading-[1.1] mb-6"
+              className="font-bold text-[var(--reviva-green)] leading-[1.1] mb-6"
               style={{ fontSize: "clamp(3rem, 7vw, 6rem)" }}
             >
               Nutrition{" "}
-              <span className="reviva-display font-normal" style={{ color: "var(--reviva-terracotta)", fontSize: "1.08em" }}>
+              <span
+                className="reviva-display font-normal"
+                style={{ color: "var(--reviva-terracotta)", fontSize: "1.08em" }}
+              >
                 Education
               </span>
             </h2>
@@ -120,18 +133,18 @@ export default function AboutInvite() {
               className="text-[var(--reviva-warm-brown)] leading-relaxed mb-8 max-w-2xl mx-auto"
               style={{ fontSize: "clamp(1rem, 1.4vw, 1.15rem)", opacity: 0.8 }}
             >
-              Empowering people to understand their body, challenge health myths, and make
-              informed nutrition and lifestyle choices for lifelong wellness.
+              Empowering people to understand their body, challenge health myths, and make informed
+              nutrition and lifestyle choices for lifelong wellness.
             </p>
 
             <div className="flex flex-wrap gap-2 mb-10 justify-center">
               {VENUES.map((v) => (
                 <span
                   key={v}
-                  className="px-4 py-1.5 rounded-full text-sm font-medium text-[var(--reviva-warm-brown)]"
+                  className="px-4 py-1.5 rounded-full text-sm font-medium text-[var(--reviva-green)]"
                   style={{
-                    border: "1px solid rgba(193,99,74,0.35)",
-                    backgroundColor: "rgba(193,99,74,0.07)",
+                    border: "1px solid rgba(47,107,45,0.35)",
+                    backgroundColor: "rgba(47,107,45,0.07)",
                   }}
                 >
                   {v}
@@ -141,8 +154,12 @@ export default function AboutInvite() {
 
             <button
               onClick={() => setOpen(true)}
-              className="inline-block rounded-full bg-[var(--reviva-warm-brown)] text-[var(--reviva-cream)] text-sm font-semibold tracking-widest uppercase transition-all hover:bg-[var(--reviva-terracotta)] hover:scale-105 active:scale-95"
-              style={{ padding: "0.9rem 2.4rem" }}
+              className="inline-block rounded-full text-[var(--reviva-green-dark)] text-sm font-semibold tracking-widest uppercase transition-all hover:scale-105 active:scale-95"
+              style={{
+                padding: "0.9rem 2.4rem",
+                backgroundColor: "var(--reviva-gold)",
+                boxShadow: "0 4px 20px rgba(244,178,27,0.35)",
+              }}
             >
               Invite Heena
             </button>
@@ -200,7 +217,10 @@ export default function AboutInvite() {
                         style={{ fontSize: "clamp(1.4rem, 3vw, 1.9rem)" }}
                       >
                         Invite{" "}
-                        <span className="reviva-display font-normal" style={{ color: "var(--reviva-terracotta)" }}>
+                        <span
+                          className="reviva-display font-normal"
+                          style={{ color: "var(--reviva-terracotta)" }}
+                        >
                           Heena
                         </span>
                       </h3>
@@ -213,7 +233,9 @@ export default function AboutInvite() {
                   {status === "success" ? (
                     <div className="text-center py-8">
                       <div className="text-5xl mb-4">🙏</div>
-                      <p className="font-semibold text-[var(--reviva-warm-brown)] text-lg mb-1">Thank you!</p>
+                      <p className="font-semibold text-[var(--reviva-warm-brown)] text-lg mb-1">
+                        Thank you!
+                      </p>
                       <p className="text-sm" style={{ color: "rgba(124,66,51,0.65)" }}>
                         We&apos;ve received your invitation request and will reach out soon.
                       </p>
@@ -228,7 +250,10 @@ export default function AboutInvite() {
                     <form onSubmit={handleSubmit} noValidate className="space-y-4">
                       {/* Name */}
                       <div>
-                        <label className="block text-xs font-semibold uppercase tracking-wide mb-1.5" style={{ color: "var(--reviva-warm-brown)" }}>
+                        <label
+                          className="block text-xs font-semibold uppercase tracking-wide mb-1.5"
+                          style={{ color: "var(--reviva-warm-brown)" }}
+                        >
                           Name <span style={{ color: "var(--reviva-terracotta)" }}>*</span>
                         </label>
                         <input
@@ -245,7 +270,10 @@ export default function AboutInvite() {
 
                       {/* Phone */}
                       <div>
-                        <label className="block text-xs font-semibold uppercase tracking-wide mb-1.5" style={{ color: "var(--reviva-warm-brown)" }}>
+                        <label
+                          className="block text-xs font-semibold uppercase tracking-wide mb-1.5"
+                          style={{ color: "var(--reviva-warm-brown)" }}
+                        >
                           Phone <span style={{ color: "var(--reviva-terracotta)" }}>*</span>
                         </label>
                         <input
@@ -256,12 +284,17 @@ export default function AboutInvite() {
                           placeholder="+91 98765 43210"
                           className={inputCls("phone")}
                         />
-                        {errors.phone && <p className="mt-1 text-xs text-red-500">{errors.phone}</p>}
+                        {errors.phone && (
+                          <p className="mt-1 text-xs text-red-500">{errors.phone}</p>
+                        )}
                       </div>
 
                       {/* Email */}
                       <div>
-                        <label className="block text-xs font-semibold uppercase tracking-wide mb-1.5" style={{ color: "var(--reviva-warm-brown)" }}>
+                        <label
+                          className="block text-xs font-semibold uppercase tracking-wide mb-1.5"
+                          style={{ color: "var(--reviva-warm-brown)" }}
+                        >
                           Email
                         </label>
                         <input
@@ -272,12 +305,17 @@ export default function AboutInvite() {
                           placeholder="you@example.com"
                           className={inputCls("email")}
                         />
-                        {errors.email && <p className="mt-1 text-xs text-red-500">{errors.email}</p>}
+                        {errors.email && (
+                          <p className="mt-1 text-xs text-red-500">{errors.email}</p>
+                        )}
                       </div>
 
                       {/* Tell us more */}
                       <div>
-                        <label className="block text-xs font-semibold uppercase tracking-wide mb-1.5" style={{ color: "var(--reviva-warm-brown)" }}>
+                        <label
+                          className="block text-xs font-semibold uppercase tracking-wide mb-1.5"
+                          style={{ color: "var(--reviva-warm-brown)" }}
+                        >
                           Tell us more <span style={{ color: "var(--reviva-terracotta)" }}>*</span>
                         </label>
                         <textarea
@@ -288,7 +326,9 @@ export default function AboutInvite() {
                           rows={3}
                           className={`${inputCls("message")} resize-none`}
                         />
-                        {errors.message && <p className="mt-1 text-xs text-red-500">{errors.message}</p>}
+                        {errors.message && (
+                          <p className="mt-1 text-xs text-red-500">{errors.message}</p>
+                        )}
                       </div>
 
                       {status === "error" && (

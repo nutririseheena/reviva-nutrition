@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useSyncExternalStore } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -39,7 +39,13 @@ function toAbsoluteUrl(url: string) {
   return /^https?:\/\//i.test(url) ? url : `https://${url}`;
 }
 
-function CardInner({ photo, index }: { photo: { src?: string; alt: string; url?: string }; index: number }) {
+function CardInner({
+  photo,
+  index,
+}: {
+  photo: { src?: string; alt: string; url?: string };
+  index: number;
+}) {
   const inner = (
     <div
       className="relative overflow-hidden rounded-[20px] shadow-lg w-full"
@@ -87,7 +93,7 @@ function CardInner({ photo, index }: { photo: { src?: string; alt: string; url?:
           </svg>
         </div>
       )}
-      </div>
+    </div>
   );
 
   if (photo.url) {
@@ -108,23 +114,17 @@ function CardInner({ photo, index }: { photo: { src?: string; alt: string; url?:
 }
 
 export default function AboutImpact() {
-  /*
-   * Swiper breakpoints are evaluated against window.innerWidth which is only
-   * available on the client. Rendering Swiper only after mount avoids the
-   * SSR/hydration mismatch where the server sends slidesPerView=1 and the
-   * browser never re-evaluates the breakpoints — causing the single giant card.
-   */
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  // false on server, true on client — avoids Swiper SSR/hydration mismatch
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
 
   return (
     <section className="bg-[var(--reviva-cream)] py-10 sm:py-16 lg:py-20">
-
       {/* ── Main row: stacked on <lg, horizontal on lg+ ── */}
       <div className="flex flex-col lg:flex-row lg:items-center px-6 sm:px-8 lg:px-10 xl:px-12">
-
         {/* Title */}
         <motion.div
           initial={{ opacity: 0, x: -32 }}
@@ -138,7 +138,9 @@ export default function AboutImpact() {
             style={{ fontSize: "clamp(1.5rem, 3.9vw, 2.5rem)" }}
           >
             <span className="block mb-2">Creating Awareness.</span>
-            <span className="block mb-2" style={{ color: "var(--reviva-terracotta)" }}>Transforming Mindsets.</span>
+            <span className="block mb-2" style={{ color: "var(--reviva-terracotta)" }}>
+              Transforming Mindsets.
+            </span>
             <span className="block">Inspiring Healthier Lives.</span>
           </p>
         </motion.div>
@@ -161,13 +163,19 @@ export default function AboutImpact() {
               loop
               speed={500}
               autoplay={{ delay: 5000, disableOnInteraction: false }}
-              coverflowEffect={{ rotate: 40, stretch: 0, depth: 80, modifier: 1, slideShadows: true }}
+              coverflowEffect={{
+                rotate: 40,
+                stretch: 0,
+                depth: 80,
+                modifier: 1,
+                slideShadows: true,
+              }}
               navigation={{ prevEl: `.${PREV_CLS}`, nextEl: `.${NEXT_CLS}` }}
               onBeforeInit={onBeforeInit}
               breakpoints={{
-                0:    { slidesPerView: 1,   spaceBetween: 0  },
-                640:  { slidesPerView: 2.1, spaceBetween: 10 },
-                900:  { slidesPerView: 2.8, spaceBetween: 12 },
+                0: { slidesPerView: 1, spaceBetween: 0 },
+                640: { slidesPerView: 2.1, spaceBetween: 10 },
+                900: { slidesPerView: 2.8, spaceBetween: 12 },
                 1023: { slidesPerView: 2.5, spaceBetween: 10 },
                 1279: { slidesPerView: 2.8, spaceBetween: 12 },
               }}
@@ -199,11 +207,7 @@ export default function AboutImpact() {
         >
           <ChevronRight size={17} strokeWidth={2} />
         </button>
-
       </div>
-
-
-
     </section>
   );
 }

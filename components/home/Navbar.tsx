@@ -92,7 +92,7 @@ export default function Navbar() {
 
             {/* Desktop CTA */}
             <Link
-              href="/consult#consult-form"
+              href="/contact"
               className="hidden md:inline-flex items-center rounded-full px-6 py-3 text-base font-semibold text-white shadow-sm transition-all hover:scale-105 hover:shadow-md"
               style={{ backgroundColor: "var(--reviva-gold)" }}
             >

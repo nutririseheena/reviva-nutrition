@@ -6,6 +6,7 @@ import AboutHeroBanner from "@/components/about/AboutHeroBanner";
 import AboutBio from "@/components/about/AboutBio";
 import AboutImpact from "@/components/about/AboutImpact";
 import AboutInvite from "@/components/about/AboutInvite";
+import AboutYoutube from "@/components/about/AboutYoutube";
 
 export const metadata: Metadata = {
   title: "About — Reviva Nutrition",
@@ -22,6 +23,7 @@ export default function AboutPage() {
         <AboutBio />
         <AboutImpact />
         <AboutInvite />
+        <AboutYoutube />
       </main>
       <Footer />
       <WhatsAppFloat />
