@@ -11,7 +11,8 @@ export interface MythFactsCategory {
   mythFactPairs: MythFactPair[];
 }
 
-export const pageTagline = "Don't let myths shape your health journey.\n\nReplace confusion with knowledge—because every informed choice brings you closer to lasting wellness.";
+export const pageTagline =
+  "Don't let myths shape your health journey.\n\nReplace confusion with knowledge—because every informed choice brings you closer to lasting wellness.";
 
 export const mythsFactsData: MythFactsCategory[] = [
   {
@@ -67,7 +68,8 @@ export const mythsFactsData: MythFactsCategory[] = [
   {
     id: "menstrual",
     title: "Menstrual: Myths & Facts",
-    tagline: "Your menstrual cycle is your body's monthly health report.\n\nDon't normalize discomfort. Understand your body, challenge the myths, and make informed choices.",
+    tagline:
+      "Your menstrual cycle is your body's monthly health report.\n\nDon't normalize discomfort. Understand your body, challenge the myths, and make informed choices.",
     mythFactPairs: [
       {
         myth: "Severe PMS pain is normal for every teen.",
@@ -98,7 +100,8 @@ export const mythsFactsData: MythFactsCategory[] = [
   {
     id: "acidity",
     title: "Acidity: Myths & Facts",
-    tagline: "Acidity is a signal — not just a stomach problem. Understand your triggers before choosing a remedy.",
+    tagline:
+      "Acidity is a signal — not just a stomach problem. Understand your triggers before choosing a remedy.",
     mythFactPairs: [
       {
         myth: "Acidity is caused only by spicy food.",
@@ -172,7 +175,8 @@ export const mythsFactsData: MythFactsCategory[] = [
   {
     id: "constipation",
     title: "Constipation: Myths & Facts",
-    tagline: "Constipation is a symptom — not a diagnosis. Understand the root cause before choosing a remedy.",
+    tagline:
+      "Constipation is a symptom — not a diagnosis. Understand the root cause before choosing a remedy.",
     mythFactPairs: [
       {
         myth: "Constipation is normal if you're passing stool every day.",
@@ -201,4 +205,3 @@ export const mythsFactsData: MythFactsCategory[] = [
     ],
   },
 ];
-

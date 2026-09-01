@@ -128,7 +128,6 @@ export default function ContactForm() {
                 </span>{" "}
                 with you
               </h2>
-              
             </div>
 
             <AnimatePresence mode="wait">
