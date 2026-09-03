@@ -18,13 +18,13 @@ export default function MythsFactsPage() {
   return (
     <>
       <Navbar />
+      <TestimonialsGrid />
+      <TestimonialsFeedback />
       <main className="overflow-x-hidden">
         <MythsFactsHero />
         {mythsFactsData.map((category, index) => (
           <MythsFactsCategory key={category.id} category={category} isFirst={index === 0} />
         ))}
-        <TestimonialsGrid />
-        <TestimonialsFeedback />
       </main>
       <Footer />
       <WhatsAppFloat />
