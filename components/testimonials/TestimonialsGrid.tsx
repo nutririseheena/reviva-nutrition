@@ -1,98 +1,115 @@
 "use client";
 
-import Link from "next/link";
+import { startTransition, useState } from "react";
 import { motion } from "framer-motion";
-import { Quote, Star, ArrowRight } from "lucide-react";
-import { allTestimonials } from "@/data/testimonials";
+import { Quote, Star } from "lucide-react";
+import {
+  allTestimonials,
+  testimonialCategories,
+  type TestimonialCategory,
+} from "@/data/testimonials";
+import { accentColors, cardGradients } from "@/data/home";
 
 export default function TestimonialsGrid() {
+  const [activeCategory, setActiveCategory] = useState<TestimonialCategory | "All">("All");
+  const visibleTestimonials =
+    activeCategory === "All"
+      ? allTestimonials
+      : allTestimonials.filter((testimonial) => testimonial.category === activeCategory);
+
   return (
     <section className="bg-[var(--reviva-cream)] py-24">
       <div className="mx-auto max-w-7xl page-pad">
-        {/* Grid */}
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {allTestimonials.map((t, index) => (
-            <motion.article
-              key={t.name}
-              className="group relative flex flex-col overflow-hidden rounded-[28px] bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-              initial={{ opacity: 0, y: 36 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.08 }}
-              transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
-            >
-              {/* Top accent */}
-              <div
-                className="absolute top-0 left-0 h-1 w-full"
+        <motion.div
+          className="mb-10 text-center"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.15 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <p className="reviva-eyebrow">Real Success Stories</p>
+        </motion.div>
+
+        <div
+          className="mb-10 flex flex-wrap justify-center gap-2 sm:gap-3"
+          aria-label="Filter success stories"
+        >
+          {(["All", ...testimonialCategories] as const).map((category) => {
+            const isActive = activeCategory === category;
+
+            return (
+              <button
+                key={category}
+                type="button"
+                aria-pressed={isActive}
+                onClick={() => startTransition(() => setActiveCategory(category))}
+                className="rounded-full border px-4 py-2 text-sm font-semibold transition-colors sm:px-5"
                 style={{
-                  background:
-                    index % 2 === 0
-                      ? "linear-gradient(to right, var(--reviva-green), var(--reviva-gold))"
-                      : "linear-gradient(to right, var(--reviva-gold), var(--reviva-green))",
+                  backgroundColor: isActive ? "var(--reviva-green)" : "rgba(255,255,255,0.8)",
+                  borderColor: isActive ? "var(--reviva-green)" : "var(--reviva-blush-deep)",
+                  color: isActive ? "#fff" : "var(--reviva-warm-brown)",
                 }}
+              >
+                {category}
+              </button>
+            );
+          })}
+        </div>
+
+        <div className="grid gap-6 lg:grid-cols-2">
+          {visibleTestimonials.map((testimonial, index) => (
+            <article
+              key={testimonial.name}
+              className="group relative overflow-hidden rounded-[28px] border border-slate-100 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              style={{ background: cardGradients[index % cardGradients.length] }}
+            >
+              <div
+                className="absolute left-0 top-0 h-full w-1 rounded-l-[28px]"
+                style={{ backgroundColor: accentColors[index % accentColors.length] }}
               />
 
-              {/* Stars */}
-              <div className="flex gap-0.5 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={14} fill="var(--reviva-gold)" color="var(--reviva-gold)" />
-                ))}
+              <div className="absolute right-8 top-8 opacity-10">
+                <Quote size={48} color="var(--reviva-green)" />
               </div>
 
-              {/* Quote icon */}
-              <Quote
-                size={28}
-                className="mb-3 opacity-15"
-                style={{ color: "var(--reviva-green)" }}
-              />
-
-              {/* Quote text */}
-              <p className="flex-1 text-sm leading-relaxed text-slate-600 italic">
-                &ldquo;{t.quote}&rdquo;
-              </p>
-
-              {/* Result pill */}
-              <div className="mt-5">
-                <span
-                  className="inline-block rounded-full px-3 py-1 text-xs font-semibold"
+              <div className="flex items-center gap-4">
+                <div
+                  className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-lg font-bold shadow-sm"
                   style={{
-                    backgroundColor: "var(--reviva-gold-light)",
+                    backgroundColor: "rgba(255,255,255,0.85)",
                     color: "var(--reviva-green)",
                   }}
                 >
-                  ✓ {t.result}
-                </span>
+                  {testimonial.name.charAt(0)}
+                </div>
+                <div>
+                  <h3 className="text-base font-bold text-slate-800">{testimonial.name}</h3>
+                  <p className="mt-0.5 text-sm text-slate-500">{testimonial.condition}</p>
+                </div>
+                <div className="ml-auto flex gap-0.5">
+                  {[...Array(5)].map((_, starIndex) => (
+                    <Star key={starIndex} size={15} fill="#f4b21b" color="#f4b21b" />
+                  ))}
+                </div>
               </div>
 
-              {/* Author */}
-              <div className="mt-4 flex items-center justify-between border-t border-slate-50 pt-4">
-                <div>
-                  <p className="text-sm font-semibold text-slate-900">{t.name}</p>
-                  <p className="text-xs text-slate-400">{t.condition}</p>
+              <p className="mt-5 text-[15px] sm:text-base italic leading-relaxed text-slate-700">
+                &ldquo;{testimonial.quote}&rdquo;
+              </p>
+
+              {testimonial.result && (
+                <div className="mt-5">
+                  <span
+                    className="inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-sm font-medium shadow-sm"
+                    style={{ backgroundColor: "rgba(255,255,255,0.8)", color: "#374151" }}
+                  >
+                    {testimonial.result}
+                  </span>
                 </div>
-                <span className="text-xs text-slate-400">{t.duration}</span>
-              </div>
-            </motion.article>
+              )}
+            </article>
           ))}
         </div>
-
-        {/* CTA */}
-        <motion.div
-          className="mt-16 text-center"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.1 }}
-          transition={{ duration: 0.6 }}
-        >
-          <p className="text-lg text-slate-600 mb-6">Ready to write your own success story?</p>
-          <Link
-            href="/consult#consult-form"
-            className="inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-semibold text-white shadow-md transition-all hover:scale-105 hover:shadow-lg"
-            style={{ backgroundColor: "var(--reviva-green)" }}
-          >
-            Start Your Journey
-            <ArrowRight size={18} />
-          </Link>
-        </motion.div>
       </div>
     </section>
   );

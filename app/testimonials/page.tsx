@@ -2,24 +2,29 @@ import type { Metadata } from "next";
 import Navbar from "@/components/home/Navbar";
 import Footer from "@/components/home/Footer";
 import WhatsAppFloat from "@/components/home/WhatsAppFloat";
-import TestimonialsHero from "@/components/testimonials/TestimonialsHero";
+import MythsFactsHero from "@/components/testimonials/MythsFactsHero";
+import MythsFactsCategory from "@/components/testimonials/MythsFactsCategory";
 import TestimonialsGrid from "@/components/testimonials/TestimonialsGrid";
 import TestimonialsFeedback from "@/components/testimonials/TestimonialsFeedback";
+import { mythsFactsData } from "@/data/myths-facts";
 
 export const metadata: Metadata = {
-  title: "Testimonials — Reviva Nutrition",
+  title: "Myths & Facts — Reviva Nutrition",
   description:
-    "Real stories from clients who transformed their health through personalized nutrition with Reviva Nutrition.",
+    "Don't let myths shape your health journey. Learn the facts about weight gain, high BP, menstrual health, acidity, childhood obesity, and constipation.",
 };
 
-export default function TestimonialsPage() {
+export default function MythsFactsPage() {
   return (
     <>
       <Navbar />
+      <TestimonialsGrid />
+      <TestimonialsFeedback />
       <main className="overflow-x-hidden">
-        <TestimonialsHero />
-        <TestimonialsGrid />
-        <TestimonialsFeedback />
+        <MythsFactsHero />
+        {mythsFactsData.map((category, index) => (
+          <MythsFactsCategory key={category.id} category={category} isFirst={index === 0} />
+        ))}
       </main>
       <Footer />
       <WhatsAppFloat />

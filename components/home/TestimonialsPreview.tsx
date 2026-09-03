@@ -157,14 +157,10 @@ export default function TestimonialsPreview() {
         {/* ── Testimonial Cards ── */}
         <div className="mt-14 grid gap-6 lg:grid-cols-2">
           {testimonials.map((testimonial, index) => (
-            <motion.article
+            <article
               key={testimonial.name}
               className="group relative overflow-hidden rounded-[28px] p-8 shadow-sm border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               style={{ background: cardGradients[index % cardGradients.length] }}
-              initial={{ opacity: 0, y: 36 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.1 }}
-              transition={{ duration: 0.55, delay: index * 0.12, ease: "easeOut" }}
             >
               {/* Left accent bar */}
               <div
@@ -219,7 +215,7 @@ export default function TestimonialsPreview() {
                   📍 {testimonial.result}
                 </span>
               </div>
-            </motion.article>
+            </article>
           ))}
         </div>
       </div>
