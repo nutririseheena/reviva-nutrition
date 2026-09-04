@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { X, Check } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { mythsFacts } from "@/data/consult";
 
@@ -94,6 +96,23 @@ export default function MythnFactPreview() {
               </div>
             </motion.div>
           ))}
+        </motion.div>
+
+        <motion.div
+          className="mt-10 text-center"
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.1 }}
+          transition={{ duration: 0.55, ease: "easeOut" }}
+        >
+          <Link
+            href="/testimonials#myths-facts"
+            className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-base font-semibold text-white shadow-md transition-all hover:scale-105 hover:shadow-lg"
+            style={{ backgroundColor: "var(--reviva-green)" }}
+          >
+            Explore All Myths &amp; Facts
+            <ArrowRight size={18} />
+          </Link>
         </motion.div>
       </div>
     </section>

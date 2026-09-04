@@ -6,6 +6,7 @@ import { pageTagline } from "@/data/myths-facts";
 export default function MythsFactsHero() {
   return (
     <section
+      id="myths-facts"
       className="py-20 sm:py-24 md:py-28"
       style={{
         background:
