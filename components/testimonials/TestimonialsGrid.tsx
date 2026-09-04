@@ -10,15 +10,27 @@ import {
 } from "@/data/testimonials";
 import { accentColors, cardGradients } from "@/data/home";
 
+function getInitialCategory(): TestimonialCategory | "All" {
+  if (typeof window === "undefined") return "All";
+
+  const category = new URLSearchParams(window.location.search).get("category");
+  return category && testimonialCategories.includes(category as TestimonialCategory)
+    ? (category as TestimonialCategory)
+    : "All";
+}
+
 export default function TestimonialsGrid() {
-  const [activeCategory, setActiveCategory] = useState<TestimonialCategory | "All">("All");
+  const [activeCategory, setActiveCategory] = useState<TestimonialCategory | "All">(
+    getInitialCategory
+  );
+
   const visibleTestimonials =
     activeCategory === "All"
       ? allTestimonials
       : allTestimonials.filter((testimonial) => testimonial.category === activeCategory);
 
   return (
-    <section className="bg-[var(--reviva-cream)] pb-20 sm:pb-24 md:pb-28">
+    <section id="testimonials-grid" className="bg-[var(--reviva-cream)] pb-20 sm:pb-24 md:pb-28">
       <motion.div
         className="mb-10 w-full px-5 py-12 text-center sm:px-8 md:py-16 lg:px-20"
         style={{
@@ -65,7 +77,7 @@ export default function TestimonialsGrid() {
                 type="button"
                 aria-pressed={isActive}
                 onClick={() => startTransition(() => setActiveCategory(category))}
-                className="rounded-full border px-4 py-2 text-sm font-semibold transition-colors sm:px-5"
+                className="cursor-pointer rounded-full border px-4 py-2 text-sm font-semibold transition-colors sm:px-5"
                 style={{
                   backgroundColor: isActive ? "var(--reviva-green)" : "rgba(255,255,255,0.8)",
                   borderColor: isActive ? "var(--reviva-green)" : "var(--reviva-blush-deep)",
