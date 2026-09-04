@@ -62,7 +62,7 @@ export default function MythsFactsCategory({ category, isFirst = false }: MythsF
               transition={{ duration: 0.7, delay: 0.2 }}
             >
               <p
-                className="text-base sm:text-lg font-medium italic leading-relaxed"
+                className="text-lg sm:text-xl md:text-2xl font-medium italic leading-relaxed"
                 style={{ color: "var(--reviva-terracotta)" }}
               >
                 {categoryMessage.split("\n\n").map((line, index) => (
