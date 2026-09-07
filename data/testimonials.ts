@@ -42,6 +42,8 @@ export const testimonialCategories = [
   "Autoimmune",
   "Lifestyle and Metabolic Disorder",
   "Womens Health",
+  "Geriatric Nutrition - Senior Citizen",
+  "Pediatric & Adolescent Nutrition",
 ] as const;
 
 export type TestimonialCategory = (typeof testimonialCategories)[number];
@@ -80,12 +82,20 @@ export const allTestimonials: TestimonialDetail[] = [
     result: "Hongkong",
   },
   {
-    name: "Dipali Mahakal",
+    name: "Jaswandi — 8 Years",
     category: "Autoimmune",
     condition: "Autoimmune · Lupus",
     quote:
       "I am Dipali Mahakal, my daughter Jaswandi she suffering from SLE lupus from last March 2021. She was taking steroids from last 2 years. After we meet with heena ma'am, I obsessed many positive changes in jaswandi's health. Wysolone (steroids) tablet completely stop from 15 june. She feel happy, healthy and energetic without steroids. Last year in June and July she suffered from high fever and rashes on her legs. Last year she start school from august only that time she can't walk also.. But this year without steroids she is healthy and happy.. Thank you very much ma'am .. It's possible only because of proper diet and yoga.. appreciate you efforts and you prepared our diet plan with consider my all condition thats why i can follow easily.",
-    result: "",
+    result: "Dombivli, Thane",
+  },
+  {
+    name: "Jaswandi — 8 Years",
+    category: "Pediatric & Adolescent Nutrition",
+    condition: "Pediatric & Adolescent Nutrition · SLE Lupus",
+    quote:
+      "I am Dipali Mahakal, my daughter Jaswandi she suffering from SLE lupus from last March 2021. She was taking steroids from last 2 years. After we meet with heena ma'am, I obsessed many positive changes in jaswandi's health. Wysolone (steroids) tablet completely stop from 15 june. She feel happy, healthy and energetic without steroids. Last year in June and July she suffered from high fever and rashes on her legs. Last year she start school from august only that time she can't walk also.. But this year without steroids she is healthy and happy.. Thank you very much ma'am .. It's possible only because of proper diet and yoga.. appreciate you efforts and you prepared our diet plan with consider my all condition thats why i can follow easily.",
+    result: "Dombivli, Thane",
   },
   {
     name: "Geeta Mandlik — 42 Years",
@@ -138,7 +148,7 @@ export const allTestimonials: TestimonialDetail[] = [
   {
     name: "Shailaja S. — 40 Years",
     category: "Lifestyle and Metabolic Disorder",
-    condition: "Lifestyle & Metabolic Disorder · Thyroid",
+    condition: "Lifestyle & Metabolic Disorder · Gut Issues - Thyroid",
     quote:
       "From Gut Issues and Thyroid Imbalance to Better Health and Lasting Habits. When I started with REVIVA Nutrition, I was struggling with persistent gut issues and thyroid imbalance. Through Heena Ma'am's personalized guidance, structured lifestyle changes, and continuous support, I gradually experienced remarkable improvements. Today, I am free from gut issues, my thyroid is well under control, and I feel healthier and more energetic. The biggest gift has been learning sustainable habits that continue to support my health every day. Truly grateful to Heena Ma'am and the REVIVA team for their expertise and care. Highly Recommended.",
     result: "Bangalore",
@@ -149,15 +159,47 @@ export const allTestimonials: TestimonialDetail[] = [
     condition: "Women's Health · Menopause",
     quote:
       "When the Root Cause Was Addressed, Everything Started Changing. No Medicines. Less Acidity. Fewer Hot Flashes. A New Hope During Menopause. I approached Heena Ma'am for hyperacidity, menopause symptoms, hot flashes, constipation, migraines, hair fall, and other health concerns that were affecting my quality of life. Through a personalized 180-day nutrition and lifestyle program, I experienced significant improvements without medication. My acidity reduced, hot flashes became less frequent, constipation improved, migraines reduced, and I noticed healthier hair, better skin, and improved hemoglobin levels. Most importantly, I gained a clear understanding of my body's nutritional needs and now feel confident managing menopause naturally. I am grateful to Heena Ma'am for giving me hope, clarity, and a healthier future.",
-    result: "Navi Mumbai",
+    result: "Mumbai",
   },
   {
-    name: "Nirmala Jadhav — 40 Years",
+    name: "Nirmala — 40 Years",
     category: "Womens Health",
     condition: "Womens Health · PMOS - Insulin Resistance",
     quote:
       "I approached Heena Ma'am after struggling with irregular periods and relying on hormonal pills for nearly six months. Instead of continuing to depend on medication, she helped me understand the root causes behind my symptoms and guided me through personalized dietary and lifestyle corrections. Within just two months, my menstrual cycles started normalizing naturally. Along with this, I experienced better energy, improved digestion, and an overall sense of wellbeing. The nutrition support helped me heal from within and gave me confidence in my body's ability to recover naturally. I feel healthier, more balanced, and truly grateful for the guidance and support provided throughout my journey. Highly Recommended!",
     result: "Mumbai",
+  },
+  {
+    name: "Lalitha — 64 Years",
+    category: "Geriatric Nutrition - Senior Citizen",
+    condition: "Geriatric Nutrition - Senior Citizen · Diabetes / Stage 3 Kidney Health",
+    quote:
+      "When my kidney function and blood sugar levels started improving, I knew I was on the right path. I approached Heena Ma'am looking for a natural and sustainable way to support my Stage 3 kidney health and manage my diabetes. Through her personalized nutrition and lifestyle guidance, I learned how daily food choices could influence my health. Within just three months, I saw encouraging improvements in my reports. My creatinine improved from 1.24 to 1.15, eGFR increased from 43 to 50, fasting blood sugar reduced from 177 to 123, and post-meal sugar dropped from 237 to 139. Along with these positive changes, I felt more confident and motivated to take charge of my health. The practical diet plan and continuous support made it easy to stay consistent. I am grateful to Heena Ma'am for helping me understand my health better and guiding me toward long-term wellness.",
+    result: "Mumbai",
+  },
+  {
+    name: "Padma — 69 Years",
+    category: "Geriatric Nutrition - Senior Citizen",
+    condition: "Geriatric Nutrition - Senior Citizen · High BP / Fatty Liver / Insulin Resistance",
+    quote:
+      "10+ kg Lost. BP Controlled. Better Mobility. Better Life. I was struggling with high blood pressure, fatty liver, insulin resistance, high cholesterol, joint pain, and excess weight. Through Heena Ma'am's personalized nutrition and lifestyle guidance, I experienced remarkable improvements in my health. My BP came under control, fatty liver and cholesterol markers improved, joint pain reduced, and my walking and flexibility became much better. I also achieved a weight loss of more than 10 kg and felt more energetic and confident. This journey taught me that addressing the root cause can truly transform health.",
+    result: "Mumbai",
+  },
+  {
+    name: "Shashi — 67 Years",
+    category: "Geriatric Nutrition - Senior Citizen",
+    condition: "Geriatric Nutrition - Senior Citizen · Psoriasis / High BP / Cholesterol",
+    quote:
+      "Psoriasis Improved. BP Controlled. Cholesterol Improved. BP Medication Stopped. A New Beginning. When I started my journey, I was struggling with Psoriasis, itching, dryness, constipation, knee and leg pain, fatigue, swelling, poor sleep, high BP, and cholesterol concerns. Within the first 45 days, I noticed significant improvements in my sleep, digestion, pain levels, sweet cravings, and overall wellbeing. My skin symptoms became more manageable, leg cramps reduced, and my energy levels improved. Over the next 5 months of consistently following the personalized nutrition and lifestyle plan, my health continued to transform. My BP came under control, allowing my BP medication to be stopped under medical supervision. I also saw improvements in cholesterol levels, mobility, and overall quality of life. Today, I feel healthier, more energetic, and confident that addressing the root cause through nutrition and lifestyle changes can create lasting results.",
+    result: "Madhya Pradesh",
+  },
+  {
+    name: "Ghanshyamdas — 75 Years",
+    category: "Geriatric Nutrition - Senior Citizen",
+    condition: "Geriatric Nutrition - Senior Citizen · Dyslipidemia / Hypertension",
+    quote:
+      "I consulted Dt. Heena for bloating, gas, weakness, sweet cravings, and ongoing health concerns like dyslipidemia and hypertension. With her detailed root-cause assessment, personalized diet plans, and guidance, within 1 week I noticed around 25% improvement in my health symptoms. Gradually, with Diet Plan 1 and Diet Plan 2, significant improvement was visible in both my symptoms and blood parameters like HDL, haemoglobin, fasting insulin, and uric acid. Now I feel much more active and energetic. Highly recommended.",
+    result: "Kolkata",
   },
 ];
 

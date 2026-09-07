@@ -222,4 +222,38 @@ export const youtubeTopics = [
     topic: "Solution for Blocked Nose — Face Yoga",
     url: "https://www.youtube.com/watch?v=pu5qD9Q7RxU&t=96s",
   },
+  {
+    topic: "Cooking Topic: Aam Panna Full of Nutritional Benefits",
+    url: "https://www.youtube.com/watch?v=LQPtQKaMX44",
+  },
+  {
+    topic: "How to Cook Traditional Style Sweet Potato",
+    url: "https://www.youtube.com/watch?v=1ObJTVSYuy8",
+  },
+  { topic: "Mushroom Snacking Anytime", url: "https://www.youtube.com/watch?v=2yblIX7RREc" },
+  {
+    topic: "How to Make a Jowar Roti with a Unique Combination",
+    url: "https://www.youtube.com/watch?v=e7th0s8Km7c",
+  },
+  {
+    topic: "Are You Hungry? Grab This Snack Anytime in 5 Minutes",
+    url: "https://www.youtube.com/watch?v=duSuUuHrQ2M",
+  },
+  {
+    topic: "Saunf or Fennel Sharbat in 1 Minute — Summer Drink",
+    url: "https://www.youtube.com/watch?v=MaTXivDkv9g",
+  },
+  {
+    topic: "100% Recovery from Cold & Cough Following Home Remedy",
+    url: "https://www.youtube.com/watch?v=n4Hyouts63M",
+  },
+  {
+    topic: "Petha Juice for Piles, Fissure & Many More Health Challenges",
+    url: "https://www.youtube.com/watch?v=5TR5rVs47XQ",
+  },
+  {
+    topic: "Carrot Milk Recipe for Lung Improvement",
+    url: "https://www.youtube.com/watch?v=0ECv8CUJ6cg",
+  },
+  { topic: "Amla Murabba Using Jaggery", url: "https://www.youtube.com/watch?v=C5EYxFvjrVo" },
 ];
