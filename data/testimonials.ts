@@ -98,6 +98,30 @@ export const allTestimonials: TestimonialDetail[] = [
     result: "Dombivli, Thane",
   },
   {
+    name: "Samruddhi — 14 Years",
+    category: "Pediatric & Adolescent Nutrition",
+    condition: "Pediatric & Adolescent Nutrition · Healthy Weight Loss / Fitness",
+    quote:
+      "From 70 kg to 58 kg — A Journey of Dedication, Discipline, and Confidence. When I started my journey at the age of 14, I weighed 70 kg and often experienced breathlessness, foot pain, low stamina, and nutritional deficiencies. Through Heena Ma'am's Gap Analysis approach, I learned how small daily habits were affecting my health. With consistent nutrition, exercise, and lifestyle changes over one year, I successfully reduced my weight to 58 kg. Along the way, my breathlessness reduced, metabolism improved, foot pain disappeared, flexibility increased, and my hemoglobin levels improved. More importantly, I gained confidence, better energy levels, and healthy habits that will stay with me for life. This journey taught me that sustainable results come from consistency, patience, and the right guidance.",
+    result: "Nashik",
+  },
+  {
+    name: "Shanaya — 15 Years",
+    category: "Pediatric & Adolescent Nutrition",
+    condition: "Pediatric & Adolescent Nutrition · Irregular Periods / PCOD / Low Hemoglobin",
+    quote:
+      "At 15, I Didn't Just Lose Weight—I Transformed My Health. When I started my journey with Heena Ma'am, I was struggling with weight gain, irregular periods, borderline thyroid concerns, slow metabolism, low hemoglobin, dark circles, late-night sleeping habits, frequent junk food consumption, and irregular eating patterns. Through personalized nutrition, lifestyle corrections, and six months of consistent discipline, I experienced a remarkable transformation. My periods became regular, metabolism improved, hemoglobin levels increased, dark circles reduced, and my energy levels improved significantly. I also developed healthier eating habits, reduced junk food cravings, and established a better sleep routine. The biggest achievement was gaining confidence and learning how small daily choices can create lasting health improvements.",
+    result: "Mumbai",
+  },
+  {
+    name: "Ananya — 18 Years",
+    category: "Pediatric & Adolescent Nutrition",
+    condition: "Pediatric & Adolescent Nutrition · PCOD / Acne / PMS / Low Hemoglobin",
+    quote:
+      "PCOD Was Affecting More Than My Periods—It Was Affecting My Confidence. At 18, I was struggling with PCOD, acne, PMS, weight gain, irregular eating habits, low hemoglobin, premature greying of hair, and frequent mood swings. I often felt irritated, tired, and disconnected from my health. Through Heena Ma'am's personalized nutrition and lifestyle guidance, I learned how my daily habits were influencing my hormones and overall wellbeing. Over the next few months, my periods became more regular, PMS symptoms reduced, acne improved, energy levels increased, and my eating habits became more structured. My hemoglobin improved, weight started moving in the right direction, and I felt calmer and more emotionally balanced. The biggest transformation was not just physical—it was gaining confidence and understanding how to take care of my body naturally.",
+    result: "Mumbai",
+  },
+  {
     name: "Geeta Mandlik — 42 Years",
     category: "Autoimmune",
     condition: "Autoimmune · RA",
@@ -168,6 +192,14 @@ export const allTestimonials: TestimonialDetail[] = [
     quote:
       "I approached Heena Ma'am after struggling with irregular periods and relying on hormonal pills for nearly six months. Instead of continuing to depend on medication, she helped me understand the root causes behind my symptoms and guided me through personalized dietary and lifestyle corrections. Within just two months, my menstrual cycles started normalizing naturally. Along with this, I experienced better energy, improved digestion, and an overall sense of wellbeing. The nutrition support helped me heal from within and gave me confidence in my body's ability to recover naturally. I feel healthier, more balanced, and truly grateful for the guidance and support provided throughout my journey. Highly Recommended!",
     result: "Mumbai",
+  },
+  {
+    name: "Dipali Prahar Mahakal — 34 Years",
+    category: "Womens Health",
+    condition: "Women's Health · Heart Condition / Daily Episodes",
+    quote:
+      "When Surgery Seemed Like the Only Option, Nutrition Gave Me New Hope. No More Daily Attacks. Better Energy. Better Quality of Life. I have had a heart condition since childhood and underwent open-heart surgery at the age of 15. In recent years, I started experiencing daily episodes that affected my quality of life. After undergoing a TEE test, I was informed that my heart had a 95% blockage on the right side, and surgery was suggested. Before proceeding, I consulted Heena Ma'am and shared all my medical reports. Based on my health condition and lifestyle, she designed a personalized nutrition and lifestyle plan for me. By making simple changes such as improving food quality, changing cooking oil, reducing processed foods, practicing yoga, and following the recommended diet consistently, I started feeling healthier and more energetic. Within a few weeks, the daily attacks stopped, and my overall wellbeing improved significantly. I am grateful to Heena Ma'am for giving me hope, guidance, and a natural path toward better health.",
+    result: "Dombivli, Thane",
   },
   {
     name: "Lalitha — 64 Years",

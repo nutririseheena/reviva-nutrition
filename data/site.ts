@@ -3,14 +3,14 @@ export const siteConfig = {
   owner: "Heena",
 
   contact: {
-    phone: "+919930548506",
-    phoneDisplay: "+91 99305 48506",
+    phone: "+918169563336",
+    phoneDisplay: "+91 81695 63336",
     email: "nutririseheena@gmail.com",
     location: "Mumbai, Maharashtra",
   },
 
   payment: {
-    upi: "9930548506",
+    upi: "8169563336",
     upi_id: "8291694827@upi",
   },
 

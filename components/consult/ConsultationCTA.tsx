@@ -241,7 +241,7 @@ export default function ConsultationCTA() {
               {/* Contact Options */}
               <div className="mt-10 flex flex-wrap gap-3">
                 <a
-                  href="https://wa.me/919930548506"
+                  href="https://wa.me/918169563336"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white shadow-md transition-all hover:scale-105 hover:shadow-lg"
@@ -252,7 +252,7 @@ export default function ConsultationCTA() {
                 </a>
 
                 <a
-                  href="tel:+919930548506"
+                  href="tel:+918169563336"
                   className="inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/10"
                 >
                   <Phone size={17} />
