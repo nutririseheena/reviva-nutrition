@@ -67,7 +67,7 @@ export default function Navbar() {
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
               <Image
-                src="/images/logo/reviva-logo.png"
+                src="/images/logo/reviva_logo.png"
                 alt="Reviva Nutrition"
                 width={180}
                 height={60}

@@ -32,8 +32,8 @@ export const metadata: Metadata = {
   title: "Reviva Nutrition",
   description: "Personalized nutrition and wellness guidance by Heena",
   icons: {
-    icon: "/images/logo/reviva-logo.png",
-    apple: "/images/logo/reviva-logo.png",
+    icon: "/images/logo/reviva_logo.png",
+    apple: "/images/logo/reviva_logo.png",
   },
 };
 

@@ -13,7 +13,7 @@ export default function Footer() {
           {/* Logo + About */}
           <div>
             <Image
-              src="/images/logo/reviva-logo.png"
+              src="/images/logo/reviva_logo.png"
               alt="Reviva Nutrition"
               width={140}
               height={74}
