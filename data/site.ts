@@ -11,7 +11,7 @@ export const siteConfig = {
 
   payment: {
     upi: "8169563336",
-    upi_id: "8291694827@upi",
+    upi_id: "9930548506@cnrb",
   },
 
   googleReview: {
@@ -19,18 +19,64 @@ export const siteConfig = {
   },
 
   social: {
-    instagram: "https://www.youtube.com/@NutriRiseHeena",
-    facebook: "https://www.youtube.com/@NutriRiseHeena",
-    linkedin: "https://www.youtube.com/@NutriRiseHeena",
+    instagram: "https://www.instagram.com/dietician_heenauy?stkn=MTczN25sZm1idnEzbg==",
+    facebook: "https://www.facebook.com/share/19cMr6N3Xq/",
+    linkedin: "https://www.linkedin.com/in/dietitian-heena-5709a7371/",
     youtube: "https://www.youtube.com/@NutriRiseHeena",
   },
 };
 
-export const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/consult", label: "Consult" },
-  { href: "/testimonials", label: "Testimonials" },
+export interface NavSubLink {
+  href: string;
+  label: string;
+}
+
+export interface NavLink {
+  href: string;
+  label: string;
+  submenu?: NavSubLink[];
+}
+
+export const navLinks: NavLink[] = [
+  {
+    href: "/",
+    label: "Home",
+    submenu: [
+      { href: "/#home-healing-journey", label: "Healing Journey" },
+      { href: "/#about-preview", label: "About Heena" },
+      { href: "/#three-pillars", label: "Three Pillars" },
+      { href: "/#real-stories", label: "Success Stories" },
+      { href: "/#myths-facts-preview", label: "Myths & Facts" },
+    ],
+  },
+  {
+    href: "/about",
+    label: "About",
+    submenu: [
+      { href: "/about#about-bio", label: "Meet Heena" },
+      { href: "/about#about-impact", label: "Creating Awareness" },
+      { href: "/about#learn-with-me", label: "Learn With Me" },
+    ],
+  },
+  {
+    href: "/consult",
+    label: "Consult",
+    submenu: [
+      { href: "/consult#healing-journey", label: "Your Personalized Healing Journey" },
+      { href: "/consult#how-it-works", label: "How The Treatment Program Works" },
+      { href: "/consult#consult-form", label: "Consultation Form" },
+      { href: "/consult#payment-section", label: "Payment Section" },
+    ],
+  },
+  {
+    href: "/testimonials",
+    label: "Testimonials",
+    submenu: [
+      { href: "/testimonials#testimonials-grid", label: "Success Stories" },
+      { href: "/testimonials#share-feedback", label: "Share Your Story" },
+      { href: "/testimonials#myths-facts", label: "Myths & Facts" },
+    ],
+  },
   { href: "/about#invite-form", label: "Invite Heena" },
 ];
 

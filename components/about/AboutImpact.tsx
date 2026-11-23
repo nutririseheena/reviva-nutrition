@@ -122,7 +122,10 @@ export default function AboutImpact() {
   );
 
   return (
-    <section className="bg-[var(--reviva-cream)] py-10 sm:py-16 lg:py-20">
+    <section
+      id="about-impact"
+      className="bg-[var(--reviva-cream)] py-10 sm:py-16 lg:py-20 scroll-mt-24"
+    >
       {/* ── Main row: stacked on <lg, horizontal on lg+ ── */}
       <div className="flex flex-col lg:flex-row lg:items-center px-6 sm:px-8 lg:px-10 xl:px-12">
         {/* Title */}

@@ -190,10 +190,11 @@ export default function ContactHero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
-          className="mt-4 text-sm sm:text-base leading-relaxed whitespace-nowrap"
+          className="mx-auto mt-4 max-w-2xl text-sm sm:text-base leading-relaxed"
           style={{ color: "var(--reviva-warm-brown)", opacity: 0.75 }}
         >
-          Have a question or want to connect? We&apos;d love to hear from you.
+          Have questions about your health or nutrition goals? Feel free to connect with us—
+          We&apos;d love to hear from you and support you on your path to better health.
         </motion.p>
       </div>
     </section>

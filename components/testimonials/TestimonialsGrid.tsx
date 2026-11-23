@@ -30,7 +30,10 @@ export default function TestimonialsGrid() {
       : allTestimonials.filter((testimonial) => testimonial.category === activeCategory);
 
   return (
-    <section id="testimonials-grid" className="bg-[var(--reviva-cream)] pb-20 sm:pb-24 md:pb-28">
+    <section
+      id="testimonials-grid"
+      className="bg-[var(--reviva-cream)] pb-20 sm:pb-24 md:pb-28 scroll-mt-24"
+    >
       <motion.div
         className="mb-10 w-full px-5 py-12 text-center sm:px-8 md:py-16 lg:px-20"
         style={{
@@ -65,7 +68,7 @@ export default function TestimonialsGrid() {
 
       <div className="mx-auto max-w-7xl page-pad">
         <div
-          className="mb-10 flex flex-wrap justify-center gap-2 sm:gap-3"
+          className="mb-10 flex flex-wrap justify-center gap-2.5 sm:gap-3.5"
           aria-label="Filter success stories"
         >
           {(["All", ...testimonialCategories] as const).map((category) => {
@@ -77,7 +80,7 @@ export default function TestimonialsGrid() {
                 type="button"
                 aria-pressed={isActive}
                 onClick={() => startTransition(() => setActiveCategory(category))}
-                className="cursor-pointer rounded-full border px-4 py-2 text-sm font-semibold transition-colors sm:px-5"
+                className="cursor-pointer rounded-full border px-5 py-2.5 text-base font-bold transition-colors sm:px-6 sm:text-lg"
                 style={{
                   backgroundColor: isActive ? "var(--reviva-green)" : "rgba(255,255,255,0.8)",
                   borderColor: isActive ? "var(--reviva-green)" : "var(--reviva-blush-deep)",
@@ -137,7 +140,7 @@ export default function TestimonialsGrid() {
                     className="inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-sm font-medium shadow-sm"
                     style={{ backgroundColor: "rgba(255,255,255,0.8)", color: "#374151" }}
                   >
-                    {testimonial.result}
+                    📍 {testimonial.result}
                   </span>
                 </div>
               )}

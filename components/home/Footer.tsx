@@ -75,7 +75,7 @@ export default function Footer() {
             <div className="mt-4 space-y-3">
               <a
                 href={`mailto:${siteConfig.contact.email}`}
-                className="flex items-center gap-3 text-sm text-white/70 transition hover:text-white"
+                className="flex items-center gap-3 text-[15px] text-white/85 transition hover:text-white break-all"
               >
                 <Mail size={16} className="shrink-0" />
                 {siteConfig.contact.email}
@@ -83,13 +83,13 @@ export default function Footer() {
 
               <a
                 href={`tel:${siteConfig.contact.phone}`}
-                className="flex items-center gap-3 text-sm text-white/70 transition hover:text-white"
+                className="flex items-center gap-3 text-[15px] text-white/85 transition hover:text-white"
               >
                 <Phone size={16} className="shrink-0" />
                 {siteConfig.contact.phoneDisplay}
               </a>
 
-              <div className="flex items-start gap-3 text-sm text-white/70">
+              <div className="flex items-start gap-3 text-[15px] text-white/85">
                 <MapPin size={16} className="mt-0.5 shrink-0" />
                 {siteConfig.contact.location}
               </div>
@@ -107,7 +107,7 @@ export default function Footer() {
             </p>
 
             <Link
-              href="/contact"
+              href="/consult#consult-form"
               className="mt-4 inline-flex items-center rounded-full px-5 py-2.5 text-sm font-semibold transition-all hover:scale-105"
               style={{
                 backgroundColor: "var(--reviva-gold)",

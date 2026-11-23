@@ -46,7 +46,11 @@ const specializations = [
 
 export default function HealingJourney() {
   return (
-    <section className="py-20 sm:py-24 md:py-28" style={{ backgroundColor: "#fdf8f4" }}>
+    <section
+      id="healing-journey"
+      className="py-20 sm:py-24 md:py-28 scroll-mt-24"
+      style={{ backgroundColor: "#fdf8f4" }}
+    >
       <div className="mx-auto max-w-7xl page-pad">
         {/* ── Header — centered ── */}
         <motion.div

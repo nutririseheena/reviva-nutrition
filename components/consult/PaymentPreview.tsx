@@ -141,7 +141,11 @@ const steps = [
 
 export default function PaymentPreview() {
   return (
-    <section className="py-10 sm:py-14" style={{ backgroundColor: "var(--reviva-cream)" }}>
+    <section
+      id="payment-section"
+      className="py-10 sm:py-14 scroll-mt-24"
+      style={{ backgroundColor: "var(--reviva-cream)" }}
+    >
       <div className="mx-auto max-w-6xl page-pad">
         <motion.div
           className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch"

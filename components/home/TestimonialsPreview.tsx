@@ -13,7 +13,8 @@ export default function TestimonialsPreview() {
       <div className="mx-auto max-w-7xl page-pad">
         {/* ── Section header ── */}
         <motion.div
-          className="text-center"
+          id="three-pillars"
+          className="text-center scroll-mt-24"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.15 }}
@@ -120,36 +121,35 @@ export default function TestimonialsPreview() {
 
         {/* ── Testimonials header ── */}
         <motion.div
-          className="mt-24 flex flex-col items-center text-center md:flex-row md:items-end md:justify-between md:text-left"
+          id="real-stories"
+          className="mt-24 flex flex-col items-center text-center scroll-mt-24"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.15 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <div>
-            <h2
-              className="mt-4 text-3xl md:text-4xl lg:text-5xl xl:text-[4.2rem] leading-tight"
-              style={{
-                color: "var(--reviva-green)",
-                fontFamily: "var(--font-heading)",
-              }}
-            >
-              Real People,{" "}
-              <span className="italic" style={{ color: "var(--reviva-warm-brown)" }}>
-                Meaningful Change
-              </span>
-            </h2>
-          </div>
+          <h2
+            className="mt-4 text-3xl md:text-4xl lg:text-5xl xl:text-[4.2rem] leading-tight"
+            style={{
+              color: "var(--reviva-green)",
+              fontFamily: "var(--font-heading)",
+            }}
+          >
+            Real People,{" "}
+            <span className="italic" style={{ color: "var(--reviva-warm-brown)" }}>
+              Meaningful Change
+            </span>
+          </h2>
 
           <Link
             href="/testimonials"
-            className="mt-6 inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-sm font-semibold transition hover:bg-[#eef5eb] md:mt-0"
+            className="mt-8 inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-sm font-semibold transition hover:bg-[#eef5eb]"
             style={{
               borderColor: "var(--reviva-green)",
               color: "var(--reviva-green)",
             }}
           >
-            View All Success Stories
+            See Real Health Transformations
             <ArrowRight size={16} />
           </Link>
         </motion.div>
