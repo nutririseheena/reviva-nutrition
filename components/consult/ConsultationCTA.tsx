@@ -184,7 +184,7 @@ export default function ConsultationCTA() {
   }
 
   return (
-    <section id="consult-form" className="bg-[var(--reviva-cream)] py-24">
+    <section id="consult-form" className="bg-[var(--reviva-cream)] py-24 scroll-mt-24">
       <div className="mx-auto max-w-7xl page-pad">
         <motion.div
           className="relative overflow-hidden rounded-[28px] sm:rounded-[40px] p-5 sm:p-8 lg:p-12"
@@ -262,7 +262,12 @@ export default function ConsultationCTA() {
 
               <p className="mt-6 flex items-center gap-2 text-sm text-white/60">
                 <Mail size={14} />
-                nutririseheena@gmail.com
+                <a
+                  href="mailto:nutririseheena@gmail.com"
+                  className="hover:text-white/90 transition"
+                >
+                  nutririseheena@gmail.com
+                </a>
               </p>
             </div>
 

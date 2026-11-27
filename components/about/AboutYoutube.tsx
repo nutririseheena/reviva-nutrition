@@ -70,7 +70,10 @@ export default function AboutYoutube() {
     .filter((group) => group.topics.length > 0);
 
   return (
-    <section className="bg-[var(--reviva-cream)] py-16 sm:py-20 lg:py-24">
+    <section
+      id="learn-with-me"
+      className="bg-[var(--reviva-cream)] py-16 sm:py-20 lg:py-24 scroll-mt-24"
+    >
       <div className="mx-auto max-w-7xl page-pad">
         <motion.div
           className="mb-10"
@@ -119,7 +122,7 @@ export default function AboutYoutube() {
               <div className="mb-5 flex items-center gap-4">
                 <span className="h-px w-8 shrink-0 bg-[var(--reviva-terracotta)]" />
                 <h3
-                  className="text-2xl font-medium sm:text-3xl"
+                  className="text-2xl font-bold sm:text-3xl"
                   style={{ color: "var(--reviva-green)", fontFamily: "var(--font-heading)" }}
                 >
                   {section}
@@ -155,11 +158,11 @@ export default function AboutYoutube() {
         >
           <div>
             <p className="text-lg font-semibold text-[var(--reviva-warm-brown)]">
-              Ready to take it beyond the videos?
+              You watched the video👉 Ready to Take the Next Step Towards Better Health?
             </p>
             <p className="mt-1 text-sm text-[var(--reviva-warm-brown)] opacity-65">
-              Book a personalized 1-on-1 consultation and build a plan designed specifically for
-              you.
+              Book 1:1 consultation to identify what&apos;s holding your health back and create a
+              practical roadmap toward lasting wellness
             </p>
           </div>
           <Link

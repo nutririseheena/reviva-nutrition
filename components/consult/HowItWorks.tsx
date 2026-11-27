@@ -6,7 +6,7 @@ import { MapPin, Video } from "lucide-react";
 
 export default function HowItWorks() {
   return (
-    <section className="bg-white py-24">
+    <section id="how-it-works" className="bg-[var(--reviva-cream)] py-24 scroll-mt-24">
       <div className="mx-auto max-w-7xl page-pad">
         {/* Header */}
         <motion.div

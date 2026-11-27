@@ -9,7 +9,11 @@ import { processCards } from "@/data/process-cards";
 
 export default function ProcessCards() {
   return (
-    <section className="py-24" style={{ backgroundColor: "#fdf8f4" }}>
+    <section
+      id="home-healing-journey"
+      className="py-24 scroll-mt-24"
+      style={{ backgroundColor: "#fdf8f4" }}
+    >
       <div className="mx-auto max-w-7xl page-pad">
         {/* Header */}
         <motion.div
@@ -66,7 +70,7 @@ export default function ProcessCards() {
               transition={{ duration: 0.5, delay: index * 0.11 }}
             >
               <Link
-                href="/consult#consult-form"
+                href="/consult#how-it-works"
                 className="group relative block overflow-hidden rounded-[28px] shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
                 aria-label={card.title}
               >

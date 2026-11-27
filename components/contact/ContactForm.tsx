@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, Mail, Phone, MapPin, Send, AlertCircle } from "lucide-react";
-import { FaInstagram, FaLinkedinIn, FaYoutube, FaWhatsapp } from "react-icons/fa";
+import { FaInstagram, FaLinkedinIn, FaYoutube, FaWhatsapp, FaFacebookF } from "react-icons/fa";
 import { siteConfig } from "@/data/site";
 
 type FormState = { name: string; email: string; subject: string; message: string };
@@ -271,7 +271,7 @@ export default function ContactForm() {
                       className="mb-1.5 block text-xs font-semibold uppercase tracking-wider"
                       style={{ color: "var(--reviva-warm-brown)", opacity: 0.65 }}
                     >
-                      Your message{" "}
+                      How Can We Help You?{" "}
                       <span
                         className="normal-case tracking-normal font-normal text-xs"
                         style={{ color: "var(--reviva-warm-brown)", opacity: 0.45 }}
@@ -285,7 +285,7 @@ export default function ContactForm() {
                       value={form.message}
                       onChange={handleChange}
                       rows={5}
-                      placeholder="Tell us more…"
+                      placeholder="Tell us about your health goals, concerns, or questions…"
                       className={`${inputCls("message")} resize-none`}
                       style={{ color: "var(--reviva-warm-brown)" }}
                     />
@@ -424,8 +424,8 @@ export default function ContactForm() {
                     Location
                   </p>
                   <div
-                    className="flex items-start gap-2.5 text-sm"
-                    style={{ color: "var(--reviva-warm-brown)" }}
+                    className="flex items-start gap-2.5 text-sm font-medium"
+                    style={{ color: "var(--reviva-terracotta)" }}
                   >
                     <MapPin
                       size={15}
@@ -458,7 +458,7 @@ export default function ContactForm() {
                     On Social Media
                   </span>
                 </p>
-                <div className="flex gap-3">
+                <div className="flex flex-wrap gap-3">
                   <SocialIcon
                     href={siteConfig.social.youtube}
                     label="YouTube"
@@ -473,6 +473,11 @@ export default function ContactForm() {
                     href={siteConfig.social.linkedin}
                     label="LinkedIn"
                     icon={<FaLinkedinIn size={16} />}
+                  />
+                  <SocialIcon
+                    href={siteConfig.social.facebook}
+                    label="Facebook"
+                    icon={<FaFacebookF size={16} />}
                   />
                   <SocialIcon
                     href={`https://wa.me/${siteConfig.contact.phone.replace(/\D/g, "")}`}

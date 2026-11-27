@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 export default function AboutPreview() {
   return (
-    <section id="about-preview" className="bg-[var(--reviva-cream)] py-12 lg:py-22">
+    <section id="about-preview" className="bg-[var(--reviva-cream)] py-12 lg:py-22 scroll-mt-24">
       <div className="mx-auto max-w-7xl page-pad">
         <div className="grid items-start gap-8 lg:gap-18 lg:grid-cols-2">
           {/* ── Left: Quote + Image ── */}
@@ -150,7 +150,7 @@ export default function AboutPreview() {
               >
                 <p className="text-xs uppercase tracking-wider text-slate-500">Clients</p>
                 <p className="mt-2 text-sm font-semibold text-slate-800">
-                  3000+ Health Transformation Journeys
+                  3,000+ Health Transformations Through Nutrition
                 </p>
               </div>
             </div>

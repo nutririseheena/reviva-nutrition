@@ -11,7 +11,7 @@ const fadeUp = {
 
 export default function AboutBio() {
   return (
-    <section className="bg-[var(--reviva-cream)] px-4 sm:px-8 lg:px-20">
+    <section id="about-bio" className="bg-[var(--reviva-cream)] px-4 sm:px-8 lg:px-20 scroll-mt-24">
       <div className="w-full flex flex-col lg:flex-row divide-y lg:divide-y-0 lg:divide-x divide-[var(--reviva-blush-deep)]">
         {/* ── Left panel — name + credentials ── */}
         <motion.div

@@ -7,7 +7,7 @@ export default function MythsFactsHero() {
   return (
     <section
       id="myths-facts"
-      className="py-20 sm:py-24 md:py-28"
+      className="py-20 sm:py-24 md:py-28 scroll-mt-24"
       style={{
         background:
           "linear-gradient(145deg, #fdeee6 0%, var(--reviva-blush) 42%, #fdf6f0 72%, var(--reviva-blush-deep) 100%)",
